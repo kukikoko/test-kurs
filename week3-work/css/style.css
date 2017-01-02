@@ -19,11 +19,10 @@ body
 #navbar-brand
 	{
 		float: left;
-		padding-top: 15px;
 		padding-left: 15px;
 		margin-right: 0;
-		font-size: 2.5em;
-		width: 220px;
+		font-size: 2em;
+		width: 180px;
 		font-weight: bold;
 		text-decoration: none;
 		color: #33ff00;
