@@ -8,12 +8,20 @@ body
 
 	}
 
+@media (min-width: 768px) {
+	.container-fluid>.navbar-header
+		{	margin-right: -15px;
+			margin-left: -15px;
+		}
+}
 
 #header-nav
 	{
 		background-color: #333366;
 		border-radius: 10px;
+		padding-left: 0px;
 	}
+
 
 
 #navbar-brand
@@ -32,6 +40,7 @@ body
 #collapsable-nav
 	{
 		background-color: #00ffcc;
+
 	}
 
 #menuitem1, #menuitem2, #menuitem3
