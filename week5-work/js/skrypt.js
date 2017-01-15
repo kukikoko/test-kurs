@@ -53,6 +53,7 @@ $ajaxUtils.sendGetRequest(
 });
 
 dc.laduj = function (co) {
+  console.log (co);
    showLoading ("#head");
    $ajaxUtils.sendGetRequest(
     co, function (responseText) {
