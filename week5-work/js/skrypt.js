@@ -46,7 +46,7 @@ showLoading("#head");
 $ajaxUtils.sendGetRequest(
   homeHtml,
   function (responseText) {
-    document.querySelector("#main-content")
+    document.querySelector("#head")
       .innerHTML = responseText;
   },
   false);
