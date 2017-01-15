@@ -52,7 +52,16 @@ $ajaxUtils.sendGetRequest(
   false);
 });
 
+dc.laduj = function (co) {
+   showLoading ("#head");
+   $ajaxUtils.sendGetRequest(
+    co, function (responseText) {
+      document.querySelector ("#head")
+      .innerHTML = responseText;
+    }, false)
+}
 
 global.$dc = dc;
 
 })(window);
+
