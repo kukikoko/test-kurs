@@ -37,6 +37,8 @@ console.log ("Prezes: " + company.structure["prezes"]);
 console.log ("Sekretarka: " + company.structure["sekretarka"]);
 console.log ("Robotnik: " + company.structure["robotnik"]);
 
+console.log (JSON.stringify (company));
+
 var sodom = {
 	prezes: "Pawel",
 	samochody: {
@@ -91,3 +93,18 @@ console.log (Tabela);
 
 (function() { console.log ("Brudny najbrudniejszy") })();
 
+function sayhello()
+	{
+
+		var kronos = document.getElementById("name").value;
+		console.log (kronos);
+		document.getElementById("mega")
+		.textContent = kronos;
+
+	if (kronos === "Pawel")
+	{
+		document.querySelector("#imie")
+		.textContent = kronos;
+	}
+
+}
