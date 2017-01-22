@@ -21,7 +21,7 @@
 			jedzenie = jedzenie.trim();
 			if (jedzenie === "")
 			{
-				$scope.odpowiedz = "nothing to eat";
+				$scope.odpowiedz = "enter some data first";
 				$scope.styl="neutral";
 			}	else
 				{
