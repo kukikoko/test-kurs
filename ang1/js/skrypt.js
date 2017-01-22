@@ -34,7 +34,7 @@
 							else
 							{
 								$scope.styl="toomuch";
-								$scope.odpowiedz="TOO MUCH!"
+								$scope.odpowiedz="TOO MUCH!";
 							};
 
 						
@@ -45,7 +45,6 @@
 	function policz (jedzenie)
 	{
 
-		var i = 0;
 		var counter = 1;
 		for (var i = jedzenie.length - 2; i >= 0; i--) {
 			if (jedzenie.charAt(i) === ",")
