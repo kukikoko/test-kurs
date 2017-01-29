@@ -19,7 +19,8 @@
 		$scope.krzyknij = function () {
 			var jedzenie = $scope.MenuForToday;
 			jedzenie = jedzenie.trim();
-			if (jedzenie === "Pawel" || jedzenie === "Piotrek")
+			if (jedzenie === "Pawel" || jedzenie === "Piotrek"
+				|| jedzenie === "Paweł")
 			{
 				$scope.odpowiedz = "Witam szanownego pana";
 				$scope.styl="notfat";
