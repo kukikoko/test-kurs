@@ -3,46 +3,59 @@
 
 	angular.module('Apka', [])
 
-	.controller('Kontroler', Kontroler);
+	.controller('Kontroler', Kontroler)
+	.service ('Serwis', Serwis)
 
 
 
-
-	Kontroler.$inject = ['$scope'];
-	function Kontroler ($scope)
+	Kontroler.$inject = ['Serwis'];
+	function Kontroler (Serwis)
 	{
-		$scope.MenuForToday = "";
-		$scope.odpowiedz = "............";
+		var dupa = this;
+		dupa.filtr = "";
+		dupa.MenuForToday = "";
+		dupa.odpowiedz = "............";
+		dupa.lista = ["ciało", "krew", "czarnuch",
+		"mizeria", "karambol", "megaloman", 1, 2, 3, "hujek"];
+		dupa.styl="neutral";
 
-		$scope.styl="neutral";
 		
-		$scope.krzyknij = function () {
-			var jedzenie = $scope.MenuForToday;
+
+		dupa.krzyknij = function () {
+			var jedzenie = dupa.MenuForToday;
 			jedzenie = jedzenie.trim();
 			if (jedzenie === "")
 			{
-				$scope.odpowiedz = "enter some data first";
-				$scope.styl="neutral";
+				dupa.odpowiedz = "enter some data first";
+				dupa.styl="neutral";
 			}	else
 				{
-					var ilosc = policz (jedzenie);
+					var ilosc = Serwis.policz (jedzenie);
 						if (ilosc<4)
 						{
-							$scope.styl="notfat";
-							$scope.odpowiedz="ENJOY!";
+							dupa.styl="notfat";
+							dupa.odpowiedz="ENJOY!";
 						}
 							else
 							{
-								$scope.styl="toomuch";
-								$scope.odpowiedz="TOO MUCH!";
+								dupa.styl="toomuch";
+								dupa.odpowiedz="TOO MUCH!";
 							};
 
 						
 				};
 		};
+
+		dupa.wywal = function (ktora) {
+			Serwis.wywal (ktora, dupa.lista);
+		}
+		
 	};
 
-	function policz (jedzenie)
+function Serwis () {
+	var sr = this;
+
+sr.policz = function (jedzenie)
 	{
 
 		var counter = 1;
@@ -53,5 +66,12 @@
 				};
 		};
 		return counter;
+	};
+
+sr.wywal = function (numer, rzeczy)
+	{
+		rzeczy.splice (numer, 1);
 	}
+};
+
 })();

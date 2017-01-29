@@ -37,6 +37,7 @@ body
 	{ 
 		margin-top: 20px;
 		margin-bottom: 15px;
+		font-weight: bolder;
 	}
 
 .btn
@@ -98,3 +99,8 @@ body
 		color: red;
 	}
 
+#rzeczy
+	{ 
+	width: 25%;
+	font-weight: bold;
+	 }
