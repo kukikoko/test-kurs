@@ -23,7 +23,7 @@
 			if (jedzenie === "Pawel" || jedzenie === "Piotrek"
 				|| jedzenie === "Paweł")
 			{
-				$scope.odpowiedz = "Witam szanownego pana";
+				$scope.odpowiedz = "Witam";
 				$scope.styl="notfat";
 			}	else
 				{
