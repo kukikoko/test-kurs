@@ -19,6 +19,7 @@
 		$scope.krzyknij = function () {
 			var jedzenie = $scope.MenuForToday;
 			jedzenie = jedzenie.trim();
+			console.log (jedzenie);
 			if (jedzenie === "Pawel" || jedzenie === "Piotrek"
 				|| jedzenie === "Paweł")
 			{
