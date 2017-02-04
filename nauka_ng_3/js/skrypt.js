@@ -77,7 +77,7 @@ function sodomTag () {
 	return ddo;
 }
 	
-function kontrolaStrachu ()
+function kontrolaStrachu()
 	{
 		var strach = this;
 		strach.czyzero = function () 
