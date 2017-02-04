@@ -71,9 +71,15 @@ body
 #guziczek
 	{
 		position: absolute;
-   		left: 10px;
-   		top: 240px;
+   		left: 30px;
+   		top: 270px;
    		height: 30px;
+	}
+
+#kupujemy
+	{
+		font-size: 0.7em;
+		color: black;
 	}
 
 @media (max-width: 400px)

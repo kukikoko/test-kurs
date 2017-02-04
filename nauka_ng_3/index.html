@@ -19,9 +19,11 @@
    <div ng-controller="DodawanieZakupow as pyk" id="header" class="container">
 
     <p>co chcesz kupic:</p><br>
-    <div id="star">
-    TOWAR: <input type="text" ng-model="pyk.co"><br>
-    ILOSC             :   <input type="text" ng-model="pyk.ile"><br>
+    <div id="kupujemy">
+    TOWAR: <input type="text" ng-model="pyk.co"
+    class="text-center"><br>
+    ILOSC: <input type="text" 
+    class="text-center" ng-model="pyk.ile"><br>
     <button ng-hide="pyk.zaduzo();" 
     ng-click="pyk.wpisz();">DODAJ</button>
     <br>
