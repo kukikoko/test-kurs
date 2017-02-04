@@ -71,9 +71,9 @@ body
 #guziczek
 	{
 		position: relative;
-   		left:10px;
-   		bottom:5px;
-   		height:30px;
+   		left: 10px;
+   		top: 260px;
+   		height: 30px;
 	}
 
 @media (max-width: 400px)

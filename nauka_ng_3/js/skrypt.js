@@ -109,7 +109,7 @@ sr.sweep = function (co)
 		else
 			{
 				var dlugosc =
-				sr.listOfBoughtThings;
+				sr.listOfBoughtThings.length;
 				sr.listOfBoughtThings.splice (0, dlugosc);
 			};
 	};
