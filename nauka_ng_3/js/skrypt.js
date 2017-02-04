@@ -42,6 +42,8 @@
 		pyk.wpisz = function ()
 			{
 				Checking.dodaj (pyk.co, pyk.ile);
+				pyk.com = "";
+				pyk.ile = "";
 			};
 	}
 
