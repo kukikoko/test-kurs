@@ -73,7 +73,11 @@ function sodomTag () {
 			bindToController: true
 		};
 
-function kontolaStrachu ()
+
+	return ddo;
+}
+	
+function kontrolaStrachu ()
 	{
 		var strach = this;
 		strach.czyzero = function () 
@@ -81,9 +85,6 @@ function kontolaStrachu ()
 				mojaLista.length === 0;
 			};
 	};
-	return ddo;
-}
-	
 
 
 })();
