@@ -5,6 +5,7 @@
 
 	.controller('ToBuyController', ToBuyController)
 	.controller('AlreadyBoughtController', AlreadyBoughtController)
+	.controller('DodawanieZakupow', DodawanieZakupow)
 	.service ('Checking', Checking)
 	.directive ('sodomTag', sodomTag);
 
@@ -32,17 +33,22 @@
 			};
 	};
 
+	DodawanieZakupow.$inject = ['Checking'];
+	function DodawanieZakupow (Checking)
+	{
+		var pyk = this;
+		pyk.co ="";
+		pyk.ile = "";
+		pyk.wpisz = function ()
+			{
+				Checking.dodaj (pyk.co, pyk.ile);
+			};
+	}
+
 function Checking () {
 	var sr = this;
 	sr.listOfThingsToBuy = new Array ();
-	sr.listOfThingsToBuy[0] = {name: "beers", quantity: 10};
-	sr.listOfThingsToBuy[1] = {name: "hamburgers", quantity: 3};
-	sr.listOfThingsToBuy[2] = {name: "carrots", quantity: 8};
-	sr.listOfThingsToBuy[3] = {name: "cars", quantity: 2};
-	sr.listOfThingsToBuy[4] = {name: "flowers", quantity: 13};
-	sr.listOfThingsToBuy[5] = {name: "plums", quantity: 3};
-	sr.listOfThingsToBuy[6] = {name: "buckets", quantity: 4};
-
+	
 	sr.listOfBoughtThings = new Array ();
 
 sr.change = function (number, kierunek)
@@ -57,6 +63,17 @@ sr.change = function (number, kierunek)
 		sr.listOfBoughtThings.splice (number, 1);
 		};
 	}
+
+sr.dodaj = function (co, ile)
+	{
+		var pozycja = {
+			name: co,
+			quantity: ile
+		};
+
+		sr.listOfThingsToBuy.push(pozycja);
+	}
+
 };
 
 function sodomTag () {

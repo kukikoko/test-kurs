@@ -16,6 +16,16 @@
 
    <div id="header" class="container text-center">SHOPPING LIST</div>
 
+   <div ng-controller="DodawanieZakupow as pyk" id="header" class="container">
+
+    <p>co chcesz kupic:</p><br>
+    TOWAR: <input type="text" ng-model="pyk.co"><br>
+    ILOSC: <input type="text" ng-model="pyk.ile"><br>
+    <button ng-click="pyk.wpisz();">DODAJ</button>
+    </div>
+    
+
+
 
    <div class="container">
     <div ng-controller="ToBuyController as buy" id="star" class="col-sm-6 col-xs-12">
