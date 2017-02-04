@@ -11,12 +11,27 @@ body
 #header
 	{
 		width: 50%;
-		margin: 10 auto 10;
 		padding-top: 20px;
 		padding-bottom: 20px;
 		border: 1px solid black;
 		border-radius: 10px;
 		background-color: #3300cc;
+		box-shadow: 0 0 20px #3f0c1f;
+		color: black;
+		font-weight: bold;
+		font-size: 1.3em;
+	}
+
+#zakupmy
+	{
+		width: 50%;
+		height: 250px;
+		padding-top: 20px;
+		margin-top: 10px;
+		padding-bottom: 20px;
+		border: 1px solid black;
+		border-radius: 10px;
+		background-color: #996699;
 		box-shadow: 0 0 20px #3f0c1f;
 		color: white;
 		font-weight: bold;
@@ -25,7 +40,6 @@ body
 
 #lista
 	{
-		margin: 10 auto 10;
 		height: 300px;
 		padding-left: 10px;
 		padding-right: 10px;
