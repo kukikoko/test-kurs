@@ -102,13 +102,13 @@ sr.sweep = function (co)
 	{
 		if (co === 0)
 			{
-				dlugosc =
+				var dlugosc =
 				sr.listOfThingsToBuy.length;
 				sr.listOfThingsToBuy.splice (0 , dlugosc);
 			}
 		else
 			{
-				dlugosc =
+				var dlugosc =
 				sr.listOfBoughtThings;
 				sr.listOfBoughtThings.splice (0, dlugosc);
 			};
