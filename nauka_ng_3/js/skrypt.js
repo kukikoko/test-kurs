@@ -51,7 +51,7 @@
 				var ilosc = Checking.listOfThingsToBuy.length
 							+ Checking.listOfBoughtThings.length;
 
-				if ilosc > 9
+				if (ilosc > 9)
 					{ return true }
 					else
 						{ return false };
