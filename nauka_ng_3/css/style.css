@@ -72,8 +72,13 @@ body
 	{
 		position: absolute;
    		left: 30px;
-   		top: 270px;
+   		top: 285px;
    		height: 30px;
+	}
+
+#dane
+	{
+		width: 75%;
 	}
 
 #kupujemy
