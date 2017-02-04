@@ -50,6 +50,10 @@ sr.change = function (number)
 function sodomTag () {
 	var ddo = 
 		{
+			scope:
+				{
+					mojaLista: '=mojaLista'
+				}
 			templateUrl: 'shot.html'
 		};
 	return ddo;

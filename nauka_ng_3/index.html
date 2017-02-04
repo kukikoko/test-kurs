@@ -20,30 +20,12 @@
    <div class="container">
     <div ng-controller="ToBuyController as buy" id="star" class="col-sm-6 col-xs-12">
       <p>to buy:</p>
-     
-        <ul class="list-unstyled" id="lista">
-        <div class="container" id="rzeczy">
-         <p ng-show="buy.list.length===0">You have bought everything</p>
-          <li ng-repeat="thing in buy.list">
-          <button class="btn btn-warning btn-xs" ng-click="buy.gotit($index);">==></button>
-          buy <sodom-tag></sodom-tag>
-          </li>
-        </div>
-        </ul>
+      <sodom-tag moja-lista="buy"></sodom-tag>
     </div>
 
     <div ng-controller="AlreadyBoughtController as bought" id="star" class="col-sm-6 col-xs-12">
       <p>bought:</p>
-     
-        <ul class="list-unstyled" id="lista">
-        <div class="container" id="rzeczy">
-         <p ng-show="bought.list.length===0">Nothing has been bought</p>
-          <li ng-repeat="thing in bought.list">
-          bought <sodom-tag></sodom-tag>
-          </li>
-        </div>
-        </ul>
-    </div>
+      <sodom-tag moja-lista="bought"></sodom-tag>
     </div>
  
 
