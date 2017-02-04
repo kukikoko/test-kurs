@@ -82,8 +82,8 @@ function kontrolaStrachu()
 		var strach = this;
 		strach.czyzero = function () 
 			{
-				console.log (mojaLista.length);
-				return (mojaLista.length === 0);
+				console.log (mojaLista.list.length);
+				return (mojaLista.list.length === 0);
 			};
 	};
 
