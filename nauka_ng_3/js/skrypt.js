@@ -42,9 +42,20 @@
 		pyk.wpisz = function ()
 			{
 				Checking.dodaj (pyk.co, pyk.ile);
-				pyk.com = "";
+				pyk.co = "";
 				pyk.ile = "";
 			};
+
+		pyk.zaduzo = function ()
+			{
+				var ilosc = Checking.listOfThingsToBuy.length
+							+ Checking.listOfBoughtThings.length;
+
+				if ilosc > 9
+					{ return true }
+					else
+						{ return false };
+			}
 	}
 
 function Checking () {

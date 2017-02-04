@@ -26,7 +26,7 @@ body
 #lista
 	{
 		margin: 10 auto 10;
-		height: 200px;
+		height: 300px;
 		padding-left: 10px;
 		padding-right: 10px;
 		font-size: 0.8em;
@@ -61,6 +61,12 @@ body
 		font-size: 1.3em;
 		font-weight: bold;
 	}
+
+#blad
+	{ 
+		color: red;
+		font-weight: bolder;
+	 }
 
 @media (max-width: 400px)
 {
