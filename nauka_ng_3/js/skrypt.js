@@ -64,7 +64,8 @@ function sodomTag () {
 		{
 			scope:
 				{
-					mojaLista: '=mojaLista'
+					mojaLista: '=mojaLista',
+					title: '@title'
 				},
 			templateUrl: 'shot.html'
 		};
