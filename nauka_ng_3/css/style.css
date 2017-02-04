@@ -66,6 +66,7 @@ body
 	{ 
 		color: red;
 		font-weight: bolder;
+		font-size: .7em;
 	 }
 
 #guziczek
@@ -78,6 +79,7 @@ body
 
 #dane
 	{
+		margin-bottom: 5px;
 		width: 75%;
 	}
 
