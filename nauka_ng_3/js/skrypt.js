@@ -94,9 +94,11 @@ sr.dodaj = function (co, ile)
 			name: co,
 			quantity: ile
 		};
-
+		if (co != "")
+		{
 		sr.listOfThingsToBuy.push(pozycja);
-	}
+		};
+	};
 
 sr.sweep = function (co)
 	{
