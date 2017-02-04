@@ -82,7 +82,7 @@ function kontrolaStrachu()
 		var strach = this;
 		strach.czyzero = function () 
 			{
-				return mojaLista.length === 0;
+				return strach.mojaLista.length === 0;
 			};
 	};
 
