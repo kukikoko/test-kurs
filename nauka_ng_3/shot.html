@@ -1,5 +1,6 @@
 
- <ul class="list-unstyled" id="lista">
+ <div id="lista">
+ <ul class="list-unstyled">
   <div class="container" id="rzeczy">
    <p ng-show="strach.czyzero();">
    {{ strach.title }}
@@ -11,7 +12,8 @@
           {{thing.quantity + " " + thing.name}}
 </li>
 	</div>
-	<button id="guziczek"
-		ng-click="strach.mojaLista.wyczysc();">
-		WYCZYSC LISTE</button>
 </ul>
+	<button id="guziczek"
+	ng-click="strach.mojaLista.wyczysc();">
+	WYCZYSC LISTE</button>
+</div>
