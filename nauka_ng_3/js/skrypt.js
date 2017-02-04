@@ -64,12 +64,24 @@ function sodomTag () {
 		{
 			scope:
 				{
-					mojaLista: '=mojaLista',
-					title: '@title'
+					mojaLista: '<',
+					title: '@'
 				},
-			templateUrl: 'shot.html'
+			templateUrl: 'shot.html',
+			controller: kontrolaStrachu,
+			controllerAs: 'strach',
+			bindToController: true
 		};
 	return ddo;
 }
 	
+function kontolaStrachu ()
+	{
+		var strach = this;
+		strach.czyzero = function () 
+			{
+				mojaLista.length === 0;
+			};
+	};
+
 })();

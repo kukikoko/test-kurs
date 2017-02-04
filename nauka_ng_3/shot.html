@@ -1,12 +1,13 @@
 
  <ul class="list-unstyled" id="lista">
   <div class="container" id="rzeczy">
-   <p ng-show="mojaLista.list.length===0">
-   {{ title }}
+   <p ng-show="strach.czyzero();">
+   {{ strach.title }}
    </p>
- <li ng-repeat="thing in mojaLista.list">
+ <li ng-repeat="thing in strach.mojaLista.list">
           <button class="btn btn-warning btn-xs" 
-          ng-click="mojaLista.gotit($index);"><==></button>
+          ng-click="stach.mojaLista.gotit($index);">
+          <==></button>
           {{thing.quantity + " " + thing.name}}
 </li>
 	</div>
