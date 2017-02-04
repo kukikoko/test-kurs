@@ -70,7 +70,7 @@ body
 
 #guziczek
 	{
-		position:fixed;
+		position: relative;
    		left:10px;
    		bottom:5px;
    		height:30px;

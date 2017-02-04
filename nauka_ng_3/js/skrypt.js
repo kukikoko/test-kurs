@@ -37,7 +37,7 @@
 			Checking.change (which, 2);
 			};
 
-		bought.wyczyszc = function ()
+		bought.wyczysc = function ()
 			{
 			Checking.sweep (1);
 			};
@@ -64,7 +64,8 @@
 				if (ilosc > 9)
 					{ return true }
 					else
-						{ return false };
+						{ 
+							return false };
 			}
 	}
 

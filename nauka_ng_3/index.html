@@ -22,7 +22,8 @@
     <div id="star">
     TOWAR: <input type="text" ng-model="pyk.co"><br>
     ILOSC      :   <input type="text" ng-model="pyk.ile"><br>
-    <button ng-click="pyk.wpisz();">DODAJ</button>
+    <button ng-hide="pyk.zaduzo();" 
+    ng-click="pyk.wpisz();">DODAJ</button>
     <br>
     <p id="blad" ng-show="pyk.zaduzo();">ZA DUZO RZECZY CHCESZ KUPIC</p>
     </div>
