@@ -14,11 +14,11 @@
 
    <div class="container">
 
-   <div id="header" class="container text-center">SHOPPING LIST</div>
+   <div id="header" class="container text-center">LISTA ZAKUPÓW</div>
 
    <div ng-controller="DodawanieZakupow as pyk" id="header" class="container">
 
-    <p>co chcesz kupic:</p><br>
+    <p>co chcesz kupić:</p><br>
     <div id="kupujemy">
     TOWAR: <br>
     <input id="dane" type="text" ng-model="pyk.co"><br>
@@ -36,17 +36,17 @@
 
    <div class="container">
     <div ng-controller="ToBuyController as buy" id="star" class="col-sm-6 col-xs-12">
-      <p>to buy:</p>
+      <p>do kupienia:</p>
       <sodom-tag 
       moja-lista="buy" 
-      title="Kupiles wszystko kutasie"></sodom-tag>
+      title="Nie ma nic do kupienia"></sodom-tag>
     </div>
 
     <div ng-controller="AlreadyBoughtController as bought" id="star" class="col-sm-6 col-xs-12">
-      <p>bought:</p>
+      <p>kupione:</p>
       <sodom-tag
       moja-lista="bought" 
-      title="Nic nie kupiles huju"></sodom-tag>
+      title="Nic nie kupiłeś"></sodom-tag>
     </div>
  
 
