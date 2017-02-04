@@ -53,7 +53,7 @@ function sodomTag () {
 			scope:
 				{
 					mojaLista: '=mojaLista'
-				}
+				},
 			templateUrl: 'shot.html'
 		};
 	return ddo;
