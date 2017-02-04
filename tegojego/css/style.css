@@ -2,11 +2,18 @@ body
 	{
 		font-family: "Lucida Sans Unicode", 
 		"Lucida Grande", sans-serif;
-		background: url("../pics/tapeta.jpg");
-		background-repeat: repeat;
+		background-color: black;
 
 	}
 
+
+#czolowka
+	{
+		background: url("../pics/tapeta.png");
+		background-repeat: no-repeat;
+		background-position: center;
+		height: 400px;
+	}
 
 #pytanie
 	{
