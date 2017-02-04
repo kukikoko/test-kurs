@@ -2,8 +2,8 @@
  <ul class="list-unstyled" id="lista">
   <div class="container" id="rzeczy">
  <li ng-repeat="thing in mojaLista.list">
-          <button class="btn btn-warning btn-xs" ng-click="buy.gotit($index);">==></button>
-          {{mojaLista}} + " " + {{thing.quantity + " " + thing.name}}
+          <button class="btn btn-warning btn-xs" ng-click="mojaLista.gotit($index);">==></button>
+          {{thing.quantity + " " + thing.name}}
 </li>
 	</div>
 </ul>
