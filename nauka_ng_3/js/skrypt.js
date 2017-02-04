@@ -72,9 +72,7 @@ function sodomTag () {
 			controllerAs: 'strach',
 			bindToController: true
 		};
-	return ddo;
-}
-	
+
 function kontolaStrachu ()
 	{
 		var strach = this;
@@ -83,5 +81,9 @@ function kontolaStrachu ()
 				mojaLista.length === 0;
 			};
 	};
+	return ddo;
+}
+	
+
 
 })();
