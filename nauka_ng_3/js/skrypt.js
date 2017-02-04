@@ -19,6 +19,11 @@
 		tobuy.gotit = function (which) {
 			Checking.change (which, 1);
 		};
+
+		tobuy.wyczysc = function ()
+			{
+			Checking.sweep (0)
+			};
 	};
 
 	AlreadyBoughtController.$inject = ['Checking'];
@@ -30,6 +35,11 @@
 		bought.gotit = function (which)
 			{
 			Checking.change (which, 2);
+			};
+
+		bought.wyczyszc = function ()
+			{
+			Checking.sweep (1);
 			};
 	};
 
@@ -86,6 +96,22 @@ sr.dodaj = function (co, ile)
 
 		sr.listOfThingsToBuy.push(pozycja);
 	}
+
+sr.sweep = function (co)
+	{
+		if (co === 0)
+			{
+				dlugosc =
+				sr.listOfThingsToBuy.length;
+				sr.listOfThingsToBuy.splice (0 , dlugosc);
+			}
+		else
+			{
+				dlugosc =
+				sr.listOfBoughtThings;
+				sr.listOfBoughtThings.splice (0, dlugosc);
+			};
+	};
 
 };
 
