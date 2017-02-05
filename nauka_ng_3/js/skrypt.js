@@ -20,6 +20,7 @@
 		console.log (nid.content)
 		nid.check = function ()
 			{
+				console.log ("pizda");
 				nid.found = 
 				MenuSearchService.GetMatchedMenuItems (nid.content);
 			};
