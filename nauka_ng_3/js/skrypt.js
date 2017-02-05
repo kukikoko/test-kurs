@@ -15,7 +15,6 @@
 	{
 		var nid = this;
 		nid.content = "";
-		nid.used = 0;
 		nid.found = MenuSearchService.listOfMatchingItems;
 
 		nid.check = function ()
