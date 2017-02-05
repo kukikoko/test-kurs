@@ -26,7 +26,7 @@
 
 
 
-
+MenuSearchService.$inject = ['$http']
 function MenuSearchService () 
 {
 	var mss = this;
@@ -41,9 +41,7 @@ function MenuSearchService ()
  .then(function successCallback(response) {
 	console.log (response);
 	return response.data }
-, function errorCallback(response) {
-    console.log ("cos sie zesralo")
-  });
+);
 		}
 
 };
