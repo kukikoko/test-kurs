@@ -16,8 +16,8 @@
 		var nid = this;
 		nid.content = "";
 		nid.found = new Array ();
-		console.log ("dupa")
-		console.log (nid.content)
+		console.log ("dupa");
+		console.log (nid.content);
 		nid.check = function ()
 			{
 				console.log ("pizda");
