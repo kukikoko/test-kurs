@@ -62,8 +62,7 @@ function MenuSearchService ($http)
 		console.log (allItems);
 		console.log (matchedItems);
 		return matchedItems;
-		};
-		);
+		});
 		};
 
 };
