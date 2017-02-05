@@ -21,6 +21,7 @@
 				nid.found = 
 				MenuSearchService.GetMatchedMenuItems (nid.content);
 				nid.content = "";
+				console.log (nid.found);
 			};
 	};
 
