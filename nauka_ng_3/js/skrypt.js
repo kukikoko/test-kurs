@@ -21,12 +21,12 @@
 		nid.check = function ()
 			{
 				nid.status = 0;
+				if (nid.found.length === 0)
+					{ nid.status = 1 };
 				if (nid.content !== "")
 				{
 				MenuSearchService.GetMatchedMenuItems (nid.content);
 				nid.content = "";
-				if (nid.found.length === 0)
-					{ nid.status = 1 };
 				}
 				else { nid.status = 2 };
 			};
