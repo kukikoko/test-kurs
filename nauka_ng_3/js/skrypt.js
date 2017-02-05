@@ -56,11 +56,12 @@ function MenuSearchService ($http)
 			if (description.indexOf(matching) !== -1)
 			{
 				matchedItems.push(allItems[i])
-			}
-		}
+			};
+		};
 
 		console.log (allItems);
 		console.log (matchedItems);
+		return matchedItems;
 		};
 		);
 		};
