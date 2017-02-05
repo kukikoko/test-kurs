@@ -15,9 +15,9 @@
    <div class="container">
    <div ng-controller="NarrowItDownController as narrow">
    <input type="text" ng-model="narrow.content">
-   <button ng-click="narrow.check();">Nars222</button>
+   <button ng-click="narrow.check();">Narssss222</button>
    
-   <p ng-hide="narrow.found.length>0 && narrow.used===0">NOTHING CAN BE FOUND</p>
+   <p ng-hide="(narrow.found.length>0 && narrow.used===1)">NOTHING CAN BE FOUND</p>
 
    <found-items ng-show="narrow.found.length>0" 
    found="narrow.found" 
