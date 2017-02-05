@@ -160,7 +160,7 @@ function funkcjaLinku (scope, element, attrs, contoller)
 			warningElem.slideDown(900);
 		};
 
-		function usunOstrzeznie ()
+		function usunOstrzezenie ()
 		{
 			var warningElem = element.find("p");
 			warningElem.slideUp(900);
