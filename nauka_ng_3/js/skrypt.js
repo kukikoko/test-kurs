@@ -16,6 +16,7 @@
 		var nid = this;
 		nid.content = "";
 		nid.status = 0;
+		nid.found = MenuSearchService.listOfMatchingItems;
 
 		nid.check = function ()
 			{
@@ -24,7 +25,6 @@
 				{
 				MenuSearchService.GetMatchedMenuItems (nid.content);
 				nid.content = "";
-				nid.found = MenuSearchService.listOfMatchingItems;
 				if (nid.found.length === 0)
 					{ nid.status = 1 };
 				}
@@ -34,7 +34,6 @@
 		nid.remove = function (i)
 			{
 				MenuSearchService.xld(i);
-				console.log ("dupa");
 			};
 	};
 
@@ -70,7 +69,7 @@ function MenuSearchService ($http)
 	mss.xld = function (index)
 		{
 			mss.listOfMatchingItems.splice(index, 1);
-			console.log ("cipa");
+
 		};
 };
 
