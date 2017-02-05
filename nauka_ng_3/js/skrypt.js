@@ -15,10 +15,9 @@
 	{
 		var nid = this;
 		nid.content = "";
-		nid.found = new Array ();
+		nid.found = MenuSearchService.listOfMatchingItems;
 		nid.check = function ()
 			{
-				nid.found = 
 				MenuSearchService.GetMatchedMenuItems (nid.content);
 				nid.content = "";
 				console.log (nid.found);
@@ -31,7 +30,7 @@ MenuSearchService.$inject = ['$http']
 function MenuSearchService ($http) 
 {
 	var mss = this;
-
+	mss.listOfMatchingItems = new Array ();
 
 	mss.GetMatchedMenuItems = function (content)
 		{
@@ -40,7 +39,6 @@ function MenuSearchService ($http)
  		.then
  		(function successCallback(response) {
 
-		var matchedItems = new Array ();
 		var allItems = response.data.menu_items;
 		var matching = content.toLowerCase();
 
@@ -49,10 +47,9 @@ function MenuSearchService ($http)
 			var description = allItems[i].description.toLowerCase();
 			if (description.indexOf(matching) !== -1)
 			{
-				matchedItems.push(allItems[i])
+				mss.listOfMatchingItems.push(allItems[i]);
 			};
 		};
-		return matchedItems;
 		});
 		};
 
