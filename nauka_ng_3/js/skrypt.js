@@ -15,21 +15,20 @@
 	{
 		var nid = this;
 		nid.content = "";
-		nid.comment = "";
+		nid.status = 0;
 
 		nid.check = function ()
 			{
-				nid.comment = "";
+				nid.status = 0;
 				if (nid.content !== "")
 				{
 				MenuSearchService.GetMatchedMenuItems (nid.content);
 				nid.content = "";
 				nid.found = MenuSearchService.listOfMatchingItems;
 				if (nid.found.length === 0)
-					{ nid.comment = "NOTHING CAN BE FOUND" };
-				console.log (nid.found);
+					{ nid.status = 1 };
 				}
-				else { nid.comment = "ENTER SOME DATA"};
+				else { nid.status = 2 };
 			};
 
 		nid.remove = function (i)

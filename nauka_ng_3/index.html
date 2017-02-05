@@ -15,12 +15,13 @@
    <div class="container">
    <div ng-controller="NarrowItDownController as narrow">
    <input type="text" ng-model="narrow.content">
-   <button ng-click="narrow.check();">bubu44</button>
+   <button ng-click="narrow.check();">Narrow It Down For Me</button>
    
    <found-items ng-show="narrow.found.length>0" 
    found="narrow.found" 
    remove="narrow.remove(index)"></found-items>
-   <p>{{ narrow.comment }}</p>
+   <p ng-show="nid.status=1">NOTHING CAN BE FOUND</p>
+   <p ng-show="nid.status=2">ENTER SOME DATA</p>
 
    </div>
 
