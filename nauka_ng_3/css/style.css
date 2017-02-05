@@ -78,9 +78,9 @@ body
 
 #blad
 	{ 
-		color: red;
-		font-weight: bolder;
-		font-size: 1.1em;
+		color: white;
+		font-weight: bold;
+		font-size: 0.9em;
 		margin-bottom: 0;
 		display: none;
 	 }
