@@ -23,7 +23,9 @@
 				{
 				MenuSearchService.GetMatchedMenuItems (nid.content);
 				nid.content = "";
-				nid.comment = "";
+				if (nid.found.length === 0)
+					{ nid.comment = "NOTHING CAN BE FOUND" }
+				else {	nid.comment = "" };
 				console.log (nid.found);
 				}
 				else { nid.comment = "ENTER SOME DATA"};

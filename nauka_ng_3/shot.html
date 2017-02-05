@@ -18,7 +18,7 @@
  	<td>{{ thing.name }}</td>
  	<td>{{ thing.description }}</td>
  	<td><button class="btn btn-warning btn-xs" 
- 	ng-click="narrow.remove($index)">Not this one</button></td>
+ 	ng-click="remove({index: $index})">Not this one</button></td>
  </tr>
  </tbody>
  </div>
