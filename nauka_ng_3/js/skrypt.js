@@ -65,12 +65,14 @@ function foundItems () {
 		{
 			scope:
 				{
-					found: '=found'
+					mojaLista: '=mojaLista',
+					title: '@'
 				},
 			templateUrl: 'shot.html'
+
 		};
 
-		console.log (ddo);
+
 	return ddo;
-};
+}
 	
