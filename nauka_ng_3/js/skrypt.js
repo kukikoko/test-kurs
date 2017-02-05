@@ -60,7 +60,6 @@ function MenuSearchService ($http)
 			if (description.indexOf(matching) !== -1)
 			{
 				mss.listOfMatchingItems.push(allItems[i]);
-				console.log ("cipa");
 			};
 		};
 		});
@@ -69,6 +68,7 @@ function MenuSearchService ($http)
 	mss.xld = function (index)
 		{
 			mss.listOfMatchingItems.splice(index, 1);
+			console.log ("cipa");
 		};
 };
 
