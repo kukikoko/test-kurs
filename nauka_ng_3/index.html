@@ -18,7 +18,7 @@
    placeholder="enter some data here">
    <button ng-click="narrow.check();">Narrow It Down For Me</button>
    
-   <p ng-hide="(narrow.found.length>0 && narrow.used===1)">NOTHING CAN BE FOUND</p>
+   <p ng-hide="narrow.found.length>0">NOTHING CAN BE FOUND</p>
 
    <found-items ng-show="narrow.found.length>0" 
    found="narrow.found" 
