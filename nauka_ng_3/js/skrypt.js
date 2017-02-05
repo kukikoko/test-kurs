@@ -16,15 +16,11 @@
 		var nid = this;
 		nid.content = "";
 		nid.found = new Array ();
-		console.log ("dupa");
-		console.log (nid.content);
 		nid.check = function ()
 			{
-				console.log ("pizda");
 				nid.found = 
 				MenuSearchService.GetMatchedMenuItems (nid.content);
 			};
-		console.log(nid.found);
 	};
 
 
@@ -58,8 +54,6 @@ function MenuSearchService ($http)
 				matchedItems.push(allItems[i])
 			};
 		};
-
-		console.log (allItems);
 		console.log (matchedItems);
 		return matchedItems;
 		});
