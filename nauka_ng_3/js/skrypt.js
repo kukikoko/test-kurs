@@ -16,13 +16,13 @@
 		var nid = this;
 		nid.content = "";
 		nid.comment = "";
-		nid.found = MenuSearchService.listOfMatchingItems;
 		nid.check = function ()
 			{
 				if (nid.content !== "")
 				{
 				MenuSearchService.GetMatchedMenuItems (nid.content);
 				nid.content = "";
+				nid.found = MenuSearchService.listOfMatchingItems;
 				if (nid.found.length === 0)
 					{ nid.comment = "NOTHING CAN BE FOUND" }
 				else {	nid.comment = "" };
