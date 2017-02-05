@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="ShoppingListCheckoff">
+<html lang="en" ng-app="NarrowItDown">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,42 +13,10 @@
 
 
    <div class="container">
-
-   <div id="header" class="container text-center">LISTA ZAKUPÓW</div>
-
-   <div ng-controller="DodawanieZakupow as pyk" id="zakupmy" class="container">
-
-    <p>co chcesz kupić:</p><br>
-    <div id="kupujemy">
-    TOWAR: <br>
-    <input id="dane" type="text" ng-model="pyk.co"><br>
-    ILOSC: <br>
-    <input id="dane" type="text" ng-model="pyk.ile"><br>
-    <button ng-hide="pyk.zaduzo();" 
-    ng-click="pyk.wpisz();">DODAJ</button>
-    <br>
-    <p ng-show="pyk.zaduzo();">ZA DUZO RZECZY CHCESZ KUPIC</p>
-    </div>
-    </div>
-
-
-
-
-   <div class="container">
-    <div ng-controller="ToBuyController as buy" id="star" class="col-sm-6 col-xs-12">
-      <p>do kupienia:</p>
-      <sodom-tag 
-      moja-lista="buy" 
-      title="Nie ma nic do kupienia"></sodom-tag>
-    </div>
-
-    <div ng-controller="AlreadyBoughtController as bought" id="star" class="col-sm-6 col-xs-12">
-      <p>kupione:</p>
-      <sodom-tag
-      moja-lista="bought" 
-      title="Nic nie kupiłeś"></sodom-tag>
-    </div>
- 
+   <div ng-controller="NarrowItDownController as cut">
+   <input type="text" ng-model="cut.content">
+   <button ng-click="cut.check();">Narrow It Down for me</button>
+   </div>
 
 		<div id="stopka" class="container text-center">
     	&copy;  2017

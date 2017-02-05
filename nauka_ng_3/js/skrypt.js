@@ -1,136 +1,62 @@
 (function () {
 	'use strict';
 
-	angular.module('ShoppingListCheckoff', [])
+	angular.module('NarrowItDown', [])
 
-	.controller('ToBuyController', ToBuyController)
-	.controller('AlreadyBoughtController', AlreadyBoughtController)
-	.controller('DodawanieZakupow', DodawanieZakupow)
-	.service ('Checking', Checking)
-	.directive ('sodomTag', sodomTag);
+	.controller('NarrowItDownController',
+	 NarrowItDownController)
+	.service ('MenuSearchService', MenuSearchService)
+	.directive ('foundItems', foundItems);
 
 
-	ToBuyController.$inject = ['Checking'];
-	function ToBuyController (Checking)
+	NarrowItDownController.$inject = 
+	['MenuSearchService'];
+	function NarrowItDownController (MenuSearchService)
 	{
-		var tobuy = this;
-		tobuy.list = Checking.listOfThingsToBuy;
+		var nid = this;
+		nid.content = "";
+		nid.found = new Array ();
 
-		tobuy.gotit = function (which) {
-			Checking.change (which, 1);
-		};
-
-		tobuy.wyczysc = function ()
+		nid.check = function ()
 			{
-			Checking.sweep (0)
-			};
-	};
-
-	AlreadyBoughtController.$inject = ['Checking'];
-	function AlreadyBoughtController (Checking)
-	{
-		var bought = this;
-		bought.list = Checking.listOfBoughtThings;
-
-		bought.gotit = function (which)
-			{
-			Checking.change (which, 2);
-			};
-
-		bought.wyczysc = function ()
-			{
-			Checking.sweep (1);
-			};
-	};
-
-	DodawanieZakupow.$inject = ['Checking'];
-	function DodawanieZakupow (Checking)
-	{
-		var pyk = this;
-		pyk.co ="";
-		pyk.ile = "";
-		pyk.wpisz = function ()
-			{
-				Checking.dodaj (pyk.co, pyk.ile);
-				pyk.co = "";
-				pyk.ile = "";
-			};
-
-		pyk.zaduzo = function ()
-			{
-				var ilosc = Checking.listOfThingsToBuy.length
-							+ Checking.listOfBoughtThings.length;
-
-				if (ilosc > 9)
-					{ return true }
-					else
-						{ 
-							return false };
+				nid.found = 
+				MenuSearchService.GetMatchedMenuItems (nid.content);
 			}
-	}
+	};
 
-function Checking () {
-	var sr = this;
-	sr.listOfThingsToBuy = new Array ();
-	
-	sr.listOfBoughtThings = new Array ();
 
-sr.change = function (number, kierunek)
-	{
-	if (kierunek===1)
+
+
+function MenuSearchService () 
+{
+	var mss = this;
+
+	mss.GetMatchedMenuItems = function (content)
 		{
-		sr.listOfBoughtThings.push(sr.listOfThingsToBuy[number]);
-		sr.listOfThingsToBuy.splice (number, 1);
+			$http({
+  					method: 'GET',
+ 					url: 'https://davids-restaurant.herokuapp.com/menu_items.json'
+}).then(function successCallback(response) {
+	console.log (response);
+	return response.data }
+, function errorCallback(response) {
+    console.log ("cos sie zesralo")
+  });
 		}
-	else {
-		sr.listOfThingsToBuy.push(sr.listOfBoughtThings[number]);
-		sr.listOfBoughtThings.splice (number, 1);
-		};
-	}
-
-sr.dodaj = function (co, ile)
-	{
-		var pozycja = {
-			name: co,
-			quantity: ile
-		};
-		if (co != "")
-		{
-		sr.listOfThingsToBuy.push(pozycja);
-		};
-	};
-
-sr.sweep = function (co)
-	{
-		if (co === 0)
-			{
-				var dlugosc =
-				sr.listOfThingsToBuy.length;
-				sr.listOfThingsToBuy.splice (0 , dlugosc);
-			}
-		else
-			{
-				var dlugosc =
-				sr.listOfBoughtThings.length;
-				sr.listOfBoughtThings.splice (0, dlugosc);
-			};
-	};
 
 };
 
-function sodomTag () {
+function foundItems () {
 	var ddo = 
 		{
 			scope:
 				{
-					mojaLista: '=mojaLista',
-					title: '@'
+					found: '<'
 				},
 			templateUrl: 'shot.html',
 			controller: kontrolaStrachu,
 			controllerAs: 'strach',
 			bindToController: true,
-			link: funkcjaLinku
 		};
 
 
