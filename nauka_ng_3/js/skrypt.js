@@ -140,9 +140,10 @@ function sodomTag () {
 
 function funkcjaLinku (scope, element, attrs, contoller)
 	{
-		scope.$watch ('strach.czyzero()'),
+		scope.$watch ('strach.czyzero()',
 			function (newValue, oldValue)
 			{
+
 				if (newValue === true)
 				{
 					pokazOstrzezenie ();
@@ -151,7 +152,7 @@ function funkcjaLinku (scope, element, attrs, contoller)
 				{
 					usunOstrzezenie ();
 				}
-			};
+			});
 
 		function pokazOstrzezenie ()
 		{
