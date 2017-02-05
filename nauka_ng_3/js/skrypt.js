@@ -74,5 +74,6 @@ function foundItems () {
 
 
 	return ddo;
-}
-	
+};
+
+})();

@@ -12,11 +12,10 @@
  <tbody>
  <tr ng-repeat="thing in found">
 
- 	<td>1</td>
+ 	<td>$index</td>
  	<td>{{ thing.name }}</td>
  	<td>{{ thing.description }}</td>
- 	<td><button class="btn btn-warning btn-xs" 
-         ng-click=""><==></button></td>
+ 	<td><button class="btn btn-warning btn-xs">Delete</button></td>
  </tr>
  </tbody>
  </div>
