@@ -146,21 +146,21 @@ function funkcjaLinku (scope, element, attrs, contoller)
 
 				if (newValue === true)
 				{
-					pokazOstrzezenie ();
+					jest ();
 				}
 				else
 				{
-					usunOstrzezenie ();
+					niema ();
 				}
 			});
 
-		function pokazOstrzezenie ()
+		function jest ()
 		{
 			var warningElem = element.find("p");
 			warningElem.slideDown(900);
 		};
 
-		function usunOstrzezenie ()
+		function niema ()
 		{
 			var warningElem = element.find("p");
 			warningElem.slideUp(900);
