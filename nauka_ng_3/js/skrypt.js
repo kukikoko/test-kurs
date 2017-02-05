@@ -41,6 +41,7 @@ function MenuSearchService ($http)
  		.then
  		(function successCallback(response) {
 
+ 		console.log (response);
 		var matchedItems = new Array ();
 		var allItems = response.data;
 		var matching = content.toLowerCase();
