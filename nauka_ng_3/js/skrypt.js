@@ -16,13 +16,13 @@
 		var nid = this;
 		nid.content = "";
 		nid.found = new Array ();
-
+		console.log ("dupa")
 		console.log (nid.content)
 		nid.check = function ()
 			{
 				nid.found = 
 				MenuSearchService.GetMatchedMenuItems (nid.content);
-			}
+			};
 		console.log(nid.found);
 	};
 
