@@ -8,35 +8,6 @@ body
 	}
 
 
-#header
-	{
-		width: 50%;
-		padding-top: 20px;
-		padding-bottom: 20px;
-		border: 1px solid black;
-		border-radius: 10px;
-		background-color: #3300cc;
-		box-shadow: 0 0 20px #3f0c1f;
-		color: black;
-		font-weight: bold;
-		font-size: 1.3em;
-	}
-
-#zakupmy
-	{
-		width: 50%;
-		height: 260px;
-		padding-top: 20px;
-		margin-top: 10px;
-		padding-bottom: 20px;
-		border: 1px solid black;
-		border-radius: 10px;
-		background-color: #996699;
-		box-shadow: 0 0 20px #3f0c1f;
-		color: white;
-		font-weight: bold;
-		font-size: 1.3em;
-	}
 
 #lista
 	{
@@ -67,34 +38,8 @@ body
 		font-weight: bold;
 	}
 
-#blad
-	{ 
-		color: white;
-		font-weight: bold;
-		font-size: 0.9em;
-		margin-bottom: 0;
-		display: none;
-	 }
 
-#guziczek
-	{
-		position: absolute;
-   		left: 30px;
-   		top: 285px;
-   		height: 30px;
-	}
 
-#dane
-	{
-		margin-bottom: 5px;
-		width: 75%;
-	}
-
-#kupujemy
-	{
-		font-size: 0.7em;
-		color: black;
-	}
 
 @media (max-width: 400px)
 {

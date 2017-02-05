@@ -28,10 +28,11 @@
 				}
 				else { nid.comment = "ENTER SOME DATA"};
 			};
-			
-		nid.cancel = function (i)
+
+		nid.remove = function (i)
 			{
-				nid.found.splice(i, 1);
+				MenuSearchService.xld(i);
+				console.log ("dupa");
 			};
 	};
 
@@ -59,11 +60,16 @@ function MenuSearchService ($http)
 			if (description.indexOf(matching) !== -1)
 			{
 				mss.listOfMatchingItems.push(allItems[i]);
+				console.log ("cipa");
 			};
 		};
 		});
 		};
 
+	mss.xld = function (index)
+		{
+			mss.listOfMatchingItems.splice(index, 1);
+		};
 };
 
 function foundItems () {
@@ -72,7 +78,7 @@ function foundItems () {
 			scope:
 				{
 					found: '<',
-					onRemove: '&'
+					remove: '&'
 				},
 			templateUrl: 'shot.html'
 
