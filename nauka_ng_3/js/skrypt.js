@@ -28,6 +28,11 @@
 				}
 				else { nid.comment = "ENTER SOME DATA"};
 			};
+			
+		nid.cancel = function (i)
+			{
+				nid.found.splice(i, 1);
+			};
 	};
 
 
@@ -67,6 +72,7 @@ function foundItems () {
 			scope:
 				{
 					found: '<',
+					onRemove: '&'
 				},
 			templateUrl: 'shot.html'
 

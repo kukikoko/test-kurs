@@ -5,6 +5,7 @@
     <thead>
     <tr>
       <th>#</th>
+      <th>Short name</th>
       <th>Meal</th>
       <th>Description</th>
 	</tr>
@@ -12,10 +13,12 @@
  <tbody>
  <tr ng-repeat="thing in found">
 
- 	<td>$index</td>
+ 	<td>{{ $index + 1 }}</td>
+ 	<td>{{ thing.short_name }}</td>
  	<td>{{ thing.name }}</td>
  	<td>{{ thing.description }}</td>
- 	<td><button class="btn btn-warning btn-xs">Delete</button></td>
+ 	<td><button class="btn btn-warning btn-xs" 
+ 	ng-click="narrow.cancel({index: $index})">Not this one</button></td>
  </tr>
  </tbody>
  </div>
