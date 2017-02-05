@@ -15,8 +15,10 @@
    <div class="container">
    <div ng-controller="NarrowItDownController as narrow">
    <input type="text" ng-model="narrow.content">
-   <button ng-click="narrow.check();">eeeeeee</button>
-   <found-items found="narrow.found"></found-items>
+   <button ng-click="narrow.check();">essss</button>
+   <p>{{ narrow.comment }}</p>
+   <found-items ng-show="narrow.found.length>0" 
+   found="narrow.found"></found-items>
    </div>
 
 		<div id="stopka" class="container text-center">

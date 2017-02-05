@@ -40,14 +40,12 @@ body
 
 #lista
 	{
-		height: 300px;
 		padding-left: 10px;
 		padding-right: 10px;
 		font-size: 0.8em;
 		padding-top: 6px;
 		color: white;
 		font-weight: bold;
-		margin: 10 auto 10;
 		border: 2px solid black;
 		border-radius: 10px;
 		background-color: #3300cc;
@@ -55,13 +53,6 @@ body
 	}
 
 
-#star
-	{ 
-		font-size: 1.2em;
-		padding-top: 6px;
-		color: black;
-		font-weight: bold;
-	}
 
 #rzeczy
 	{
