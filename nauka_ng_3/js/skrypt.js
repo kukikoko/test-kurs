@@ -17,11 +17,13 @@
 		nid.content = "";
 		nid.found = new Array ();
 
+		console.log (nid.content)
 		nid.check = function ()
 			{
 				nid.found = 
 				MenuSearchService.GetMatchedMenuItems (nid.content);
 			}
+		console.log(nid.found);
 	};
 
 
@@ -43,10 +45,13 @@ function MenuSearchService ($http)
 		var allItems = response.data;
 		var matching = content.toLowerCase();
 
+		console.log (allItems);
+		console.log (matching);
+
 		for (var i = 0; i<allItems.length; i=i+1)
 		{
-			var desctription = allItems[i].desctription.toLowerCase();
-			if (desctription.indexOf(matching) !== -1)
+			var description = allItems[i].description.toLowerCase();
+			if (description.indexOf(matching) !== -1)
 			{
 				matchedItems.push(allItems[i])
 			}
@@ -56,7 +61,7 @@ function MenuSearchService ($http)
 		console.log (matchedItems);
 		return matchedItems };
 		);
-		}
+		};
 
 };
 
