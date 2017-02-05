@@ -27,7 +27,7 @@
 
 
 MenuSearchService.$inject = ['$http']
-function MenuSearchService () 
+function MenuSearchService ($http) 
 {
 	var mss = this;
 
