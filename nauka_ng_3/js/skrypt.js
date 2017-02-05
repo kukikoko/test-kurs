@@ -1,89 +1,185 @@
 (function () {
 	'use strict';
 
-	angular.module('NarrowItDown', [])
+	angular.module('ShoppingListCheckoff', [])
 
-	.controller('NarrowItDownController',
-	 NarrowItDownController)
-	.service ('MenuSearchService', MenuSearchService)
-	.directive ('foundItems', foundItems);
+	.controller('ToBuyController', ToBuyController)
+	.controller('AlreadyBoughtController', AlreadyBoughtController)
+	.controller('DodawanieZakupow', DodawanieZakupow)
+	.service ('Checking', Checking)
+	.directive ('sodomTag', sodomTag);
 
 
-	NarrowItDownController.$inject = 
-	['MenuSearchService'];
-	function NarrowItDownController (MenuSearchService)
+	ToBuyController.$inject = ['Checking'];
+	function ToBuyController (Checking)
 	{
-		var nid = this;
-		nid.content = "";
-		nid.found = MenuSearchService.listOfMatchingItems;
+		var tobuy = this;
+		tobuy.list = Checking.listOfThingsToBuy;
 
-		nid.check = function ()
-			{
-				nid.used = 1;
-				MenuSearchService.GetMatchedMenuItems (nid.content);
-				nid.content = "";
-			};
+		tobuy.gotit = function (which) {
+			Checking.change (which, 1);
+		};
 
-		nid.remove = function (i)
+		tobuy.wyczysc = function ()
 			{
-				MenuSearchService.xld(i);
+			Checking.sweep (0)
 			};
 	};
 
+	AlreadyBoughtController.$inject = ['Checking'];
+	function AlreadyBoughtController (Checking)
+	{
+		var bought = this;
+		bought.list = Checking.listOfBoughtThings;
 
-
-MenuSearchService.$inject = ['$http']
-function MenuSearchService ($http) 
-{
-	var mss = this;
-	mss.listOfMatchingItems = new Array ();
-
-	mss.GetMatchedMenuItems = function (content)
-		{
-			$http.get
-			("https://davids-restaurant.herokuapp.com/menu_items.json")
- 		.then
- 		(function successCallback(response) {
- 		mss.listOfMatchingItems.splice(0,mss.listOfMatchingItems.length);
-		if (content !=="")
-		{
-		var allItems = response.data.menu_items;
-		var matching = content.toLowerCase();
-
-		for (var i = 0; i<allItems.length; i=i+1)
-		{
-			var description = allItems[i].description.toLowerCase();
-			if (description.indexOf(matching) !== -1)
+		bought.gotit = function (which)
 			{
-				mss.listOfMatchingItems.push(allItems[i]);
+			Checking.change (which, 2);
 			};
-		};
-		};
-		});
-		};
 
-	mss.xld = function (index)
+		bought.wyczysc = function ()
+			{
+			Checking.sweep (1);
+			};
+	};
+
+	DodawanieZakupow.$inject = ['Checking'];
+	function DodawanieZakupow (Checking)
+	{
+		var pyk = this;
+		pyk.co ="";
+		pyk.ile = "";
+		pyk.wpisz = function ()
+			{
+				Checking.dodaj (pyk.co, pyk.ile);
+				pyk.co = "";
+				pyk.ile = "";
+			};
+
+		pyk.zaduzo = function ()
+			{
+				var ilosc = Checking.listOfThingsToBuy.length
+							+ Checking.listOfBoughtThings.length;
+
+				if (ilosc > 9)
+					{ return true }
+					else
+						{ 
+							return false };
+			}
+	}
+
+function Checking () {
+	var sr = this;
+	sr.listOfThingsToBuy = new Array ();
+	
+	sr.listOfBoughtThings = new Array ();
+
+sr.change = function (number, kierunek)
+	{
+	if (kierunek===1)
 		{
-			mss.listOfMatchingItems.splice(index, 1);
-
+		sr.listOfBoughtThings.push(sr.listOfThingsToBuy[number]);
+		sr.listOfThingsToBuy.splice (number, 1);
+		}
+	else {
+		sr.listOfThingsToBuy.push(sr.listOfBoughtThings[number]);
+		sr.listOfBoughtThings.splice (number, 1);
 		};
+	}
+
+sr.dodaj = function (co, ile)
+	{
+		var pozycja = {
+			name: co,
+			quantity: ile
+		};
+		if (co != "")
+		{
+		sr.listOfThingsToBuy.push(pozycja);
+		};
+	};
+
+sr.sweep = function (co)
+	{
+		if (co === 0)
+			{
+				var dlugosc =
+				sr.listOfThingsToBuy.length;
+				sr.listOfThingsToBuy.splice (0 , dlugosc);
+			}
+		else
+			{
+				var dlugosc =
+				sr.listOfBoughtThings.length;
+				sr.listOfBoughtThings.splice (0, dlugosc);
+			};
+	};
 
 };
 
-function foundItems () {
+function sodomTag () {
 	var ddo = 
 		{
 			scope:
 				{
-					found: '<',
-					remove: '&'
+					mojaLista: '=mojaLista',
+					title: '@'
 				},
-			templateUrl: 'shot.html'
-
+			templateUrl: 'shot.html',
+			controller: kontrolaStrachu,
+			controllerAs: 'strach',
+			bindToController: true,
+			link: funkcjaLinku
 		};
 
 
 	return ddo;
-};
+}
+	
+
+function funkcjaLinku (scope, element, attrs, contoller)
+	{
+		scope.$watch ('strach.czyzero()',
+			function (newValue, oldValue)
+			{
+
+				if (newValue === true)
+				{
+					jest ();
+				}
+				else
+				{
+					niema ();
+				}
+			});
+
+		function jest ()
+		{
+			var warningElem = element.find("p");
+			warningElem.slideDown(900);
+		};
+
+		function niema ()
+		{
+			var warningElem = element.find("p");
+			warningElem.slideUp(900);
+		};
+	};
+
+
+
+
+function kontrolaStrachu()
+	{
+		var strach = this;
+		strach.czyzero = function () 
+			{
+				if (strach.mojaLista.list.length === 0)
+					{	return true  }
+				else {   return false  };
+			};
+	};
+
 
 })();

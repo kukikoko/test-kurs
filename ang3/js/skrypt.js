@@ -1,185 +1,90 @@
 (function () {
 	'use strict';
 
-	angular.module('ShoppingListCheckoff', [])
+	angular.module('NarrowItDown', [])
 
-	.controller('ToBuyController', ToBuyController)
-	.controller('AlreadyBoughtController', AlreadyBoughtController)
-	.controller('DodawanieZakupow', DodawanieZakupow)
-	.service ('Checking', Checking)
-	.directive ('sodomTag', sodomTag);
+	.controller('NarrowItDownController',
+	 NarrowItDownController)
+	.service ('MenuSearchService', MenuSearchService)
+	.directive ('foundItems', foundItems);
 
 
-	ToBuyController.$inject = ['Checking'];
-	function ToBuyController (Checking)
+	NarrowItDownController.$inject = 
+	['MenuSearchService'];
+	function NarrowItDownController (MenuSearchService)
 	{
-		var tobuy = this;
-		tobuy.list = Checking.listOfThingsToBuy;
+		var nid = this;
+		nid.content = "";
+		nid.comment = "";
+		nid.found = MenuSearchService.listOfMatchingItems;
 
-		tobuy.gotit = function (which) {
-			Checking.change (which, 1);
-		};
-
-		tobuy.wyczysc = function ()
+		nid.check = function ()
 			{
-			Checking.sweep (0)
+				nid.comment = "NOTHING CAN BE FOUND";
+				MenuSearchService.GetMatchedMenuItems (nid.content);
+				nid.content = "";
+			};
+
+		nid.remove = function (i)
+			{
+				MenuSearchService.xld(i);
 			};
 	};
 
-	AlreadyBoughtController.$inject = ['Checking'];
-	function AlreadyBoughtController (Checking)
-	{
-		var bought = this;
-		bought.list = Checking.listOfBoughtThings;
 
-		bought.gotit = function (which)
-			{
-			Checking.change (which, 2);
-			};
 
-		bought.wyczysc = function ()
-			{
-			Checking.sweep (1);
-			};
-	};
+MenuSearchService.$inject = ['$http']
+function MenuSearchService ($http) 
+{
+	var mss = this;
+	mss.listOfMatchingItems = new Array ();
 
-	DodawanieZakupow.$inject = ['Checking'];
-	function DodawanieZakupow (Checking)
-	{
-		var pyk = this;
-		pyk.co ="";
-		pyk.ile = "";
-		pyk.wpisz = function ()
-			{
-				Checking.dodaj (pyk.co, pyk.ile);
-				pyk.co = "";
-				pyk.ile = "";
-			};
-
-		pyk.zaduzo = function ()
-			{
-				var ilosc = Checking.listOfThingsToBuy.length
-							+ Checking.listOfBoughtThings.length;
-
-				if (ilosc > 9)
-					{ return true }
-					else
-						{ 
-							return false };
-			}
-	}
-
-function Checking () {
-	var sr = this;
-	sr.listOfThingsToBuy = new Array ();
-	
-	sr.listOfBoughtThings = new Array ();
-
-sr.change = function (number, kierunek)
-	{
-	if (kierunek===1)
+	mss.GetMatchedMenuItems = function (content)
 		{
-		sr.listOfBoughtThings.push(sr.listOfThingsToBuy[number]);
-		sr.listOfThingsToBuy.splice (number, 1);
-		}
-	else {
-		sr.listOfThingsToBuy.push(sr.listOfBoughtThings[number]);
-		sr.listOfBoughtThings.splice (number, 1);
-		};
-	}
-
-sr.dodaj = function (co, ile)
-	{
-		var pozycja = {
-			name: co,
-			quantity: ile
-		};
-		if (co != "")
+			$http.get
+			("https://davids-restaurant.herokuapp.com/menu_items.json")
+ 		.then
+ 		(function successCallback(response) {
+ 		mss.listOfMatchingItems.splice(0,mss.listOfMatchingItems.length);
+		if (content !=="")
 		{
-		sr.listOfThingsToBuy.push(pozycja);
-		};
-	};
+		var allItems = response.data.menu_items;
+		var matching = content.toLowerCase();
 
-sr.sweep = function (co)
-	{
-		if (co === 0)
+		for (var i = 0; i<allItems.length; i=i+1)
+		{
+			var description = allItems[i].description.toLowerCase();
+			if (description.indexOf(matching) !== -1)
 			{
-				var dlugosc =
-				sr.listOfThingsToBuy.length;
-				sr.listOfThingsToBuy.splice (0 , dlugosc);
-			}
-		else
-			{
-				var dlugosc =
-				sr.listOfBoughtThings.length;
-				sr.listOfBoughtThings.splice (0, dlugosc);
+				mss.listOfMatchingItems.push(allItems[i]);
 			};
-	};
+		};
+		};
+		});
+		};
+
+	mss.xld = function (index)
+		{
+			mss.listOfMatchingItems.splice(index, 1);
+
+		};
 
 };
 
-function sodomTag () {
+function foundItems () {
 	var ddo = 
 		{
 			scope:
 				{
-					mojaLista: '=mojaLista',
-					title: '@'
+					found: '<',
+					remove: '&'
 				},
-			templateUrl: 'shot.html',
-			controller: kontrolaStrachu,
-			controllerAs: 'strach',
-			bindToController: true,
-			link: funkcjaLinku
+			templateUrl: 'shot.html'
+
 		};
 
 
 	return ddo;
-}
-	
-
-function funkcjaLinku (scope, element, attrs, contoller)
-	{
-		scope.$watch ('strach.czyzero()',
-			function (newValue, oldValue)
-			{
-
-				if (newValue === true)
-				{
-					jest ();
-				}
-				else
-				{
-					niema ();
-				}
-			});
-
-		function jest ()
-		{
-			var warningElem = element.find("p");
-			warningElem.slideDown(900);
-		};
-
-		function niema ()
-		{
-			var warningElem = element.find("p");
-			warningElem.slideUp(900);
-		};
-	};
-
-
-
-
-function kontrolaStrachu()
-	{
-		var strach = this;
-		strach.czyzero = function () 
-			{
-				if (strach.mojaLista.list.length === 0)
-					{	return true  }
-				else {   return false  };
-			};
-	};
-
+};
 
 })();
