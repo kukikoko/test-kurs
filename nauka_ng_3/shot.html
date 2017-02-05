@@ -2,7 +2,8 @@
  <div id="lista">
  <ul class="list-unstyled">
   <div class="container" id="rzeczy">
-   <p id="blad"> {{ strach.title }} </p>
+   <p id="blad"> {{ strach.title }} <br>
+    <img src="../pics/kosz.jpg"></p>
  <li ng-repeat="thing in strach.mojaLista.list">
           <button class="btn btn-warning btn-xs" 
           ng-click="strach.mojaLista.gotit($index);">
