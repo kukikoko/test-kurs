@@ -33,11 +33,8 @@ function MenuSearchService ($http)
 
 	mss.GetMatchedMenuItems = function (content)
 		{
-			$http.get
-			({
-  			method: 'GET',
- 			url: 'https://davids-restaurant.herokuapp.com/menu_items.json'
- 			})
+			$http
+			("https://davids-restaurant.herokuapp.com/menu_items.json")
  .then(function successCallback(response) {
 	console.log (response);
 	return response.data }
