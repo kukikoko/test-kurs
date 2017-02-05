@@ -65,12 +65,12 @@ function foundItems () {
 		{
 			scope:
 				{
-					found: '<'
+					found: '=found'
 				},
 			templateUrl: 'shot.html'
 		};
 
-
+		console.log (ddo);
 	return ddo;
-}
+};
 	
