@@ -33,10 +33,12 @@ function MenuSearchService ()
 
 	mss.GetMatchedMenuItems = function (content)
 		{
-			$http({
-  					method: 'GET',
- 					url: 'https://davids-restaurant.herokuapp.com/menu_items.json'
-}).then(function successCallback(response) {
+			$http.get
+			({
+  			method: 'GET',
+ 			url: 'https://davids-restaurant.herokuapp.com/menu_items.json'
+ 			})
+ .then(function successCallback(response) {
 	console.log (response);
 	return response.data }
 , function errorCallback(response) {
@@ -64,34 +66,7 @@ function foundItems () {
 }
 	
 
-function funkcjaLinku (scope, element, attrs, contoller)
-	{
-		scope.$watch ('strach.czyzero()',
-			function (newValue, oldValue)
-			{
 
-				if (newValue === true)
-				{
-					jest ();
-				}
-				else
-				{
-					niema ();
-				}
-			});
-
-		function jest ()
-		{
-			var warningElem = element.find("p");
-			warningElem.slideDown(900);
-		};
-
-		function niema ()
-		{
-			var warningElem = element.find("p");
-			warningElem.slideUp(900);
-		};
-	};
 
 
 
