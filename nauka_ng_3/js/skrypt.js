@@ -15,14 +15,12 @@
 	{
 		var nid = this;
 		nid.content = "";
-		nid.status = 0;
 		nid.found = MenuSearchService.listOfMatchingItems;
 
 		nid.check = function ()
 			{
-				nid.status = 0;
-				if (nid.found.length === 0)
-					{ nid.status = 1 };
+				nid.status = MenuSearchService.status;
+
 				if (nid.content !== "")
 				{
 				MenuSearchService.GetMatchedMenuItems (nid.content);
@@ -44,6 +42,7 @@ function MenuSearchService ($http)
 {
 	var mss = this;
 	mss.listOfMatchingItems = new Array ();
+	mss.status = 0;
 
 	mss.GetMatchedMenuItems = function (content)
 		{
@@ -63,6 +62,8 @@ function MenuSearchService ($http)
 				mss.listOfMatchingItems.push(allItems[i]);
 			};
 		};
+		if (mss.listOfMatchingItems.length === 0)
+		{ mss.status = 1 };
 		});
 		};
 
