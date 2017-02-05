@@ -19,14 +19,8 @@
 
 		nid.check = function ()
 			{
-				nid.status = MenuSearchService.status;
-
-				if (nid.content !== "")
-				{
 				MenuSearchService.GetMatchedMenuItems (nid.content);
 				nid.content = "";
-				}
-				else { nid.status = 2 };
 			};
 
 		nid.remove = function (i)
@@ -51,6 +45,8 @@ function MenuSearchService ($http)
  		.then
  		(function successCallback(response) {
  		mss.listOfMatchingItems.splice(0,mss.listOfMatchingItems.length);
+		if (content !=="")
+		{
 		var allItems = response.data.menu_items;
 		var matching = content.toLowerCase();
 
@@ -62,8 +58,7 @@ function MenuSearchService ($http)
 				mss.listOfMatchingItems.push(allItems[i]);
 			};
 		};
-		if (mss.listOfMatchingItems.length === 0)
-		{ mss.status = 1 };
+		};
 		});
 		};
 
@@ -72,6 +67,7 @@ function MenuSearchService ($http)
 			mss.listOfMatchingItems.splice(index, 1);
 
 		};
+
 };
 
 function foundItems () {
