@@ -16,6 +16,7 @@
 		var nid = this;
 		nid.content = "";
 		nid.comment = "";
+
 		nid.check = function ()
 			{
 				if (nid.content !== "")
