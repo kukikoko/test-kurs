@@ -129,13 +129,46 @@ function sodomTag () {
 			templateUrl: 'shot.html',
 			controller: kontrolaStrachu,
 			controllerAs: 'strach',
-			bindToController: true
+			bindToController: true,
+			link: funkcjaLinku
 		};
 
 
 	return ddo;
 }
 	
+
+function funkcjaLinku (scope, element, attrs, contoller)
+	{
+		scope.$watch ('strach.czyzero()'),
+			function (newValue, oldValue)
+			{
+				if (newValue === true)
+				{
+					pokazOstrzezenie ();
+				}
+				else
+				{
+					usunOstrzezenie ();
+				}
+			};
+
+		function pokazOstrzezenie ()
+		{
+			var warningElem = element.find("p");
+			warningElem.slideDown(900);
+		};
+
+		function usunOstrzeznie ()
+		{
+			var warningElem = element.find("p");
+			warningElem.slideUp(900);
+		};
+	};
+
+
+
+
 function kontrolaStrachu()
 	{
 		var strach = this;
