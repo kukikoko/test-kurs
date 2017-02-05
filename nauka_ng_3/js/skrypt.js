@@ -40,7 +40,7 @@ function MenuSearchService ($http)
 
  		console.log (response);
 		var matchedItems = new Array ();
-		var allItems = response.data;
+		var allItems = response.data.menu_items;
 		var matching = content.toLowerCase();
 
 		console.log (allItems);
