@@ -54,7 +54,6 @@ function MenuSearchService ($http)
 				matchedItems.push(allItems[i])
 			};
 		};
-		console.log (matchedItems);
 		return matchedItems;
 		});
 		};
@@ -68,32 +67,10 @@ function foundItems () {
 				{
 					found: '<'
 				},
-			templateUrl: 'shot.html',
-			controller: kontrolaStrachu,
-			controllerAs: 'strach',
-			bindToController: true,
+			templateUrl: 'shot.html'
 		};
 
 
 	return ddo;
 }
 	
-
-
-
-
-
-
-function kontrolaStrachu()
-	{
-		var strach = this;
-		strach.czyzero = function () 
-			{
-				if (strach.mojaLista.list.length === 0)
-					{	return true  }
-				else {   return false  };
-			};
-	};
-
-
-})();

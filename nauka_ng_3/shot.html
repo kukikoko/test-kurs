@@ -1,18 +1,21 @@
 
  <div id="lista">
- <ul class="list-unstyled">
+ <table class="table">
   <div class="container" id="rzeczy">
-   <p id="blad"> {{ strach.title }} <br>
-    <img src="pics/k.png" alt="kosz"></p>
- <li ng-repeat="thing in strach.mojaLista.list">
-          <button class="btn btn-warning btn-xs" 
-          ng-click="strach.mojaLista.gotit($index);">
-          <==></button>
-          {{thing.quantity + " " + thing.name}}
-</li>
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Meal</th>
+      <th>Description</th>
+	</tr>
+	<tbody>
+ <tr ng-repeat="thing in found">
+
+ 	<td>1</td>
+ 	<td>{{ thing.name }}</td>
+ 	<td>{{ thing.description }}</td>
+ 	<td><button class="btn btn-warning btn-xs" 
+         ng-click=""><==></button></td>
+ </tr>
 	</div>
-</ul>
-	<button id="guziczek"
-	ng-click="strach.mojaLista.wyczysc();">
-	wyczyść listę</button>
 </div>
