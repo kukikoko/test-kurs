@@ -20,6 +20,7 @@
 			{
 				nid.found = 
 				MenuSearchService.GetMatchedMenuItems (nid.content);
+				nid.content = "";
 			};
 	};
 
@@ -38,13 +39,9 @@ function MenuSearchService ($http)
  		.then
  		(function successCallback(response) {
 
- 		console.log (response);
 		var matchedItems = new Array ();
 		var allItems = response.data.menu_items;
 		var matching = content.toLowerCase();
-
-		console.log (allItems);
-		console.log (matching);
 
 		for (var i = 0; i<allItems.length; i=i+1)
 		{
@@ -65,8 +62,7 @@ function foundItems () {
 		{
 			scope:
 				{
-					mojaLista: '=mojaLista',
-					title: '@'
+					found: '<',
 				},
 			templateUrl: 'shot.html'
 
