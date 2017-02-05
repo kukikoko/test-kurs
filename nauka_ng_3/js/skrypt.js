@@ -19,14 +19,14 @@
 
 		nid.check = function ()
 			{
+				nid.comment = "";
 				if (nid.content !== "")
 				{
 				MenuSearchService.GetMatchedMenuItems (nid.content);
 				nid.content = "";
 				nid.found = MenuSearchService.listOfMatchingItems;
 				if (nid.found.length === 0)
-					{ nid.comment = "NOTHING CAN BE FOUND" }
-				else {	nid.comment = "" };
+					{ nid.comment = "NOTHING CAN BE FOUND" };
 				console.log (nid.found);
 				}
 				else { nid.comment = "ENTER SOME DATA"};
