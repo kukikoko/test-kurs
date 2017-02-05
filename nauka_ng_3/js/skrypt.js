@@ -15,10 +15,12 @@
 	{
 		var nid = this;
 		nid.content = "";
+		nid.used = 0;
 		nid.found = MenuSearchService.listOfMatchingItems;
 
 		nid.check = function ()
 			{
+				nid.used = 1;
 				MenuSearchService.GetMatchedMenuItems (nid.content);
 				nid.content = "";
 			};
@@ -36,7 +38,6 @@ function MenuSearchService ($http)
 {
 	var mss = this;
 	mss.listOfMatchingItems = new Array ();
-	mss.status = 0;
 
 	mss.GetMatchedMenuItems = function (content)
 		{
