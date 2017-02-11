@@ -11,7 +11,7 @@
 			bindings:
 				{
 					znalezione: '<',
-					mojTytul: '@tytul',
+					tytul: '@',
 					wywalTo: '&'
 				}
 		});
