@@ -35,7 +35,7 @@
 				}
 		}
 
-	Kontoler.$inject = ['Serwis'];
+	Kontroler.$inject = ['Serwis'];
 	function Kontroler (Serwis)
 		{
 			var k = this;
