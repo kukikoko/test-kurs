@@ -33,6 +33,21 @@ body
 			color: black;
 		}
 
+#spis
+		{
+			background-color: #00ffcc;
+			opacity: 0.9;
+			width: 60%;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			text-align: left;
+			padding-left: 15px;
+			border: 1px solid black;
+			border-radius: 10px;
+			box-shadow: 0 0 20px #3f0c1f;
+		}
+
+
 #ikonka
 		{
 			margin-top: 15px;
@@ -45,4 +60,10 @@ body
 		margin-bottom: 15px;
 		font-size: 1.3em;
 		font-weight: bold;
+	}
+
+#guziczek
+	{
+		margin-top: 5px;
+		margin-bottom: 4px;
 	}

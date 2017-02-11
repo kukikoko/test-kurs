@@ -1,9 +1,9 @@
 <br>
 <h2>{{ $ctrl.tytul }}</h2>
-<ol>
+<ul class="list-unstyled">
 <li ng-repeat="pozycja in $ctrl.rzeczy">
-{{ pozycja.nazwa + " i tego czegos sztuk " + pozycja.ilosc }}
 <button ng-click="$ctrl.remove($index);">wyrzuc</button>
+{{ pozycja.nazwa + " i tego czegoś sztuk " + pozycja.ilosc }}
 </li>
-</ol>
+</ul>
 

@@ -17,13 +17,13 @@
 
     <div class="container text-center" id="elementy" 
     ng-controller="Kontroler as k">
-    <p>zarcie</p><input type="text" ng-model="k.jedzenie">
-    <p>ilosc</p><input type="text" ng-model="k.ilosc"><br>
-    <button ng-click="k.dodaj();">dodaj</button>
+    <p>żarcie</p><input type="text" ng-model="k.jedzenie">
+    <p>ilość</p><input type="text" ng-model="k.ilosc"><br>
+    <button id="guziczek" ng-click="k.dodaj();">DODAJ</button>
 
-    <komponent ng-show="k.lista.length>0" 
+    <komponent id="spis" ng-show="k.lista.length>0" 
     rzeczy="k.lista" 
-    tytul="PIES WAS JEBAL" 
+    tytul="PIES WAS JEBAŁ" 
     wywal="k.wywal(index)">
     </komponent>
     </div>
@@ -49,11 +49,10 @@
 <img src="pics/ikona3.png" alt="ikona1">
 </a>
 </div>
+</div>
 
 <div id="stopka" class="container text-center">
       &copy;  2017
-</div>
-
 </div>
 
   		<script src="js/jquery-3.1.1.min.js"></script>
