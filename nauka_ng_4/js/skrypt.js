@@ -11,7 +11,8 @@
 			bindings:
 						{
 							rzeczy: '<',
-							tytul: '@'
+							tytul: '@',
+							wywal: '&'
 						}
 				});
 	
@@ -47,6 +48,11 @@
 					k.jedzenie = "";
 					k.ilosc = "";
 				};
+
+			k.wywal = function (co)
+				{
+					Serwis.xxx (co);
+				};
 		}
 	
 	function Serwis ()
@@ -67,6 +73,11 @@
 				{
 					return s.menu;
 				};
+
+			s.xxx = function (co)
+				{
+					s.menu.splice (co, 1);
+				}
 		};
 
 })();
