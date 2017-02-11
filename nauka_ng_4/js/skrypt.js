@@ -13,8 +13,8 @@
 							rzeczy: '<',
 							tytul: '@'
 						}
-				}
-		});
+				});
+	
 
 	function KontrolerKomponentu ()
 		{
