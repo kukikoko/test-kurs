@@ -8,7 +8,6 @@
 		{
 			templateUrl: 'ins1.html',
 			controller: KontrolerKomponentu,
-			controllerAs: '$ctrl',
 			bindings:
 				{
 					znalezione: '<',
@@ -21,7 +20,17 @@
 	function KontrolerKomponentu ()
 		{
 			$ctrl = this;
-		}
+
+			$ctrl.$onInit = function ()
+				{
+					console.log ("ON INIT");
+				};
+
+			$ctrl.$onChanges = function (changeObj)
+				{
+					console.log (changeObj);
+				};
+		};
 
 
 	Kontroler.$inject = 
