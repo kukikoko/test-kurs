@@ -12,24 +12,21 @@
    </head>
 
 
-    <div class="container" id="header">
+  <div class="container" id="header">
     KOMPONENTY
 
     <div class="container" ng-controller="Kontroler as k">
-    <p>co zamierzasz dziś opierdolić?</p><br>
-    <p>nazwa potrawy</p><br>
-    <input type="text" id="wpis" ng-model="k.pozycja"><br>
-    <p>jak duzo</p><br>
-    <input type="text" id="wpis" ng-model="k.ilosc"><br>
-    <button ng-click="k.dodaj();">DODAJ</button>
-    </div>
+    <p>zarcie</p><input type="text" ng-model="k.jedzenie">
+    <p>ilosc</p><input type="text" ng-model="k.ilosc">
+    <button ng-click="k.dodaj();">dodaj</button>
 
-    <div class="container">
-    <moj-komponent tytul="PIES WAS JEBAL" jedzonko="k.l" 
-    wypierdol="k.skasuj(index)">
+    <moj-komponent ng-show="k.lista.length>0" 
+    rzeczy="k.lista" 
+    tytul="PIES WAS JEBAL">
     </moj-komponent>
-
     </div>
+
+  </div>
 
   		<script src="js/jquery-3.1.1.min.js"></script>
   		<script src="js/bootstrap.min.js"></script>

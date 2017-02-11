@@ -10,18 +10,19 @@
 			controller: KontrolerKomponentu,
 			bindings:
 				{
-					jedzonko: '<',
-					tytul: '@',
-					wypierdol: '&'
+					templateUrl: 'ins1.html',
+					controller: KontrolerKomponentu,
+					bindings:
+						{
+							rzeczy: '<',
+							tytul: '@'
+						}
 				}
 		});
-
 
 	function KontrolerKomponentu ()
 		{
 			var $ctrl = this;
-
-
 
 			$ctrl.$onInit = function ()
 				{
@@ -30,64 +31,46 @@
 
 			$ctrl.$onChanges = function (changeObj)
 				{
-					console.log (changeObj);
-					console.log ("co sie zmienilo");
-				};
-		};
+					console.log ("changes: ",changeObj);
+				}
+		}
 
-
-	Kontroler.$inject = 
-	['Serwis'];
+	Kontoler.$inject = ['Serwis'];
 	function Kontroler (Serwis)
-	{
-		var knt = this;
-		knt.pozycja = "";
-		knt.ilosc = "";
-		knt.l = Serwis.menu;
-
-		knt.dodaj = function ()
-			{
-				Serwis.wpisz (knt.pozycja, knt.ilosc);
-				knt.pozycja = "";
-				knt.ilosc = "";
-				console.log (knt.l);
-				console.log (knt.l.length);
-			};
-
-		knt.skasuj = function (co)
-			{
-				Serwis.xxx (co);
-			};
-
-	};
-
-
-
-
-function Serwis () 
-{
-	var srw = this;
-	srw.menu = new Array ();
-
-	srw.wpisz = function (co, ile)
 		{
-			var pozycja = {
-				nazwa: co,
-				ilosc: ile
-			};
+			var k = this;
+			k.jedzenie = "";
+			k.ilosc = "";
 
-			if (co != "")
+			k.lista = Serwis.przekaz();
+
+			k.dodaj = function ()
 				{
-					srw.menu.push (pozycja);
+					var pozycja = {nazwa: k.jedzenie, ilosc: k.ilosc};
+					Serwis.dodaj (pozycja);
+					k.jedzenie = "";
+					k.ilosc = "";
+				};
+		}
+	
+	function Serwis ()
+		{
+			var s = this;
+			s.menu = new Array ();
+
+
+			s.dodaj = function (co)
+				{
+					if (co.nazwa != "")
+					{
+						s.menu.push (co);
+					};
+				};
+
+			s.przekaz = function ()
+				{
+					return s.menu;
 				};
 		};
-
-	srw.xxx = function (co)
-		{
-			srw.menu.splice (co, 1);
-		};
-};
-
-
 
 })();
