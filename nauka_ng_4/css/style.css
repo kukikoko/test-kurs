@@ -1,0 +1,18 @@
+body
+	{
+		font-family: "Arial", sans-serif;
+		background: url("../pics/tapeta.jpg");
+		background-repeat: repeat;
+
+	}
+
+#header
+	{
+		color: white;
+		font-size:	1.3em;
+	}
+
+#wpis
+	{ 
+		color: black;
+    }

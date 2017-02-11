@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Aplikacja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pawel Banasiewicz</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+   </head>
+
+
+    <div class="container" id="header">
+    KOMPONENTY
+
+    <div class="container" ng-controller="Kontroler as k">
+    <p>co zamierzasz dziś ugotować?</p><br>
+    <p>nazwa potrawy</p><br>
+    <input type="text" id="wpis" ng-model="k.pozycja"><br>
+    <p>jak duzo</p><br>
+    <input type="text" id="wpis" ng-model="k.ilosc"><br>
+    <button ng-click="k.dodaj();">DODAJ</button>
+    </div>
+
+    <div class="container">
+    <moj-komponent moj-tytul="PIES WAS JEBAL"></moj-komponent>
+      
+    </div>
+
+  		<script src="js/jquery-3.1.1.min.js"></script>
+  		<script src="js/bootstrap.min.js"></script>
+  		<script src="js/angular.min.js"></script>
+  		<script src="js/skrypt.js"></script>
+
+  	</body>
+</html>
