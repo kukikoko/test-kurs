@@ -12,12 +12,13 @@
    </head>
 
 
-  <div class="container" id="header">
-    KOMPONENTY take miliopn
+  <div class="container text-center" id="header">
+    NAUKA KOMPONENTÓW
 
-    <div class="container" id="elementy" ng-controller="Kontroler as k">
+    <div class="container text-center" id="elementy" 
+    ng-controller="Kontroler as k">
     <p>zarcie</p><input type="text" ng-model="k.jedzenie">
-    <p>ilosc</p><input type="text" ng-model="k.ilosc">
+    <p>ilosc</p><input type="text" ng-model="k.ilosc"><br>
     <button ng-click="k.dodaj();">dodaj</button>
 
     <komponent ng-show="k.lista.length>0" 
@@ -27,7 +28,33 @@
     </komponent>
     </div>
 
-  </div>
+<div>Icons made by <a href="http://www.flaticon.com/authors/chanut-is-industries" title="Chanut is Industries">Chanut is Industries</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+</div>
+
+<div class="container">
+<div class="col-md-4 col-sm-12 col-xs-12 text-center" id="ikonka">
+<a href="http://www.zalukaj.tv" target="_blank">
+<img src="pics/ikona1.png" alt="ikona1">
+</a>
+</div>
+
+<div class="col-md-4 col-sm-12 col-xs-12 text-center" id="ikonka">
+<a href="http://www.onet.pl" target="_blank">
+<img src="pics/ikona2.png" alt="ikona1">
+</a>
+</div>
+
+<div class="col-md-4 col-sm-12 col-xs-12 text-center" id="ikonka">
+<a href="http://www.orange.pl" target="_blank">
+<img src="pics/ikona3.png" alt="ikona1">
+</a>
+</div>
+
+<div id="stopka" class="container text-center">
+      &copy;  2017
+</div>
+
+</div>
 
   		<script src="js/jquery-3.1.1.min.js"></script>
   		<script src="js/bootstrap.min.js"></script>

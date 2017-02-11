@@ -2,7 +2,7 @@ body
 	{
 		font-family: "Arial", sans-serif;
 		animation: ruch 300s linear infinite alternate;
-		background-image: url("../pics/dots.png"), ("../pics/dots2.png");
+		background-image: url("../pics/dots2.png"), url("../pics/dots.png");
 	}
 
 @keyframes ruch
@@ -11,9 +11,38 @@ body
         100% {background-position:10000px 0, 7500px 0;}
       }
 
+
+#header
+	{ 
+		background-color: #3300cc;
+		opacity: 0.8;
+		box-shadow: 0 0 20px #3f0c1f;
+		color: white;
+		font-weight: bold;
+		font-size: 1.4em;
+	}
+
 #elementy
 		{
+			width: 75%;
+			padding-bottom: 4px;
 			border: 3px solid #eee;
-			background-color: rgba (255, 255, 255, 0.7);
+			background-color: #669999;
+			opacity: 0.8;
+			font-size: 0.7em;
 			color: black;
 		}
+
+#ikonka
+		{
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+
+#stopka
+	{
+		margin-top: 15px;
+		margin-bottom: 15px;
+		font-size: 1.3em;
+		font-weight: bold;
+	}
