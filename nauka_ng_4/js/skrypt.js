@@ -19,7 +19,7 @@
 
 	function KontrolerKomponentu ()
 		{
-			$ctrl = this;
+			var $ctrl = this;
 
 			$ctrl.$onInit = function ()
 				{
