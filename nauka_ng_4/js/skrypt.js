@@ -4,7 +4,7 @@
 	angular.module('Aplikacja', [])
 	.controller('Kontroler', Kontroler)
 	.service ('Serwis', Serwis)
-	.component ('mojKomponent', 
+	.component ('komponent', 
 		{
 			templateUrl: 'ins1.html',
 			controller: KontrolerKomponentu,
