@@ -10,9 +10,9 @@
 			controller: KontrolerKomponentu,
 			bindings:
 				{
-					znalezione: '<',
+					menu: '<',
 					tytul: '@',
-					wywalTo: '&'
+					wywal: '&'
 				}
 		});
 
@@ -20,6 +20,13 @@
 	function KontrolerKomponentu ()
 		{
 			var $ctrl = this;
+
+
+			$ctrl.usun = function ()
+				{
+					for (var i=0; i==)
+				}
+
 
 			$ctrl.$onInit = function ()
 				{
@@ -50,6 +57,11 @@
 				console.log (knt.lista);
 			};
 
+		knt.skasuj = function (co)
+			{
+				Serwis.xxx (co);
+			};
+
 	};
 
 
@@ -73,6 +85,10 @@ function Serwis ()
 				};
 		};
 
+	srw.xxx = function (co)
+		{
+			srw.menu.splice (co, 1);
+		};
 };
 
 
