@@ -22,11 +22,6 @@
 			var $ctrl = this;
 
 
-			$ctrl.usun = function ()
-				{
-					for (var i=0; i==)
-				}
-
 
 			$ctrl.$onInit = function ()
 				{
