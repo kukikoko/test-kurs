@@ -2,8 +2,15 @@
 <h class="text-center">{{ $ctrl.tytul }}</h>
 <ul class="list-unstyled">
 <li ng-repeat="pozycja in $ctrl.rzeczy">
-<button ng-click="$ctrl.remove($index);">WYRZUC</button>
+
+<div class="col-sm-6">
 {{ pozycja.nazwa + " i tego czegoś sztuk " + pozycja.ilosc }}
+</div>
+
+<div class="col-sm-6">
+<button ng-click="$ctrl.remove($index);">WYRZUC</button>
+</div>
+
 </li>
 </ul>
 

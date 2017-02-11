@@ -13,18 +13,18 @@
 
   <body>
   <div class="container text-center" id="header">
-    NAUKA KOMPONENTÓW - podejście 4000001
+    NAUKA KOMPONENTÓW - podejście 400000133333333333
 
     <div class="container text-center" id="elementy" 
     ng-controller="Kontroler as k">
-    <p>żarcie</p><input type="text" ng-model="k.jedzenie">
-    <p>ilość</p><input type="text" ng-model="k.ilosc"><br>
+    <p id="inputs">żarcie</p><input type="text" ng-model="k.jedzenie">
+    <p id="inputs">ilość</p><input type="text" ng-model="k.ilosc"><br>
     <button id="guziczek" ng-click="k.dodaj();">DODAJ</button>
 
     <div id="spis" ng-show="k.lista.length>0">
     <komponent  
     rzeczy="k.lista" 
-    tytul="PIES WAS JEBAŁ" 
+    tytul="TWOJA LISTA" 
     wywal="k.wywal(index)">
     </komponent>
     </div>
