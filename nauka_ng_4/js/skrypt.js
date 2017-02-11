@@ -43,15 +43,15 @@
 		var knt = this;
 		knt.pozycja = "";
 		knt.ilosc = "";
-		knt.lista = Serwis.menu;
+		knt.l = Serwis.menu;
 
 		knt.dodaj = function ()
 			{
 				Serwis.wpisz (knt.pozycja, knt.ilosc);
 				knt.pozycja = "";
 				knt.ilosc = "";
-				console.log (knt.lista);
-				console.log (knt.lista.length);
+				console.log (knt.l);
+				console.log (knt.l.length);
 			};
 
 		knt.skasuj = function (co)
