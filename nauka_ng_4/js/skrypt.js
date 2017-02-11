@@ -12,7 +12,7 @@
 				{
 					menu: '<',
 					tytul: '@',
-					wywal: '&'
+					wypierdol: '&'
 				}
 		});
 
