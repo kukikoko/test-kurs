@@ -31,6 +31,7 @@
 			$ctrl.$onChanges = function (changeObj)
 				{
 					console.log (changeObj);
+					console.log ("co sie zmienilo");
 				};
 		};
 
