@@ -25,7 +25,8 @@
     </div>
 
     <div class="container">
-    <moj-komponent ng-show="k.lista.length>0"
+    {{ k.lista.length }}
+    <moj-komponent ng-hide="k.lista.length>0"
     tytul="PIES WAS JEBAL" jedzonko="k.lista"
     wypierdol="k.skasuj(index)">
     
