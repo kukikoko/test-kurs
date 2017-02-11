@@ -16,6 +16,8 @@ body
 	{ 
 		background-color: #3300cc;
 		opacity: 0.8;
+		border: 1px solid black;
+		border-radius: 10px;
 		box-shadow: 0 0 20px #3f0c1f;
 		margin-top:20px;
 		color: white;
