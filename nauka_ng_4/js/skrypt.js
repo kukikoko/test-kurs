@@ -30,6 +30,12 @@
 				{
 					console.log ("changes: ",changeObj);
 				}
+
+			$ctrl.remove = function (myIndex) 
+				{
+			    	$ctrl.wywal({ index: myIndex });
+				};
+
 		}
 
 	Kontroler.$inject = ['Serwis'];

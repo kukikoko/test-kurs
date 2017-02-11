@@ -3,7 +3,7 @@
 <ol>
 <li ng-repeat="pozycja in $ctrl.rzeczy">
 {{ pozycja.nazwa + "  " + nazwa.ilosc }}
-<button ng-click="$ctrl.wywal({index: $index});">wyrzuc</button>
+<button ng-click="$ctrl.remove($index);">wyrzuc</button>
 </li>
 </ol>
 
