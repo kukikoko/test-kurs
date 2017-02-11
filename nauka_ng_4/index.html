@@ -16,7 +16,7 @@
     KOMPONENTY
 
     <div class="container" ng-controller="Kontroler as k">
-    <p>co zamierzasz dziś ugotowac hemingłej?</p><br>
+    <p>co zamierzasz dziś ugotjjjjjjjjjjjjjjjjjjj?</p><br>
     <p>nazwa potrawy</p><br>
     <input type="text" id="wpis" ng-model="k.pozycja"><br>
     <p>jak duzo</p><br>
@@ -25,8 +25,9 @@
     </div>
 
     <div class="container">
-    <moj-komponent tytul="PIES WAS JEBAL" menu="k.lista"
-                    wypierdol="k.skasuj(index)">
+    <moj-komponent ng-show="k.lista.length>0"
+    tytul="PIES WAS JEBAL" jedzonko="k.lista"
+    wypierdol="k.skasuj(index)">
     
     </moj-komponent>
 

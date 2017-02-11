@@ -10,7 +10,7 @@
 			controller: KontrolerKomponentu,
 			bindings:
 				{
-					menu: '<',
+					jedzonko: '<',
 					tytul: '@',
 					wypierdol: '&'
 				}
@@ -50,6 +50,7 @@
 				knt.pozycja = "";
 				knt.ilosc = "";
 				console.log (knt.lista);
+				console.log (knt.lista.length);
 			};
 
 		knt.skasuj = function (co)

@@ -1,7 +1,7 @@
 <h3>TYTUL:  {{ $ctrl.tytul }} </h3>
 
 <ul> LISTA ZAKUPOW
-<li ng-repeat="pozycja in $ctrl.menu">
+<li ng-repeat="pozycja in $ctrl.jedzonko">
           <button ng-click="$ctrl.wypierdol({index: $index});">
           <==></button>
           {{pozycja.nazwa + " " + pozycja.ilosc}}
