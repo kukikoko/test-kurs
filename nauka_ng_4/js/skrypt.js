@@ -8,6 +8,7 @@
 		{
 			templateUrl: 'ins1.html',
 			controller: KontrolerKomponentu,
+			controllerAs: '$ctrl',
 			bindings:
 				{
 					znalezione: '<',
