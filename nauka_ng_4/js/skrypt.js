@@ -9,10 +9,6 @@
 			templateUrl: 'ins1.html',
 			controller: KontrolerKomponentu,
 			bindings:
-				{
-					templateUrl: 'ins1.html',
-					controller: KontrolerKomponentu,
-					bindings:
 						{
 							rzeczy: '<',
 							tytul: '@'
