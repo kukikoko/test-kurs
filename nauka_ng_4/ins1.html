@@ -1,8 +1,8 @@
 <br>
-<h2>{{ $ctrl.tytul }}</h2>
+<h class="text-center">{{ $ctrl.tytul }}</h>
 <ul class="list-unstyled">
 <li ng-repeat="pozycja in $ctrl.rzeczy">
-<button ng-click="$ctrl.remove($index);">wyrzuc</button>
+<button ng-click="$ctrl.remove($index);">WYRZUC</button>
 {{ pozycja.nazwa + " i tego czegoś sztuk " + pozycja.ilosc }}
 </li>
 </ul>
