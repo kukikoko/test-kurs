@@ -11,29 +11,32 @@
     <link rel="stylesheet" href="css/style.css">
    </head>
 
-
+  <body>
   <div class="container text-center" id="header">
-    NAUKA KOMPONENTÓW
+    SUPER EKSTRA STRONA TEGO JEGO
 
     <div class="container text-center" id="elementy" 
     ng-controller="Kontroler as k">
-    <p>zarcie</p><input type="text" ng-model="k.jedzenie">
-    <p>ilosc</p><input type="text" ng-model="k.ilosc"><br>
-    <button ng-click="k.dodaj();">dodaj</button>
+    <p id="inputs">podaj tytuł</p><input type="text" ng-model="k.jedzenie">
+    <p id="inputs">podaj artystę</p><input type="text" ng-model="k.ilosc"><br>
+    <button id="guziczek" ng-click="k.dodaj();">DODAJ</button>
 
-    <komponent ng-show="k.lista.length>0" 
+    <div id="spis" ng-show="k.lista.length>0">
+    <komponent  
     rzeczy="k.lista" 
-    tytul="PIES WAS JEBAL" 
+    tytul="TWOJA LISTA" 
     wywal="k.wywal(index)">
     </komponent>
+    <p>.........................</p>
     </div>
 
 <div>Icons made by <a href="http://www.flaticon.com/authors/chanut-is-industries" title="Chanut is Industries">Chanut is Industries</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 </div>
+</div>
 
 <div class="container">
 <div class="col-md-4 col-sm-12 col-xs-12 text-center" id="ikonka">
-<a href="http://www.zalukaj.tv" target="_blank">
+<a href="http://www.youtube.com" target="_blank">
 <img src="pics/ikona1.png" alt="ikona1">
 </a>
 </div>
@@ -49,11 +52,10 @@
 <img src="pics/ikona3.png" alt="ikona1">
 </a>
 </div>
+</div>
 
 <div id="stopka" class="container text-center">
       &copy;  2017
-</div>
-
 </div>
 
   		<script src="js/jquery-3.1.1.min.js"></script>
@@ -61,5 +63,5 @@
   		<script src="js/angular.min.js"></script>
   		<script src="js/skrypt.js"></script>
 
-  	</body>
+</body>
 </html>
