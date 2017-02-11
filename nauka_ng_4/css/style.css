@@ -38,14 +38,13 @@ body
 		{
 			background-color: #00ffcc;
 			opacity: 0.9;
-			width: 60%;
-			margin: 10 auto 10;
-			text-align: left;
+			width: 75%;
+			margin: 0 auto 15px;
 			padding-left: 15px;
 			border: 1px solid black;
 			border-radius: 10px;
 			box-shadow: 0 0 20px #3f0c1f;
-			font-size: 1.1em;
+			font-size: 0.9em;
 		}
 
 
