@@ -28,12 +28,13 @@ za {{$ctrl.cena}} PLN</p>
  	<td>{{ thing.ilosc }}</td>
  	<td>{{ thing.cena }}</td>
  	<td><button class="btn btn-xs" 
- 	ng-click="$ctrl.kup($index, thing);">KUP!</button></td>
+ 	ng-click="$ctrl.kup($index, thing);">To biorę!</button></td>
  </tr>
  </tbody>
  </table>
- <button id="guzik" class="text-center"
- class="finalizacja" ng-click="$ctrl.zamow();">ZAMÓW MUZĘ</button>
+
+ <button id="guzik" class="text-center finalizacja"
+ ng-click="$ctrl.zamow();">ZAMÓW MUZĘ</button>
  </div>
 
 <div class="zamowienie container text-center">
@@ -54,10 +55,14 @@ KOSZT CAŁKOWITY {{ $ctrl.cena + " PLN" }}
 
 <div class="blad container text-center">
 <br>GROSZEM TO TY NIE ŚMIERDZISZ....</div><br>
-<p id="inputs">podaj nr karty:</p><input type="text">
 
+<div class="container finalizacja"
+<p id="inputs">podaj nr karty:</p><input type="text">
+<br>
 <button id="guzik" ng-click="$ctrl.karta();">
-KUPUJ!</button><br>
+KUPUJ!</button>
+</div>
+
 <button id="guzik" ng-click="$ctrl.reseta();">
 RESETUJ ZAKUPY</button>
 

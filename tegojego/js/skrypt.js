@@ -179,7 +179,7 @@
 				{
 					k.wejscie = Serwis.reseta ();
 				};
-		}
+		};
 	
 	function Serwis ()
 		{

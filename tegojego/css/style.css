@@ -23,9 +23,7 @@ input
 		border: 1px solid black;
 		border-radius: 20px;
 		box-shadow: 2px 2px 20px #003399;
-		margin-top: 20px;
-		margin-left: 5px;
-		margin-right: 5px;
+		margin: 20px auto 22px;
 		padding-top: 30px;
 		padding-bottom: 22px;
 		color: white;
