@@ -56,8 +56,6 @@ body
 #ikonka
 		{
 			width: 140px;
-			border: 1px solid black;
-			border-radius: 10px;
 			margin: 10px auto 10px;
 			font-size: 10px;
 		}
@@ -65,15 +63,14 @@ body
 #ikonka1
 		{
 			padding-top: 4px;
-			width: 70px;
-			border: 1px solid black;
-			border-radius: 10px;
+			width: 140px;
 			margin: 10px auto 10px;
 			font-size: 10px;
 		}
 
 #ikonka: hover, #ikonka1: hover
 		{
+			background-color: blue;
 			box-shadow: 0 0 20px #3f0c1f;
 		}
 
