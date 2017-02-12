@@ -52,6 +52,12 @@ body
 		top: -25px;
 	}
 
+.logout
+	{
+		position: absolute;
+		left: 10px;
+		bottom: 10px;
+	}
 
 #spis
 		{
@@ -103,7 +109,7 @@ body
 
 .zamowienie
 	{
-		width: 72%;
+		width: 85%;
 		margin: 3px auto 5px;
 		color: white;
 		font-size: 1.2em;
@@ -116,7 +122,7 @@ body
 		width: 90%;
 		margin-top: 10px;
 		margin-bottom: 5px;
-		padding: 10px;
+		padding: 15px;
 		font-size: 1.1em;
 		color: black;
 		background-color: #ccff66;
@@ -156,3 +162,16 @@ body
 	{
 		padding-left : 10px;
 	}
+
+@media (max-width: 400px)
+{
+	#kupione
+		{
+		font-size: 0.6em;
+		}
+
+	#spis
+		{
+		font-size: 0.6em;
+		}
+}
