@@ -30,6 +30,7 @@ body
 			width: 75%;
 			height: auto;
 			padding-bottom: 4px;
+			padding-top: 7px;
 			margin-bottom: 15px;
 			border: 3px solid #eee;
 			background-color: #669999;
@@ -76,4 +77,30 @@ body
 	{
 		margin-top: 5px;
 		margin-bottom: 1px;
+	}
+
+#dysko
+	{
+		clear: both;
+	}
+
+.zamowienie
+	{
+		color: red;
+		font-size: 1.7em;
+		display: none;
+	}
+
+#kupione
+	{
+
+		margin: 0 auto 15px;
+		padding: 10px;
+		font-size: 0.7em;
+		color: black;
+		background-color: #ccff66;
+		opacity: 0.7;
+		border: 1px solid black;
+		border-radius: 10px;
+		box-shadow: 0 0 20px #3f0c1f;
 	}

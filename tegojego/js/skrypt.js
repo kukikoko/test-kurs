@@ -16,10 +16,23 @@
 						}
 				});
 	
-	KontrolerKomponentu.$inject = ['$scope']
-	function KontrolerKomponentu ($scope)
+	KontrolerKomponentu.$inject = ['$scope', '$element']
+	function KontrolerKomponentu ($scope, $element)
 		{
 			var $ctrl = this;
+			$ctrl.ListaZamowienia = [];
+
+
+			$ctrl.zamow = function ()
+				{
+					for (var i=$ctrl.rzeczy.length; i>0; i=i-1)
+						{
+							$ctrl.ListaZamowienia.push($ctrl.rzeczy[i-1]);
+							$ctrl.remove (i-1);
+						};
+
+					return true;
+				};
 
 			$ctrl.$onInit = function ()
 				{
@@ -34,6 +47,27 @@
 			$ctrl.remove = function (myIndex) 
 				{
 			    	$ctrl.wywal({ index: myIndex });
+				};
+
+			$ctrl.$postlink = function ()
+				{
+					$scope.$watch('$ctrl.zamow()',
+						function (newValue, oldValue)
+						{
+							if (newValue === true)
+							{
+								var warningElem =
+								$element.find('div.zamowienie');
+								warningElem.slideDown(900);
+							}
+							else
+							{
+								var warningElem =
+								$element.find('div.zamowienie');
+								warningElem.slideUp(900);
+							};
+						});
+
 				};
 
 		}

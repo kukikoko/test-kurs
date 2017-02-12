@@ -3,14 +3,32 @@
 <ul class="list-unstyled">
 <li ng-repeat="pozycja in $ctrl.rzeczy">
 
-<div class="col-md-6">
-{{ pozycja.nazwa + " gra " + pozycja.ilosc }}
+<div class="col-md-6" id="dysko">
+{{ pozycja.nazwa + " // " + pozycja.ilosc }}
 </div>
 
-<div class="col-md-6">
-<button ng-click="$ctrl.remove($index);">WYRZUC</button>
+<div class="col-md-6" id="dysko">
+<button ng-click="$ctrl.remove($index);">WYRZUC Z LISTY</button>
 </div>
 
 </li>
 </ul>
+
+<button id="guziczek" ng-click="$ctrl.zamow();">ZAMOW PRODUKTY</button>
+
+<div class="zamowienie container text-center">
+TOWAR ZAMÓWIONO - ZOSTANIE WYSŁANY<br>
+W CIĄGU 24 GODZIN<br>
+<img src="pics/ikona3.png" alt="ikona3"><br>
+<div id="kupione" class="container">
+<h2>ZAMOWIONE POZYCJE</h2>
+<ol>
+<li ng-repeat="pozycja in $ctrl.ListaZamowienia">
+{{ pozycja. nazwa }}
+</li>
+KOSZT CAŁKOWITY {{ $ctrl.ListaZamowienia.length * 2.58 + " PLN" }}
+</ol>
+
+</div>
+</div>
 
