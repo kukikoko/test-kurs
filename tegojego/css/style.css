@@ -69,8 +69,15 @@ input
 		position: absolute;
 		right: 25px;
 		top: 15px;
-		font-size: 0.7em;
+		width: 50px;
+		font-size: 0.9em;
 		display: none;
+		color: white;
+		background-color: #000066;
+		border: 1px solid black;
+		border-radius: 10px;
+		box-shadow: 2px 2px 20px #003399;
+		opacity: 0.5;
 	}
 
 #spis
@@ -181,6 +188,12 @@ input
 .ery
 	{
 		padding-left : 10px;
+	}
+
+.tribute
+	{
+		width: 75%;
+		margin: 10px auto 10px;
 	}
 
 

@@ -21,8 +21,8 @@
 		{
 			var $ctrl = this;
 			var wyswietlamy;
-			$ctrl.ListaZapasowa = [];
 			$ctrl.ListaKupionych = [];
+			$ctrl.ListaZapasowa = [];
 			$ctrl.IloscKupionych = 0;
 			$ctrl.cena = 0;
 
