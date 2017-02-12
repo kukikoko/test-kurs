@@ -16,8 +16,8 @@
 						}
 				});
 	
-
-	function KontrolerKomponentu ()
+	KontrolerKomponentu.$inject = ['$scope']
+	function KontrolerKomponentu ($scope)
 		{
 			var $ctrl = this;
 
@@ -44,13 +44,13 @@
 			var k = this;
 			k.jedzenie = "";
 			k.ilosc = "";
-
-			k.lista = Serwis.przekaz();
+			k.lista = Serwis.przekaz ();
+			k.wejscie = false;
 
 			k.dodaj = function ()
 				{
 					var pozycja = {nazwa: k.jedzenie, ilosc: k.ilosc};
-					Serwis.dodaj (pozycja);
+					k.wejscie = Serwis.sprawdz (pozycja);
 					k.jedzenie = "";
 					k.ilosc = "";
 				};
@@ -64,15 +64,25 @@
 	function Serwis ()
 		{
 			var s = this;
-			s.menu = new Array ();
+			s.menu = [
+			{nazwa: "Lubię Paczeć", ilosc: "2015"},
+			{nazwa: "Tego Jego", ilosc: "2014"},
+			{nazwa: "Los Iwiczna Locos", ilosc: "2014"},
+			{nazwa: "Gestapowski Płaszcz Życia", ilosc: "2017"},
+			{nazwa: "Skrzydła z Tłuszczu", ilosc: "2017"},
+			{nazwa: "Pogwałcono Prawa Me", ilosc: "2018"},
+			{nazwa: "Dintojra", ilosc: "2018"},
+			{nazwa: "Kiedy Idę Najebany (ulicami mego miasta w dzień)", ilosc: "2019"},
+			{nazwa: "Eksmisja Komornicza", ilosc: "2019"},
+			{nazwa: "Zimmmmmmno Mu", ilosc: "2019"}];
 
-
-			s.dodaj = function (co)
+			s.sprawdz = function (co)
 				{
-					if (co.nazwa != "")
+					if (co.nazwa === "tegojego" && co.ilosc === "push")
 					{
-						s.menu.push (co);
+						return true;
 					};
+					else { return false };
 				};
 
 			s.przekaz = function ()

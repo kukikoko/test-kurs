@@ -13,7 +13,7 @@
    </head>
 
   <body>
-  <audio src="music/tegies.mp3" autoplay>
+  <audio src="music/tegies.mp3" type="audio/mpeg" autoplay loop>
   <p>If you are reading this, it is because your browser does not support the audio element.</p>
   </audio>
   <div class="container text-center" id="header">
@@ -21,14 +21,16 @@
 
     <div class="container text-center" id="elementy" 
     ng-controller="Kontroler as k">
-    <p id="inputs">podaj tytuł</p><input type="text" ng-model="k.jedzenie">
-    <p id="inputs">podaj artystę</p><input type="text" ng-model="k.ilosc"><br>
-    <button id="guziczek" ng-click="k.dodaj();">DODAJ</button>
+    <div ng-hide="k.wejscie">
+    <p id="inputs">podaj login:</p><input type="text" ng-model="k.jedzenie">
+    <p id="inputs">podaj hasło:</p><input type="text" ng-model="k.ilosc">
+    <button id="guziczek" ng-click="k.dodaj();">ZALOGUJ</button>
+    </div>
 
-    <div id="spis" ng-show="k.lista.length>0">
+    <div id="spis" ng-show="k.wejscie">
     <komponent  
     rzeczy="k.lista" 
-    tytul="TWOJA LISTA" 
+    tytul="CZESC - jestes zalogowany" 
     wywal="k.wywal(index)">
     </komponent>
     <p>.........................</p>
