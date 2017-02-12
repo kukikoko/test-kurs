@@ -39,7 +39,7 @@
 					return true;
 					}
 					else
-					{	retun false };
+					{	return false };
 				};
 
 			$ctrl.$onInit = function ()
