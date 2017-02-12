@@ -22,6 +22,8 @@
 			var $ctrl = this;
 			var wyswietlamy;
 			$ctrl.ListaZapasowa = [];
+			$ctrl.ListaKupionych = [];
+			$ctrl.IloscKupionych = 0;
 			$ctrl.cena = 0;
 
 
@@ -29,6 +31,8 @@
 				{
 					console.log ("A HUJA TAM!");
 					$ctrl.ListaZapasowa.length = 0;
+					$ctrl.ListaKupionych.length = 0;
+					$ctrl.IloscKupionych = 0;
 					for (var i=0; i<$ctrl.rzeczy.length; i++)
 					{
 						$ctrl.ListaZapasowa.push($ctrl.rzeczy[i]);
@@ -39,23 +43,31 @@
 
 			$ctrl.zamow = function ()
 				{
-					var sumowanie = 0;
-					for (var i=0; i<$ctrl.ListaZapasowa.length; i=i+1)
-						{
-							sumowanie =
-							sumowanie+$ctrl.ListaZapasowa[i].cena;
-						};
-					$ctrl.cena = Math.round(sumowanie*100)/100;
-					wyswietlamy = 2;
+					wyswietlamy = 4;
 				};
 
-			$ctrl.won = function (co)
+			$ctrl.policzCene = function ()
 				{
-					$ctrl.ListaZapasowa.splice(co, 1);
-					if ($ctrl.ListaZapasowa.length === 0)
-						{ 
-							wyswietlamy = 3;
+					var sumowanie = 0;
+					for (var i=0; i<$ctrl.ListaKupionych.length; i=i+1)
+						{
+							sumowanie =
+							sumowanie+$ctrl.ListaKupionych[i].cena;
 						};
+					$ctrl.cena = Math.round(sumowanie*100)/100;
+				};
+
+			$ctrl.kup = function (numer, co)
+				{
+					$ctrl.ListaKupionych.push($ctrl.ListaZapasowa[co]);
+					$ctrl.ListaZapasowa.splice(co, 1);
+					if (wyswietlamy === 1) { wyswietlamy = 2 };
+					$ctrl.policzCene();
+				};
+
+			$ctrl.karta = function ()
+				{
+					wyswietlamy = 3;
 				};
 
 
@@ -79,34 +91,45 @@
 
 			$ctrl.$doCheck = function ()
 				{
+					var zam = $element.find('.zamowienie');
+					var blad = $element.find('.blad');
+					var dokupienia = $element.find('.kupilem');
+					var final = $element.find('.finalizacja');
+					var licznik = $element.find('.licznik');
+
 					if (wyswietlamy === 2)
 							{
-								var Elem1 =	$element.find('.zamowienie');
-								var Elem2 = $element.find('.blad');
-								var Elem3 = $element.find('.kupilem');
-								Elem1.slideDown(900);
-								Elem2.slideUp(900);
-								Elem3.slideUp(900);
+								zam.slideUp(900);
+								blad.slideUp(900);
+								dokupienia.slideDown(900);
+								final.slideDown(900);
+								licznik.slideDown(900);
 							}
 					else
 					{
 					if (wyswietlamy === 1)
 							{
-								var Elem1 =	$element.find('.zamowienie');
-								var Elem2 = $element.find('.blad');
-								var Elem3 = $element.find('.kupilem');
-								Elem1.slideUp(900);
-								Elem2.slideUp(900);
-								Elem3.slideDown(900);
-							}
-					else 
+								zam.slideUp(900);
+								blad.slideUp(900);
+								dokupienia.slideDown(900);
+								final.slideUp(900);
+								licznik.slideUp(900);
+							};
+					if (wyswietlamy === 3)
 							{
-								var Elem1 =	$element.find('.zamowienie');
-								var Elem2 = $element.find('.blad');
-								var Elem3 = $element.find('.kupilem');
-								Elem1.slideUp(900);
-								Elem2.slideDown(900);
-								Elem3.slideUp(900);
+								zam.slideUp(900);
+								blad.slideDown(900);
+								dokupienia.slideUp(900);
+								final.slideUp(900);
+								licznik.slideUp(900);
+							};
+					if (wyswietlamy === 4)
+							{
+								zam.slideDown(900);
+								blad.slideUp(900);
+								dokupienia.slideUp(900);
+								final.slideUp(900);
+								licznik.slideUp(900);								
 							};
 					};
 				};

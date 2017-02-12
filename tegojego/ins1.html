@@ -5,6 +5,11 @@
 <img src="pics/logout.png" alt="cisza/dzwiek">
 <br><p>wyloguj się</p></a>
 
+<p class="licznik">kupiłeś<br>
+{{$ctrl.ListaKupionych.length}} numerów<br>
+za {{$ctrl.cena}} PLN</p>
+
+
 <div class="kupilem table-responsive">
 <table class="table">
     <thead>
@@ -23,22 +28,22 @@
  	<td>{{ thing.ilosc }}</td>
  	<td>{{ thing.cena }}</td>
  	<td><button class="btn btn-xs" 
- 	ng-click="$ctrl.won($index);">to nie!</button></td>
+ 	ng-click="$ctrl.kup($index, thing);">KUP!</button></td>
  </tr>
  </tbody>
  </table>
- <button id="guzik" class="text-center" ng-click="$ctrl.zamow();">ZAMÓW MUZĘ</button>
+ <button id="guzik" class="text-center"
+ class="finalizacja" ng-click="$ctrl.zamow();">ZAMÓW MUZĘ</button>
  </div>
 
 <div class="zamowienie container text-center">
-ZROBIONE! - WYŚLEMY<br>
-W CIĄGU 24 GODZIN<br>
-wyprzedzamy czas...<br>
+ZROBIONE! - SPRAWDŹ SWOJE<br>
+ZAMÓWIENIE<br>
 <img src="pics/thumb.png" alt="thumb up"><br>
 <div id="kupione" class="container">
 <h>ZAMÓWIONE POZYCJE</h>
 <ul class="ery list-unstyled">
-<li ng-repeat="pozycja in $ctrl.ListaZapasowa">
+<li ng-repeat="pozycja in $ctrl.ListaKupionych">
 == {{ pozycja. nazwa }}
 </li>
 KOSZT CAŁKOWITY {{ $ctrl.cena + " PLN" }}
@@ -48,8 +53,12 @@ KOSZT CAŁKOWITY {{ $ctrl.cena + " PLN" }}
 </div>
 
 <div class="blad container text-center">
-NIE CHCESZ NIC KUPIC?<br></div><br>
+<br>GROSZEM TO TY NIE ŚMIERDZISZ....</div><br>
+<p id="inputs">podaj nr karty:</p><input type="text">
+
+<button id="guzik" ng-click="$ctrl.karta();">
+KUPUJ!</button><br>
 <button id="guzik" ng-click="$ctrl.reseta();">
-RESETOWANIE ZAKUPÓW</button>
+RESETUJ ZAKUPY</button>
 
 

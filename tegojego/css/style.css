@@ -24,6 +24,8 @@ input
 		border-radius: 20px;
 		box-shadow: 2px 2px 20px #003399;
 		margin-top: 20px;
+		margin-left: 5px;
+		margin-right: 5px;
 		padding-top: 30px;
 		padding-bottom: 22px;
 		color: white;
@@ -60,8 +62,16 @@ input
 	{
 		position: absolute;
 		left: 10px;
-		bottom: 30px;
+		bottom: 50px;
 		color: black;
+	}
+
+.licznik
+	{
+		position: absolute;
+		right: 40px;
+		top: 15px;
+		display: none;
 	}
 
 #spis
@@ -71,6 +81,7 @@ input
 			width: 75%;
 			margin: 5px auto 15px;
 			padding-left: 15px;
+			padding-top: 30px;
 			border: 1px solid black;
 			border-radius: 10px;
 			box-shadow: 2px 2px 20px #003399;
@@ -118,6 +129,11 @@ input
 		margin: 3px auto 5px;
 		color: white;
 		font-size: 1.2em;
+		display: none;
+	}
+
+.finalizacja
+	{
 		display: none;
 	}
 
@@ -186,7 +202,9 @@ input
 
 	#kupione
 	{
-		font-size: 0.7em;
+		font-size: 0.9em;
+		padding-left: 5px;
+		padding-right: 5px;
 	}
 
 	.blad
