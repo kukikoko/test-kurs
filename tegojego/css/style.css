@@ -14,7 +14,7 @@ body
 
 #header
 	{ 
-		position: absolute;
+		position: relative;
 		background-color: #3300cc;
 		opacity: 0.8;
 		border: 1px solid black;

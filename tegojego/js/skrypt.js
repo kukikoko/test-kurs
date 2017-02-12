@@ -178,7 +178,7 @@
 			{nazwa: "Skłóceni przy wódce", ilosc: "2023", cena: 10.22},
 			{nazwa: "Ostatniej zimy przestał stawać mi", ilosc: "2025", cena: 12.32},
 			{nazwa: "O kosturze i w żebraczym łachu", ilosc: "2027", cena: 14.33},
-			{nazwa: "Królewskie Opierdziny - The Greatest Hits", ilosc: "2030-2033", cena: 33.22};
+			{nazwa: "Królewskie Opierdziny - The Greatest Hits", ilosc: "2030-2033", cena: 33.22}];
 
 			s.sprawdz = function (co)
 				{
