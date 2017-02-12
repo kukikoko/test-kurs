@@ -14,17 +14,25 @@ body
 
 #header
 	{ 
+		position: absolute;
 		background-color: #3300cc;
 		opacity: 0.8;
 		border: 1px solid black;
 		border-radius: 20px;
 		box-shadow: 2px 2px 20px #003399;
 		margin-top: 20px;
-		padding-top: 20px;
-		padding-bottom: 15px;
+		padding-top: 30px;
+		padding-bottom: 22px;
 		color: white;
 		font-weight: bold;
 		font-size: 1.4em;
+	}
+
+#dead
+	{
+		position: absolute;
+		left: -15px;
+		bottom: -15px;
 	}
 
 #elementy
@@ -147,4 +155,7 @@ body
 		padding: 5px;
 	}
 
-
+.ery
+	{
+		padding-left : 10px;
+	}

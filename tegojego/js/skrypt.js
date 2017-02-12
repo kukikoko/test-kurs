@@ -122,9 +122,10 @@
 			k.haslo = "";
 			k.lista = Serwis.przekaz ();
 			k.wejscie = false;
-			k.muza = new Audio("music/tegies.mp3");
+			k.muza = new Audio("../music/tegies.mp3");
 			k.muza.autoplay = true;
 			k.muza.loop = true;
+
 
 			k.dodaj = function ()
 				{
@@ -136,6 +137,7 @@
 
 			k.nuta = function ()
 				{
+					console.log (k.muza);
 					if (k.soundIcon === "pics/rura.png")
 					{
 						k.soundIcon = "pics/morda.png";
@@ -172,7 +174,11 @@
 			{nazwa: "Zimmmmmmno Mu", ilosc: "2019", cena: 2.97},
 			{nazwa: "Krójże Mnie Tasakiem Losu", ilosc: "2020", cena: 8.32},
 			{nazwa: "Wolał wypić niż zaruchać", ilosc: "2020", cena: 4.31},
-			{nazwa: "Zakład mięsny w Kole (remix 2020)", ilosc: "2020", cena: 9.32}];
+			{nazwa: "Zakład mięsny w Kole (remix 2020)", ilosc: "2020", cena: 9.32},
+			{nazwa: "Skłóceni przy wódce", ilosc: "2023", cena: 10.22},
+			{nazwa: "Ostatniej zimy przestał stawać mi", ilosc: "2025", cena: 12.32},
+			{nazwa: "O kosturze i w żebraczym łachu", ilosc: "2027", cena: 14.33},
+			{nazwa: "Królewskie Opierdziny - The Greatest Hits", ilosc: "2030-2033", cena: 33.22};
 
 			s.sprawdz = function (co)
 				{
