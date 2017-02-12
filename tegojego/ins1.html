@@ -11,20 +11,19 @@
 	</tr>
 	</thead>
  <tbody>
- <tr ng-repeat="thing in $ctrl.rzeczy">
+ <tr ng-repeat="thing in $ctrl.ListaZapasowa">
 
  	<td>{{ $index + 1 }}</td>
  	<td>{{ thing.nazwa }}</td>
  	<td>{{ thing.ilosc }}</td>
  	<td>{{ thing.cena }}</td>
- 	<td><button class="btn btn-warning btn-xs" 
+ 	<td><button class="btn btn-xs" 
  	ng-click="$ctrl.won($index);">USUŃ Z LISTY</button></td>
  </tr>
  </tbody>
  </div>
+ <button id="guzik" class="text-center" ng-click="$ctrl.zamow();">ZAMÓW MUZĘ</button>
  </table>
-
-<button class="guziczek" ng-click="$ctrl.zamow();">ZAMÓW MUZĘ</button>
 
 <div class="zamowienie container text-center">
 TOWAR ZAMÓWIONO - ZOSTANIE WYSŁANY<br>
@@ -43,7 +42,7 @@ KOSZT CAŁKOWITY {{ $ctrl.cena + " PLN" }}
 </div>
 
 <div class="blad container text-center">
-NIE CHCESZ NIC KUPIC?<br></div>
+NIE CHCESZ NIC KUPIC?<br></div><br>
 <button id="guzik" ng-click="$ctrl.reseta();">
 RESETOWANIE ZAKUPÓW</button>
 

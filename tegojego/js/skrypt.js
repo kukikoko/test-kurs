@@ -39,20 +39,25 @@
 
 			$ctrl.zamow = function ()
 				{
-					if ($ctrl.ListaZapasowa.length > 0)
-					{
 					var sumowanie = 0;
 					for (var i=0; i<$ctrl.ListaZapasowa.length; i=i+1)
 						{
 							sumowanie =
 							sumowanie+$ctrl.ListaZapasowa[i].cena;
 						};
-					$ctrl.cena = sumowanie;
+					$ctrl.cena = Math.round(sumowanie*100)/100;
 					wyswietlamy = 2;
-					}
-					else
-					{ wyswietlamy = 3; };
 				};
+
+			$ctrl.won = function (co)
+				{
+					$ctrl.ListaZapasowa.splice(co, 1);
+					if ($ctrl.ListaZapasowa.length === 0)
+						{ 
+							wyswietlamy = 3;
+						};
+				};
+
 
 			$ctrl.$onInit = function ()
 				{
@@ -65,10 +70,6 @@
 					console.log ("changes: ",changeObj);
 				}
 
-			$ctrl.won = function (co)
-				{
-					$ctrl.ListaZapasowa.splice(co, 1);
-				}
 
 			$ctrl.remove = function (myIndex) 
 				{
@@ -81,8 +82,8 @@
 					if (wyswietlamy === 2)
 							{
 								var Elem1 =	$element.find('.zamowienie');
-								var Elem2 = $element.find('.guziczek');
-								var Elem3 = $element.find('.blad');
+								var Elem2 = $element.find('.blad');
+								var Elem3 = $element.find('.table');
 								Elem1.slideDown(900);
 								Elem2.slideUp(900);
 								Elem3.slideUp(900);
@@ -92,20 +93,20 @@
 					if (wyswietlamy === 1)
 							{
 								var Elem1 =	$element.find('.zamowienie');
-								var Elem2 = $element.find('.guziczek');
-								var Elem3 = $element.find('.blad');
+								var Elem2 = $element.find('.blad');
+								var Elem3 = $element.find('.table');
 								Elem1.slideUp(900);
-								Elem2.slideDown(900);
-								Elem3.slideUp(900);
+								Elem2.slideUp(900);
+								Elem3.slideDown(900);
 							}
 					else 
 							{
 								var Elem1 =	$element.find('.zamowienie');
-								var Elem2 = $element.find('.guziczek');
-								var Elem3 = $element.find('.blad');
+								var Elem2 = $element.find('.blad');
+								var Elem3 = $element.find('.table');
 								Elem1.slideUp(900);
-								Elem2.slideUp(900);
-								Elem3.slideDown(900);
+								Elem2.slideDown(900);
+								Elem3.slideUp(900);
 							};
 					};
 				};
@@ -157,7 +158,7 @@
 		{
 			var s = this;
 			s.menu = [
-			{nazwa: "Lubię Paczeć", ilosc: "2015", cena: 3.40},
+			{nazwa: "Lubię Paczeć", ilosc: "2015", cena: 3.41},
 			{nazwa: "Tego Jego", ilosc: "2014", cena: 3.22},
 			{nazwa: "Los Iwiczna Locos", ilosc: "2014", cena: 2.89},
 			{nazwa: "Gestapowski Płaszcz Życia", ilosc: "2017", cena: 4.43},
