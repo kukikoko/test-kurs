@@ -67,11 +67,17 @@ body
 		font-weight: bold;
 	}
 
+#guzik
+	{
+		margin-top: 5px;
+		margin-bottom: 9px;
+	}
+
 .guziczek
 	{
 		margin-top: 5px;
 		margin-bottom: 9px;
-		display: all;
+		display: none;
 	}
 
 #inputs
@@ -82,11 +88,13 @@ body
 
 #dysko
 	{
-		clear: left;
+		clear: right;
 	}
 
 .zamowienie
 	{
+		width: 72%;
+		margin: 0 auto 5px;
 		color: red;
 		font-size: 1.7em;
 		display: none;

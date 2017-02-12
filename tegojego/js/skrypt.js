@@ -35,7 +35,8 @@
 							$ctrl.remove (i-1);
 						};
 
-					$ctrl.cena=Math.round (ListaZamowienia.length * 100)/100;
+					$ctrl.cena=Math.round
+					($ctrl.ListaZamowienia.length * 100)/100;
 					return true;
 					}
 					else
@@ -63,6 +64,7 @@
 					$scope.$watch('$ctrl.zamow()',
 						function (newValue, oldValue)
 						{
+							console.log($element);
 							if (newValue === true)
 							{
 								var Elem1 =	$element.find('.zamowienie');
