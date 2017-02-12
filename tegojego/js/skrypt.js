@@ -81,7 +81,7 @@
 					if (co.nazwa === "tegojego" && co.ilosc === "push")
 					{
 						return true;
-					};
+					}
 					else { return false };
 				};
 
