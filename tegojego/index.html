@@ -47,9 +47,10 @@
 </div>
 
   <div class="container text-center" id="header">
-    SUPER EKSTRA STRONA TEGO JEGO
-  <img class="dead" src="pics/dead.png" alt="dead">
+  <p id="guzik">SUPER EKSTRA STRONA TEGO JEGO</p>
+
     <div class="container text-center" id="elementy">
+    <img class="dead" src="pics/dead.png" alt="dead">
     <div ng-hide="k.wejscie">
     <p id="inputs">podaj login:</p><input type="text" ng-model="k.login">
     <p id="inputs">podaj hasło:</p><input type="password" ng-model="k.haslo"><br>
@@ -60,7 +61,7 @@
     <komponent  
     rzeczy="k.lista" 
     tytul="jesteś zalogowany" 
-    wywal="k.wywal(index)">
+    wywal="k.wywal()">
     </komponent>
     <p>.........................</p>
     </div>

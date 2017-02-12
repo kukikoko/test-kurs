@@ -71,9 +71,9 @@
 				}
 
 
-			$ctrl.remove = function (myIndex) 
+			$ctrl.remove = function () 
 				{
-			    	$ctrl.wywal({ index: myIndex });
+			    	$ctrl.wywal();
 				};
 
 
@@ -122,7 +122,7 @@
 			k.haslo = "";
 			k.lista = Serwis.przekaz ();
 			k.wejscie = false;
-			k.muza = new Audio("../music/tegies.mp3");
+			k.muza = new Audio("music/tegies.mp3");
 			k.muza.autoplay = true;
 			k.muza.loop = true;
 
@@ -152,9 +152,9 @@
 					};
 				};
 
-			k.wywal = function (co)
+			k.wywal = function ()
 				{
-					Serwis.xxx (co);
+					k.wejscie = Serwis.reseta ();
 				};
 		}
 	
@@ -194,9 +194,9 @@
 					return s.menu;
 				};
 
-			s.xxx = function (co)
+			s.reseta = function ()
 				{
-					s.menu.splice (co, 1);
+					return false;
 				}
 		};
 
