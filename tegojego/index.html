@@ -23,11 +23,11 @@
     ng-controller="Kontroler as k">
     <div ng-hide="k.wejscie">
     <p id="inputs">podaj login:</p><input type="text" ng-model="k.jedzenie">
-    <p id="inputs">podaj hasło:</p><input type="text" ng-model="k.ilosc"><br>
+    <p id="inputs">podaj hasło:</p><input type="password" ng-model="k.ilosc"><br>
     <button id="guziczek" ng-click="k.dodaj();">ZALOGUJ</button>
     </div>
 
-    <div id="spis">
+    <div id="spis" ng-show="k.wejscie">
     <komponent  
     rzeczy="k.lista" 
     tytul="CZESC - jestes zalogowany" 
