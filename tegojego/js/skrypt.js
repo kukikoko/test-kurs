@@ -31,6 +31,7 @@
 					console.log ("A HUJA TAM!");
 					$ctrl.ListaZapasowa.length = 0;
 					$ctrl.Kupilim.length = 0;
+					$ctrl.cena = 0;
 					for (var i=0; i<$ctrl.rzeczy.length; i++)
 					{
 						$ctrl.ListaZapasowa.push($ctrl.rzeczy[i]);
