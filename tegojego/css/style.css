@@ -1,6 +1,6 @@
 body
 	{
-		font-family: "Arial", sans-serif;
+		font-family: 'Varela Round', sans-serif;
 		animation: ruch 300s linear infinite alternate;
 		background-image: url("../pics/dots2.png"), url("../pics/dots.png");
 	}
@@ -55,12 +55,24 @@ body
 
 #ikonka
 		{
+			width: 120px;
+			border: 1px solid black;
+			border-radius: 10px;
 			margin-top: 15px;
 			margin-bottom: 15px;
-			border: 2px solid black;
 		}
 
-#ikonka: hover
+#ikonka1
+		{
+			width: 70px;
+			border: 1px solid black;
+			border-radius: 10px;
+			margin-top: 15px;
+			margin-bottom: 15px;
+			font-size: 11px;
+		}
+
+#ikonka: hover, #ikonka1: hover
 		{
 		box-shadow: 2px 6px 6px 2px #3f0c1f;
 		}
@@ -84,11 +96,6 @@ body
 	{
 		margin-top: 5px;
 		margin-bottom: 1px;
-	}
-
-#dysko
-	{
-		clear: right;
 	}
 
 .zamowienie
@@ -126,22 +133,20 @@ body
 		display: none;
 	}
 
-.table
+.kupilem
 	{
 		display: none;
 	}
 
 #linki
 	{
+		
 		font-size: 14px;
 		color: black;
 		font-weight: bold;
+		margin-top: 20px;
+		margin-bottom: 15px;
+		padding: 5px;
 	}
 
-#muzaoff
-	{
-		margin-top: 20px;
-		margin-bottom: 10px;
-		padding-top: 8px;
-		padding-bottom: 8px;
-	}
+

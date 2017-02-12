@@ -7,6 +7,7 @@
     <title>Pawel Banasiewicz</title>
 
     <!-- Bootstrap -->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 
@@ -14,19 +15,37 @@
 
   <body ng-controller="Kontroler as k">
 
-  <audio src="music/tegies.mp3" type="audio/mpeg" autoplay loop {{k.cisza}}>
+  <audio src="music/tegies.mp3" type="audio/mpeg" autoplay loop muted={{k.cisza}}>
   <p>If you are reading this, it is because your browser does not support the audio element.</p>
   </audio>
 
-  <div class="container" id="muzaoff">
+<div class="container" id="linki">
 
-  <div class="col-md-2 col-sm-3 col-xs-6 text-center" id="ikonka">
-  <a href ng-click="k.nuta();">
-  <img src="{{k.soundIcon}}" alt="cisza/dzwiek">
-  </a><br><p>{{k.soundText}}</p>
-  </div>
+<div class="col-md-2 col-sm-3 col-xs-6 text-center" id="ikonka1">
+<a href ng-click="k.nuta();">
+<img src="{{k.soundIcon}}" alt="cisza/dzwiek">
+</a><br><p>{{k.soundText}}</p>
+</div>
 
-  </div>
+<div class="col-md-4 col-sm-12 col-xs-12 text-center" id="ikonka">
+<a href="http://www.youtube.com" target="_blank">
+<img src="pics/ikona1.png" alt="ikona1">
+</a><br><p>jutub</p>
+</div>
+
+<div class="col-md-4 col-sm-12 col-xs-12 text-center" id="ikonka">
+<a href="http://www.onet.pl" target="_blank">
+<img src="pics/ikona2.png" alt="ikona2">
+</a><br><p>koncertomania</p>
+</div>
+
+<div class="col-md-4 col-sm-12 col-xs-12 text-center" id="ikonka">
+<a href="https://pl.wikipedia.org/wiki/Telefon" target="_blank">
+<img src="pics/ikona3.png" alt="ikona3">
+</a><br><p>telefon</p>
+</div>
+
+</div>
 
   <div class="container text-center" id="header">
     SUPER EKSTRA STRONA TEGO JEGO
@@ -51,25 +70,6 @@
 </div>
 </div>
 
-<div class="container" id="linki">
-<div class="col-md-4 col-sm-12 col-xs-12 text-center" id="ikonka">
-<a href="http://www.youtube.com" target="_blank">
-<img src="pics/ikona1.png" alt="ikona1">
-</a><br><p>jutub</p>
-</div>
-
-<div class="col-md-4 col-sm-12 col-xs-12 text-center" id="ikonka">
-<a href="http://www.onet.pl" target="_blank">
-<img src="pics/ikona2.png" alt="ikona2">
-</a><br><p>koncertomania</p>
-</div>
-
-<div class="col-md-4 col-sm-12 col-xs-12 text-center" id="ikonka">
-<a href="https://pl.wikipedia.org/wiki/Telefon" target="_blank">
-<img src="pics/ikona3.png" alt="ikona3">
-</a><br><p>telefon</p>
-</div>
-</div>
 
 <div id="stopka" class="container text-center">
       &copy;  2017

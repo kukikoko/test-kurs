@@ -1,7 +1,7 @@
 
 <p>{{ $ctrl.tytul }}</p>
+<div class="container kupilem">
 <table class="table">
-  <div class="container">
     <thead>
     <tr>
       <th>#</th>
@@ -21,18 +21,19 @@
  	ng-click="$ctrl.won($index);">USUŃ Z LISTY</button></td>
  </tr>
  </tbody>
- </div>
- <button id="guzik" class="text-center" ng-click="$ctrl.zamow();">ZAMÓW MUZĘ</button>
  </table>
+ <button id="guzik" class="text-center" ng-click="$ctrl.zamow();">ZAMÓW MUZĘ</button>
+ </div>
 
 <div class="zamowienie container text-center">
-TOWAR ZAMÓWIONO - ZOSTANIE WYSŁANY<br>
+ZROBIONE! - WYŚLEMY<br>
 W CIĄGU 24 GODZIN<br>
+wyprzedzamy czas...<br>
 <img src="pics/thumb.png" alt="thumb up"><br>
 <div id="kupione" class="container">
 <h>ZAMÓWIONE POZYCJE</h>
 <ol>
-<li ng-repeat="pozycja in $ctrl.ListaZamowienia">
+<li ng-repeat="pozycja in $ctrl.ListaZapasowa">
 {{ pozycja. nazwa }}
 </li>
 KOSZT CAŁKOWITY {{ $ctrl.cena + " PLN" }}

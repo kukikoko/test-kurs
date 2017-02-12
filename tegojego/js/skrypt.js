@@ -83,7 +83,7 @@
 							{
 								var Elem1 =	$element.find('.zamowienie');
 								var Elem2 = $element.find('.blad');
-								var Elem3 = $element.find('.table');
+								var Elem3 = $element.find('.kupilem');
 								Elem1.slideDown(900);
 								Elem2.slideUp(900);
 								Elem3.slideUp(900);
@@ -94,7 +94,7 @@
 							{
 								var Elem1 =	$element.find('.zamowienie');
 								var Elem2 = $element.find('.blad');
-								var Elem3 = $element.find('.table');
+								var Elem3 = $element.find('.kupilem');
 								Elem1.slideUp(900);
 								Elem2.slideUp(900);
 								Elem3.slideDown(900);
@@ -103,7 +103,7 @@
 							{
 								var Elem1 =	$element.find('.zamowienie');
 								var Elem2 = $element.find('.blad');
-								var Elem3 = $element.find('.table');
+								var Elem3 = $element.find('.kupilem');
 								Elem1.slideUp(900);
 								Elem2.slideDown(900);
 								Elem3.slideUp(900);
@@ -116,7 +116,7 @@
 	function Kontroler (Serwis)
 		{
 			var k = this;
-			k.cisza = "";
+			k.cisza = false;
 			k.soundIcon = "pics/rura.png";
 			k.soundText = "wyłącz muzę!!!";
 			k.login = "";
@@ -137,13 +137,13 @@
 					if (k.soundIcon === "pics/rura.png")
 					{
 						k.soundIcon = "pics/morda.png";
-						k.cisza = "muted";
+						k.cisza = true;
 						k.soundText = "za cicho tu!";
 					}
 					else
 					{
 						k.soundIcon = "pics/rura.png";
-						k.cisza = "";
+						k.cisza = false;
 						k.soundText = "wyłącz muzę!!!";
 					};
 				};
