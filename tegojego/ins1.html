@@ -14,7 +14,7 @@
 </li>
 </ul>
 
-<button id="guziczek" ng-click="$ctrl.zamow();">ZAMOW PRODUKTY</button>
+<button class="guziczek" ng-click="$ctrl.zamow();">ZAMÓW MUZĘ</button>
 
 <div class="zamowienie container text-center">
 TOWAR ZAMÓWIONO - ZOSTANIE WYSŁANY<br>
@@ -26,7 +26,7 @@ W CIĄGU 24 GODZIN<br>
 <li ng-repeat="pozycja in $ctrl.ListaZamowienia">
 {{ pozycja. nazwa }}
 </li>
-KOSZT CAŁKOWITY {{ $ctrl.ListaZamowienia.length * 2.58 + " PLN" }}
+KOSZT CAŁKOWITY {{ $ctrl.cena + " PLN" }}
 </ol>
 
 </div>

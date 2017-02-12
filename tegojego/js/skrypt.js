@@ -21,17 +21,25 @@
 		{
 			var $ctrl = this;
 			$ctrl.ListaZamowienia = [];
+			$ctrl.cena = 0;
+
 
 
 			$ctrl.zamow = function ()
 				{
+					if ($ctrl.rzeczy.length > 0)
+					{
 					for (var i=$ctrl.rzeczy.length; i>0; i=i-1)
 						{
 							$ctrl.ListaZamowienia.push($ctrl.rzeczy[i-1]);
 							$ctrl.remove (i-1);
 						};
 
+					$ctrl.cena=Math.round (ListaZamowienia.length * 100)/100;
 					return true;
+					}
+					else
+					{	retun false };
 				};
 
 			$ctrl.$onInit = function ()
@@ -51,20 +59,23 @@
 
 			$ctrl.$postlink = function ()
 				{
+					console.log($element);
 					$scope.$watch('$ctrl.zamow()',
 						function (newValue, oldValue)
 						{
 							if (newValue === true)
 							{
-								var warningElem =
-								$element.find('div.zamowienie');
-								warningElem.slideDown(900);
+								var Elem1 =	$element.find('.zamowienie');
+								var Elem2 = $element.find('.guziczek');
+								Elem1.slideDown(900);
+								Elem2.slideUp(900);
 							}
 							else
 							{
-								var warningElem =
-								$element.find('div.zamowienie');
-								warningElem.slideUp(900);
+								var Elem1 =	$element.find('.zamowienie');
+								var Elem2 = $element.find('.guziczek');
+								Elem1.slideUp(900);
+								Elem2.slideDown(900);
 							};
 						});
 

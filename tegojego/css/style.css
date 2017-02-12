@@ -67,10 +67,11 @@ body
 		font-weight: bold;
 	}
 
-#guziczek
+.guziczek
 	{
 		margin-top: 5px;
 		margin-bottom: 9px;
+		display: all;
 	}
 
 #inputs
@@ -81,7 +82,7 @@ body
 
 #dysko
 	{
-		clear: both;
+		clear: left;
 	}
 
 .zamowienie
