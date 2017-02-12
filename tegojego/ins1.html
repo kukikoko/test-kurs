@@ -1,18 +1,28 @@
 
 <p>{{ $ctrl.tytul }}</p>
-<ul class="list-unstyled">
-<li ng-repeat="pozycja in $ctrl.rzeczy">
+<table class="table">
+  <div class="container">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Nazwa numeru</th>
+      <th>Rok powstania</th>
+      <th>Cena</th>
+	</tr>
+	</thead>
+ <tbody>
+ <tr ng-repeat="thing in $ctrl.rzeczy">
 
-<div class="col-md-6" id="dysko">
-{{ pozycja.nazwa + " // " + pozycja.ilosc }}
-</div>
-
-<div class="col-md-6" id="dysko">
-<button ng-click="$ctrl.remove($index);">WYRZUC Z LISTY</button>
-</div>
-
-</li>
-</ul>
+ 	<td>{{ $index + 1 }}</td>
+ 	<td>{{ thing.nazwa }}</td>
+ 	<td>{{ thing.ilosc }}</td>
+ 	<td>{{ thing.cena }}</td>
+ 	<td><button class="btn btn-warning btn-xs" 
+ 	ng-click="$ctrl.won($index);">USUŃ Z LISTY</button></td>
+ </tr>
+ </tbody>
+ </div>
+ </table>
 
 <button class="guziczek" ng-click="$ctrl.zamow();">ZAMÓW MUZĘ</button>
 
@@ -21,7 +31,7 @@ TOWAR ZAMÓWIONO - ZOSTANIE WYSŁANY<br>
 W CIĄGU 24 GODZIN<br>
 <img src="pics/thumb.png" alt="thumb up"><br>
 <div id="kupione" class="container">
-<h2>ZAMÓWIONE POZYCJE</h2>
+<h>ZAMÓWIONE POZYCJE</h>
 <ol>
 <li ng-repeat="pozycja in $ctrl.ListaZamowienia">
 {{ pozycja. nazwa }}
@@ -33,9 +43,8 @@ KOSZT CAŁKOWITY {{ $ctrl.cena + " PLN" }}
 </div>
 
 <div class="blad container text-center">
-NIE CHCESZ NIC KUPIC?<br>
+NIE CHCESZ NIC KUPIC?<br></div>
 <button id="guzik" ng-click="$ctrl.reseta();">
-spróbuj jeszcze raz</button>
-</div>
+RESETOWANIE ZAKUPÓW</button>
 
 
