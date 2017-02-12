@@ -11,6 +11,10 @@ body
         100% {background-position:10000px 0, 7500px 0;}
       }
 
+input
+	{
+		text-align: center;
+	}
 
 #header
 	{ 
@@ -134,7 +138,7 @@ body
 
 .blad
 	{
-		width: 50%;
+		width: 87%;
 		margin: 1px auto 5px;
 		color: red;
 		font-size: 1.3em;
@@ -163,15 +167,27 @@ body
 		padding-left : 10px;
 	}
 
-@media (max-width: 400px)
+@media (max-width: 480px)
 {
-	#kupione
-		{
-		font-size: 0.6em;
-		}
+
+	input
+	{
+		width: 75%;
+	}
 
 	#spis
-		{
-		font-size: 0.6em;
-		}
+	{
+		width: 95%;
+		font-size: 0.5em;
+	}
+
+	#kupione
+	{
+		font-size: 0.5em;
+	}
+
+	.blad
+	{
+		font-size: 0.9em;
+	}
 }
