@@ -116,7 +116,7 @@
 	function Kontroler (Serwis)
 		{
 			var k = this;
-			k.cisza = false;
+			k.cisza = "";
 			k.soundIcon = "pics/rura.png";
 			k.soundText = "wyłącz muzę!!!";
 			k.login = "";
@@ -137,13 +137,13 @@
 					if (k.soundIcon === "pics/rura.png")
 					{
 						k.soundIcon = "pics/morda.png";
-						k.cisza = true;
+						k.cisza = "muted";
 						k.soundText = "za cicho tu!";
 					}
 					else
 					{
 						k.soundIcon = "pics/rura.png";
-						k.cisza = false;
+						k.cisza = "";
 						k.soundText = "wyłącz muzę!!!";
 					};
 				};

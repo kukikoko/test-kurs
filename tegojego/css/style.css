@@ -27,7 +27,7 @@ body
 
 #elementy
 		{
-			width: 75%;
+			width: 80%;
 			height: auto;
 			padding-bottom: 4px;
 			padding-top: 7px;
@@ -44,7 +44,7 @@ body
 			background-color: #00ffcc;
 			opacity: 0.9;
 			width: 75%;
-			margin: 0 auto 15px;
+			margin: 5px auto 15px;
 			padding-left: 15px;
 			border: 1px solid black;
 			border-radius: 10px;
@@ -55,26 +55,26 @@ body
 
 #ikonka
 		{
-			width: 120px;
+			width: 140px;
 			border: 1px solid black;
 			border-radius: 10px;
-			margin-top: 15px;
-			margin-bottom: 15px;
+			margin: 10px auto 10px;
+			font-size: 10px;
 		}
 
 #ikonka1
 		{
+			padding-top: 4px;
 			width: 70px;
 			border: 1px solid black;
 			border-radius: 10px;
-			margin-top: 15px;
-			margin-bottom: 15px;
-			font-size: 11px;
+			margin: 10px auto 10px;
+			font-size: 10px;
 		}
 
 #ikonka: hover, #ikonka1: hover
 		{
-		box-shadow: 2px 6px 6px 2px #3f0c1f;
+			box-shadow: 0 0 20px #3f0c1f;
 		}
 
 #stopka
@@ -101,7 +101,7 @@ body
 .zamowienie
 	{
 		width: 72%;
-		margin: 0 auto 5px;
+		margin: 3px auto 5px;
 		color: white;
 		font-size: 1.2em;
 		display: none;
@@ -126,7 +126,7 @@ body
 .blad
 	{
 		width: 50%;
-		margin: 0 auto 5px;
+		margin: 1px auto 5px;
 		color: red;
 		font-size: 1.3em;
 		padding: 5px;
