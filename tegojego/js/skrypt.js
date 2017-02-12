@@ -29,7 +29,7 @@
 				{
 					console.log ("A HUJA TAM!");
 					$ctrl.ListaZapasowa.length = 0;
-					for (i=0; i<$ctrl.rzeczy.length; i++)
+					for (var i=0; i<$ctrl.rzeczy.length; i++)
 					{
 						$ctrl.ListaZapasowa.push($ctrl.rzeczy[i]);
 					}
@@ -115,17 +115,36 @@
 	function Kontroler (Serwis)
 		{
 			var k = this;
-			k.jedzenie = "";
-			k.ilosc = "";
+			k.cisza = "";
+			k.soundIcon = "pics/rura.png";
+			k.soundText = "wyłącz muzę!!!";
+			k.login = "";
+			k.haslo = "";
 			k.lista = Serwis.przekaz ();
 			k.wejscie = false;
 
 			k.dodaj = function ()
 				{
-					var pozycja = {nazwa: k.jedzenie, ilosc: k.ilosc};
+					var pozycja = {lg: k.login, ps: k.haslo};
 					k.wejscie = Serwis.sprawdz (pozycja);
-					k.jedzenie = "";
-					k.ilosc = "";
+					k.login = "";
+					k.haslo = "";
+				};
+
+			k.nuta = function ()
+				{
+					if (k.soundIcon === "pics/rura.png")
+					{
+						k.soundIcon = "pics/morda.png";
+						k.cisza = "muted";
+						k.soundText = "za cicho tu!";
+					}
+					else
+					{
+						k.soundIcon = "pics/rura.png";
+						k.cisza = "";
+						k.soundText = "wyłącz muzę!!!";
+					};
 				};
 
 			k.wywal = function (co)
@@ -148,11 +167,13 @@
 			{nazwa: "Kiedy Idę Najebany (ulicami mego miasta w dzień)", ilosc: "2019", cena: 5.23},
 			{nazwa: "Eksmisja Komornicza", ilosc: "2019", cena: 3.43},
 			{nazwa: "Zimmmmmmno Mu", ilosc: "2019", cena: 2.97},
-			{nazwa: "Krójże Mnie Tasakiem Losu", ilosc: "2020", cena: 8.32}];
+			{nazwa: "Krójże Mnie Tasakiem Losu", ilosc: "2020", cena: 8.32},
+			{nazwa: "Wolał wypić niż zaruchać", ilosc: "2020", cena: 4.31},
+			{nazwa: "Zakład mięsny w Kole (remix 2020)", ilosc: "2020", cena: 9.32}];
 
 			s.sprawdz = function (co)
 				{
-					if (co.nazwa === "tegojego" && co.ilosc === "push")
+					if (co.lg === "tegojego" && co.ps === "push")
 					{
 						return true;
 					}
