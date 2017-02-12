@@ -59,17 +59,17 @@ input
 .logout
 	{
 		position: absolute;
-		left: 10px;
-		bottom: 95px;
+		left: 15px;
+		bottom: 15px;
 		color: black;
 	}
 
 .licznik
 	{
 		position: absolute;
-		right: 25px;
+		right: 15px;
 		top: 15px;
-		width: 50px;
+		width: 75px;
 		font-size: 0.9em;
 		display: none;
 		color: white;

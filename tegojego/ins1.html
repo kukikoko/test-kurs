@@ -6,7 +6,7 @@
 <br><p>wyloguj się</p></a>
 
 <div class="licznik text-center">kupiłeś<br>
-{{$ctrl.ListaKupionych.length}} numerów<br>
+{{$ctrl.Kupilim.length}} szt.<br>
 za {{$ctrl.cena}} PLN</div>
 
 
@@ -44,7 +44,7 @@ ZAMÓWIENIE<br>
 <div id="kupione" class="container">
 <h>ZAMÓWIONE POZYCJE</h>
 <ul class="ery list-unstyled">
-<li ng-repeat="pozycja in $ctrl.ListaKupionych">
+<li ng-repeat="pozycja in $ctrl.Kupilim">
 == {{ pozycja. nazwa }}
 </li>
 KOSZT CAŁKOWITY {{ $ctrl.cena + " PLN" }}

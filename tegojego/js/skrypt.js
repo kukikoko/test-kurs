@@ -21,9 +21,8 @@
 		{
 			var $ctrl = this;
 			var wyswietlamy;
-			$ctrl.ListaKupionych = [];
-			$ctrl.ListaZapasowa = [];
-			$ctrl.IloscKupionych = 0;
+			$ctrl.Kupilim = new Array ();
+			$ctrl.ListaZapasowa = new Array ();
 			$ctrl.cena = 0;
 
 
@@ -31,8 +30,7 @@
 				{
 					console.log ("A HUJA TAM!");
 					$ctrl.ListaZapasowa.length = 0;
-					$ctrl.ListaKupionych.length = 0;
-					$ctrl.IloscKupionych = 0;
+					$ctrl.Kupilim.length = 0;
 					for (var i=0; i<$ctrl.rzeczy.length; i++)
 					{
 						$ctrl.ListaZapasowa.push($ctrl.rzeczy[i]);
@@ -46,25 +44,28 @@
 					wyswietlamy = 4;
 				};
 
+
+			$ctrl.kup = function (numer, co)
+				{
+					$ctrl.Kupilim.push(co);
+					$ctrl.ListaZapasowa.splice(numer, 1);
+					if (wyswietlamy === 1) { wyswietlamy = 2 };
+					$ctrl.policzCene();
+				};
+
 			$ctrl.policzCene = function ()
 				{
 					var sumowanie = 0;
-					for (var i=0; i<$ctrl.ListaKupionych.length; i=i+1)
+					for (var i=0; i<$ctrl.Kupilim.length; i=i+1)
 						{
-							console.log (ListaKupionych);
+							console.log ($ctrl.Kupilim);
 							sumowanie =
-							sumowanie+$ctrl.ListaKupionych[i].cena;
+							sumowanie + $ctrl.Kupilim[i].cena;
 						};
 					$ctrl.cena = Math.round(sumowanie*100)/100;
 				};
 
-			$ctrl.kup = function (numer, co)
-				{
-					$ctrl.ListaKupionych.push($ctrl.ListaZapasowa[co]);
-					$ctrl.ListaZapasowa.splice(co, 1);
-					if (wyswietlamy === 1) { wyswietlamy = 2 };
-					$ctrl.policzCene();
-				};
+
 
 			$ctrl.karta = function ()
 				{
