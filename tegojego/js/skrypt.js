@@ -146,7 +146,7 @@
 								blad.slideUp(900);
 								dokupienia.slideUp(900);
 								final.slideDown(900);
-								licznik.slideUp(900);																
+								licznik.slideDown(900);																
 							};
 					};
 				};
