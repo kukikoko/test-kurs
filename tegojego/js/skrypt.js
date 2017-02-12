@@ -116,13 +116,15 @@
 	function Kontroler (Serwis)
 		{
 			var k = this;
-			k.cisza = 0.8;
 			k.soundIcon = "pics/rura.png";
 			k.soundText = "wyłącz muzę!!!";
 			k.login = "";
 			k.haslo = "";
 			k.lista = Serwis.przekaz ();
 			k.wejscie = false;
+			k.muza = new Audio("music/tegies.mp3");
+			k.muza.autoplay = true;
+			k.muza.loop = true;
 
 			k.dodaj = function ()
 				{
@@ -137,14 +139,14 @@
 					if (k.soundIcon === "pics/rura.png")
 					{
 						k.soundIcon = "pics/morda.png";
-						k.cisza = 0;
 						k.soundText = "za cicho tu!";
+						k.muza.pause();
 					}
 					else
 					{
 						k.soundIcon = "pics/rura.png";
-						k.cisza = 0.8;
 						k.soundText = "wyłącz muzę!!!";
+						k.muza.play();
 					};
 				};
 

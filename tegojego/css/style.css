@@ -17,9 +17,11 @@ body
 		background-color: #3300cc;
 		opacity: 0.8;
 		border: 1px solid black;
-		border-radius: 10px;
-		box-shadow: 0 0 20px #3f0c1f;
-		margin-top:20px;
+		border-radius: 20px;
+		box-shadow: 2px 2px 20px #003399;
+		margin-top: 20px;
+		padding-top: 20px;
+		padding-bottom: 15px;
 		color: white;
 		font-weight: bold;
 		font-size: 1.4em;
@@ -29,11 +31,13 @@ body
 		{
 			width: 80%;
 			height: auto;
-			padding-bottom: 4px;
-			padding-top: 7px;
+			padding-bottom: 15px;
+			padding-top: 17px;
 			margin-bottom: 15px;
-			border: 3px solid #eee;
-			background-color: #669999;
+			border: 2px solid black;
+			border-radius: 15px;
+			background-color: #33ccff;
+			box-shadow: 2px 2px 20px #003399;
 			opacity: 0.8;
 			font-size: 0.7em;
 			color: black;
@@ -41,14 +45,14 @@ body
 
 #spis
 		{
-			background-color: #00ffcc;
+			background-color: #3399ff;
 			opacity: 0.9;
 			width: 75%;
 			margin: 5px auto 15px;
 			padding-left: 15px;
 			border: 1px solid black;
 			border-radius: 10px;
-			box-shadow: 0 0 20px #3f0c1f;
+			box-shadow: 2px 2px 20px #003399;
 			font-size: 0.9em;
 		}
 
@@ -68,8 +72,7 @@ body
 
 #ikonka: hover, #ikonka1: hover
 		{
-			background-color: blue;
-			box-shadow: 0 0 20px #3f0c1f;
+			box-shadow: 2px 2px 20px #003399;
 		}
 
 #stopka
@@ -115,7 +118,7 @@ body
 		opacity: 0.9;
 		border: 1px solid black;
 		border-radius: 10px;
-		box-shadow: 0 0 20px #3f0c1f;
+		box-shadow: 2px 2px 20px #003399;
 	}
 
 .blad
