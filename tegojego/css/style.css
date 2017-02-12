@@ -60,15 +60,16 @@ input
 	{
 		position: absolute;
 		left: 10px;
-		bottom: 50px;
+		bottom: 95px;
 		color: black;
 	}
 
 .licznik
 	{
 		position: absolute;
-		right: 40px;
+		right: 25px;
 		top: 15px;
+		font-size: 0.7em;
 		display: none;
 	}
 

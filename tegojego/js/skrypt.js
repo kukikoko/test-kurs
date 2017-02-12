@@ -51,6 +51,7 @@
 					var sumowanie = 0;
 					for (var i=0; i<$ctrl.ListaKupionych.length; i=i+1)
 						{
+							console.log (ListaKupionych);
 							sumowanie =
 							sumowanie+$ctrl.ListaKupionych[i].cena;
 						};
