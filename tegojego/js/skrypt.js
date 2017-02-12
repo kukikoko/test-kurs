@@ -20,9 +20,20 @@
 	function KontrolerKomponentu ($scope, $element)
 		{
 			var $ctrl = this;
+			var wyswietlamy;
+			var ListaZapasowa;
 			$ctrl.ListaZamowienia = [];
 			$ctrl.cena = 0;
 
+
+			$ctrl.reseta = function ()
+				{
+					console.log ("A HUJA TAM!");
+					for (var i=0; i<ListaZapasowa.length; i=i-1)
+					{
+						console.log ("PIZDA");
+					}
+				};
 
 
 			$ctrl.zamow = function ()
@@ -37,15 +48,17 @@
 
 					$ctrl.cena=Math.round
 					($ctrl.ListaZamowienia.length * 100)/100;
-					return true;
+					wyswietlamy = 2;
 					}
 					else
-					{	return false };
+					{ wyswietlamy = 3; };
 				};
 
 			$ctrl.$onInit = function ()
 				{
 					console.log ("ON INIT");
+					wyswietlamy = 1;
+					ListaZapasowa = $ctrl.rzeczy;
 				};
 
 			$ctrl.$onChanges = function (changeObj)
@@ -58,31 +71,40 @@
 			    	$ctrl.wywal({ index: myIndex });
 				};
 
-			$ctrl.$postlink = function ()
+
+			$ctrl.$doCheck = function ()
 				{
-					console.log($element);
-					$scope.$watch('$ctrl.zamow()',
-						function (newValue, oldValue)
-						{
-							console.log($element);
-							if (newValue === true)
+					if (wyswietlamy === 2)
 							{
 								var Elem1 =	$element.find('.zamowienie');
 								var Elem2 = $element.find('.guziczek');
+								var Elem3 = $element.find('.blad');
 								Elem1.slideDown(900);
 								Elem2.slideUp(900);
+								Elem3.slideup(900);
 							}
-							else
+					else
+					{
+					if (wyswietlamy === 1)
 							{
 								var Elem1 =	$element.find('.zamowienie');
 								var Elem2 = $element.find('.guziczek');
+								var Elem3 = $element.find('.blad');
 								Elem1.slideUp(900);
 								Elem2.slideDown(900);
+								Elem3.slideUp(900);
+							}
+					else 
+							{
+								var Elem1 =	$element.find('.zamowienie');
+								var Elem2 = $element.find('.guziczek');
+								var Elem3 = $element.find('.blad');
+								Elem1.slideUp(900);
+								Elem2.slideUp(900);
+								Elem3.slideDown(900);
 							};
-						});
-
+					};
 				};
-
 		}
 
 	Kontroler.$inject = ['Serwis'];

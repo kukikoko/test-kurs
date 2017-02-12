@@ -95,8 +95,8 @@ body
 	{
 		width: 72%;
 		margin: 0 auto 5px;
-		color: red;
-		font-size: 1.7em;
+		color: white;
+		font-size: 1.2em;
 		display: none;
 	}
 
@@ -108,8 +108,18 @@ body
 		font-size: 0.7em;
 		color: black;
 		background-color: #ccff66;
-		opacity: 0.7;
+		opacity: 0.9;
 		border: 1px solid black;
 		border-radius: 10px;
 		box-shadow: 0 0 20px #3f0c1f;
+	}
+
+.blad
+	{
+		width: 50%;
+		margin: 0 auto 5px;
+		color: red;
+		font-size: 1.3em;
+		padding: 5px;
+		display: none;
 	}
