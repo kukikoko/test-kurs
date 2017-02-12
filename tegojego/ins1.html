@@ -32,10 +32,9 @@ za {{$ctrl.cena}} PLN</div>
  </tr>
  </tbody>
  </table>
-
+ </div>
  <button id="guzik" class="text-center finalizacja"
  ng-click="$ctrl.zamow();">ZAMÓW MUZĘ</button>
- </div>
 
 <div class="zamowienie container text-center">
 ZROBIONE! - SPRAWDŹ SWOJE<br>
@@ -57,7 +56,8 @@ KOSZT CAŁKOWITY {{ $ctrl.cena + " PLN" }}
 <br>GROSZEM TO TY NIE ŚMIERDZISZ....</div><br>
 
 <div class="container zamowienie text-center">
-<p id="inputs">podaj nr karty:</p><input type="text">
+<p id="inputs">podaj nr karty:</p>
+<input type="text" ng-model="$ctrl.cc">
 <br>
 <button id="guzik" ng-click="$ctrl.karta();">
 KUPUJ!</button>

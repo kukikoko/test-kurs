@@ -24,6 +24,7 @@
 			$ctrl.Kupilim = new Array ();
 			$ctrl.ListaZapasowa = new Array ();
 			$ctrl.cena = 0;
+			$ctrl.cc = "";
 
 
 			$ctrl.reseta = function ()
@@ -32,6 +33,8 @@
 					$ctrl.ListaZapasowa.length = 0;
 					$ctrl.Kupilim.length = 0;
 					$ctrl.cena = 0;
+					$ctrl.cc = "";
+
 					for (var i=0; i<$ctrl.rzeczy.length; i++)
 					{
 						$ctrl.ListaZapasowa.push($ctrl.rzeczy[i]);
@@ -50,6 +53,8 @@
 				{
 					$ctrl.Kupilim.push(co);
 					$ctrl.ListaZapasowa.splice(numer, 1);
+					if (wyswietlamy === 2 && $ctrl.ListaZapasowa.length === 0)
+						{ wyswietlamy = 5 };
 					if (wyswietlamy === 1) { wyswietlamy = 2 };
 					$ctrl.policzCene();
 				};
@@ -88,6 +93,7 @@
 
 			$ctrl.remove = function () 
 				{
+					$ctrl.reseta();
 			    	$ctrl.wywal();
 				};
 
@@ -133,6 +139,14 @@
 								dokupienia.slideUp(900);
 								final.slideUp(900);
 								licznik.slideUp(900);								
+							};
+					if (wyswietlamy === 5)
+							{
+								zam.slideUp(900);
+								blad.slideUp(900);
+								dokupienia.slideUp(900);
+								final.slideDown(900);
+								licznik.slideUp(900);																
 							};
 					};
 				};
