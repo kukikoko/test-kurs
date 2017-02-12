@@ -37,12 +37,12 @@ wyprzedzamy czas...<br>
 <img src="pics/thumb.png" alt="thumb up"><br>
 <div id="kupione" class="container">
 <h>ZAMÓWIONE POZYCJE</h>
-<ol class="ery">
+<ul class="ery list-unstyled">
 <li ng-repeat="pozycja in $ctrl.ListaZapasowa">
-{{ pozycja. nazwa }}
+== {{ pozycja. nazwa }}
 </li>
 KOSZT CAŁKOWITY {{ $ctrl.cena + " PLN" }}
-</ol>
+</ul>
 
 </div>
 </div>
