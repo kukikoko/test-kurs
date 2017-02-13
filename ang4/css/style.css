@@ -2,7 +2,7 @@ body
 	{
 		font-family: 'Varela Round', sans-serif;
 		animation: ruch 300s linear infinite alternate;
-		background-image: url("../pics/dots2.png"), url("../pics/dots.png");
+		background-image: url("../pics/fork.png"), url("../pics/dots.png");
 	}
 
 @keyframes ruch
@@ -13,7 +13,7 @@ body
 
 a
 	{
-		color: #003399;
+		color: white;
 	}
 
 
