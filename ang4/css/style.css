@@ -28,7 +28,6 @@ a
 		padding-top: 30px;
 		padding-bottom: 22px;
 		color: white;
-		font-weight: bold;
 		font-size: 1.4em;
 	}
 
@@ -38,4 +37,11 @@ a
 		margin-bottom: 15px;
 		font-size: 1.3em;s
 		font-weight: bold;
+	}
+
+#domek
+	{
+		font-size: 1.2em;
+		font-weight: bold;
+		color: magenta;
 	}
