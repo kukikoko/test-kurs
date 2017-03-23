@@ -1,0 +1,37 @@
+<div class="container-fluid portfolio-template">
+
+<div class="container text-center" id="chunk-content">
+
+<div class="container black-mamba">
+<span class="slowo-panskiectc">kliknięcie w fotkę będzie przenosiło do szczegółowego opisu projektu</span>
+</div>
+
+  <div style="height: 305px">
+    <div uib-carousel active="active" interval="k.myInterval" no-wrap="noWrapSlides">
+      <div uib-slide ng-repeat="slide in k.photos track by slide.id" index="$index">
+      	<a ng-click="k.modal($index)">
+        <img ng-src="{{slide.image}}" class="img-responsive" style="margin:auto;">
+        </a>
+        <div class="carousel-caption">
+          <h4>Projekt {{slide.id}}</h4>
+          <p>{{slide.text}}</p>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</div>

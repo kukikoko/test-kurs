@@ -1,0 +1,117 @@
+<div class="container-fluid contact-template">
+
+<div class="container" id="chunk-content">
+
+
+<div class="container text-center offerpanel">
+<span class="slowo-panskiectc">zadzwoń lub napisz e-mail</span>
+</div>
+
+
+<div class="container offerpanel">
+<div class="container black-mamba">
+<div class="row">
+<div class="col-md-6 col-sm-12 text-center emailme">
+<img src="sources/media/icons/email.png" alt="mejl">
+<span class="offerstajl">.. mail: kontakt@comdesign.pl</span>
+</div>
+<div class="col-md-6 col-sm-12 text-center phoneme">
+<img src="sources/media/icons/phone.png" alt="foun">
+<span class="offerstajl">.. telefon: 602 366 xxx</span>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="container" ng-show="k.showform">
+  <div class="row" style="margin-bottom:15px;">
+    <div class="col-md-12">
+      <div class="col-md-offset-1 col-md-6" id="box">
+        <span class="slowo-panskiectc">lub skontaktuj się ze mną przez formularz!</span>
+        <hr>
+        <form class="form-horizontal" name="contactForm" novalidate>
+          <fieldset>
+            <!-- Form Name -->
+            <!-- Text input-->
+            <div class="form-group">
+              <div class="col-md-12" ng-class="{ 'has-error' : contactForm.first_name.$invalid && !contactForm.first_name.$pristine }">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                  <input name="first_name" placeholder="Imię" ng-model="k.ContactDetails.FirstName" class="form-control" type="text" required>
+                </div>
+                <span ng-show="contactForm.first_name.$invalid && !contactForm.first_name.$pristine" class="help-block">Wprowadź imię</span>
+              </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+              <div class="col-md-12" ng-class="{ 'has-error' : contactForm.email.$invalid && !contactForm.email.$pristine }">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                  <input name="email" placeholder="E-Mail" ng-model="k.ContactDetails.Email" class="form-control" type="text" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/">
+                </div>
+                <span ng-show="contactForm.email.$invalid && !contactForm.email.$pristine" class="help-block">Wprowadź prawidłowy e-mail</span>
+              </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group" ng-class="{ 'has-error' : contactForm.phone.$invalid && !contactForm.phone.$pristine }">
+              <div class="col-md-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                  <input type="text" class="form-control" ng-model="k.ContactDetails.PhoneNumber" name="phone" ng-maxlength="10" placeholder="Telefon" required>
+                </div>
+                <span ng-show="contactForm.phone.$invalid && !contactForm.phone.$pristine" class="help-block">Wpisz numer telefonu</span>
+              </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' : contactForm.subject.$invalid && !contactForm.subject.$pristine }">
+              <div class="col-md-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-bookmark"></i></span>
+                  <input name="subject" ng-model="k.ContactDetails.Subject" placeholder="Temat" class="form-control" type="text" required>
+                </div>
+                <span ng-show="contactForm.subject.$invalid && !contactForm.subject.$pristine" class="help-block">Wpisz temat</span>
+              </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group" ng-class="{ 'has-error' : contactForm.comment.$invalid && !contactForm.comment.$pristine }">
+              <div class="col-md-12 inputGroupContainer">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                  <textarea class="form-control" ng-model="k.ContactDetails.Comment" rows="6" name="comment" placeholder="Wiadomość" ng-maxlength="255" ng-minlength="10" required></textarea>
+                </div>
+                <span ng-show="contactForm.comment.$invalid && !contactForm.comment.$pristine" class="help-block">Napisz więcej :)</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <button class="btn btn-warning pull-right" ng-disabled="contactForm.$invalid" ng-click="k.submitContactForm();">Wyślij<span class="glyphicon glyphicon-send"></span>
+                </button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="col-md-offset-1 col-md-6 nagiefotki" ng-hide="k.showform">
+<span class="slowo-panskiectc">Dziękuję, Twoja wiadomość została wysłana.</span><br>
+<span class="slowo-panskiectc">Odpowiem najprzeszybciej jak to tylko możliwe,</span><br>
+<span class="slowo-panskiectc">dołączając wiele mych nagich, diabolicznych fotek!!!</span><br>
+<span class="slowo-panskiectc">Ciao! Albertyna</span><br>
+<br>
+<button class="btn btn-warning confess" ui-sref="home">OK!!!</button>
+</div>
+
+
+</div>
+</div>
+
+
