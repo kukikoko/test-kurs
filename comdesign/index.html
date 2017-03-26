@@ -8,7 +8,7 @@
 
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Arimo|Varela+Round" rel="stylesheet"> 
-
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Indie+Flower|Open+Sans|Sigmar+One" rel="stylesheet">
 
     <!-- Bootstrap -->
 
@@ -27,31 +27,41 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-       data-target="#collapsable-nav" aria-expanded="false">
+       data-target="#collapsable-nav" aria-expanded="false"
+       ng-audio="sources/media/sounds/water.mp3"
+        ng-audio-hover="sources/media/sounds/camera.mp3" volume-hover="0.2">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a ui-sref="home">
-      <div class="navbar-brand" id="logo-img">comdesign.pl
-      </div></a>
+      <a ui-sref="home" ng-audio="sources/media/sounds/water.mp3"
+       ng-audio-hover="sources/media/sounds/camera.mp3" volume-hover="0.2">
+      <div class="navbar-brand" id="logo-img">comdesign</div></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="collapsable-nav">
         <ul id="nav-list" class="nav navbar-nav navbar-right">
             <li role="presentation" class="nav-item text-center">
-            <a class="nav-link navibutton" ui-sref="about">O mnie</a>
+            <a class="nav-link navibutton" ui-sref="about"
+             ng-audio="sources/media/sounds/water.mp3"
+             ng-audio-hover="sources/media/sounds/camera.mp3" volume-hover="0.2">O mnie</a>
             </li>
             <li role="presentation" class="nav-item text-center">
-            <a class="nav-link navibutton" ui-sref="offer">Oferta</a>
+            <a class="nav-link navibutton" ui-sref="offer" 
+              ng-audio="sources/media/sounds/water.mp3"
+              ng-audio-hover="sources/media/sounds/camera.mp3" volume-hover="0.2">Oferta</a>
             </li>
             <li role="presentation" class="nav-item text-center">
-            <a class="nav-link navibutton" ui-sref="portfolio">Portfolio</a>
+            <a class="nav-link navibutton" ui-sref="portfolio" 
+             ng-audio="sources/media/sounds/water.mp3"
+             ng-audio-hover="sources/media/sounds/camera.mp3" volume-hover="0.2">Portfolio</a>
             </li>
             <li role="presentation" class="nav-item text-center">
-            <a class="nav-link navibutton" ui-sref="contact">Kontakt</a></li>
+            <a class="nav-link navibutton" ui-sref="contact"
+             ng-audio="sources/media/sounds/water.mp3"
+             ng-audio-hover="sources/media/sounds/camera.mp3" volume-hover="0.2">Kontakt</a></li>
         </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -62,14 +72,17 @@
 
 <div ui-view></div>
 
-
+<div class="firebreath" ng-show="show">
+</div>
 
 
 <footer class="footer navbar-fixed-bottom">
     <div class="container-fluid stopka">
         <div class="container">
         <p class="text-center">
-        &copy;  Varan <img src="sources/media/icons/varan.png" alt="jaszczur">
+        &copy;  Varan <img src="sources/media/icons/varan.png" alt="jaszczur" 
+        ng-mouseenter="show = true" ng-mouseleave="show = false"
+         ng-audio-hover="sources/media/sounds/European_Dragon.mp3" volume-hover="0.3">
         </p>
         </div>
     </div>
@@ -84,10 +97,13 @@
     <script src="sources/scripts/jquery-3.1.1.min.js"></script>
     <script src="sources/scripts/bootstrap.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+
     <script src="sources/scripts/angular-ui-router.min.js"></script>
+    <script src="sources/scripts/angular.audio.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
     <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+
     <script src="sources/scripts/cdapp.js"></script>
 
   </body>

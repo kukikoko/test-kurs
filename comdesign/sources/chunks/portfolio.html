@@ -6,11 +6,12 @@
 <span class="slowo-panskiectc">kliknięcie w fotkę będzie przenosiło do szczegółowego opisu projektu</span>
 </div>
 
-  <div style="height: 305px">
+<div class="row" class="karuzela">
+  <div class="col-md-4">
     <div uib-carousel active="active" interval="k.myInterval" no-wrap="noWrapSlides">
       <div uib-slide ng-repeat="slide in k.photos track by slide.id" index="$index">
       	<a ng-click="k.modal($index)">
-        <img ng-src="{{slide.image}}" class="img-responsive" style="margin:auto;">
+        <img ng-src="{{slide.image}}" class="img-responsive" style="max-height:300px; margin:0 auto;">
         </a>
         <div class="carousel-caption">
           <h4>Projekt {{slide.id}}</h4>
@@ -19,19 +20,22 @@
       </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
+</div>
 
 
 </div>
+
+
+<button id="ikonka1" ng-click="k.nuta(1);">
+
+<img ng-src="{{k.soundIcon}}" alt="muzyka/bezmuzy">
+</button>
+
+<button id="ikonka2" ng-click="k.nuta(2);">
+<img ng-src="{{k.soundShutUp}}" alt="w swiecie ciszy">
+</button>
+
+
+
 
 </div>

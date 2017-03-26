@@ -1,39 +1,60 @@
 <div class="container-fluid about-template">
 <div class="container text-center" id="chunk-content">
 
-<div class="container black-mamba">
-<img src="sources/media/icons/notes.png" alt="nuta">
-<span class="slowo-panskiectc">... I'm all about that bass, 'bout that bass, no treble ...</span>
-<img src="sources/media/icons/notes.png" alt="nuta">
+<div class="container black-mamba" ng-show="k.mamba">
+<img class="nutka" src="sources/media/icons/notes.png" alt="nuta" ng-show="k.letThereBeMusic">
+<span class="slowo-panskiectc" ng-show="k.alla">... I'm all about that bass, 'bout that bass, no treble ...</span>
+<img class="nutka" src="sources/media/icons/notes.png" alt="nuta" ng-show="k.letThereBeMusic">
 </div>
 
+<div class="container">
+
 	<div class="row">
-		<div class="col-md-3 col-sm-4 fotopad">
+		<div class="col-md-4 col-sm-6 col-xs-12 fotopad" ng-show="k.fotopad">
 		<div>
-			<img src="sources/media/Monika.jpg" class="img-rounded img-responsive" alt="Monika">
+			<img src="sources/media/pics/Monika.jpg" class="img-rounded img-responsive" alt="Monika">
 		</div>
 		</div>
-		<div class="col-md-9 col-sm-8 tekstpad">
-		<div class="slowo-panskie">
-			Dafnia, rozwielitka (Daphnia) – rodzaj słodkowodnych stawonogów zaliczanych do grupy wioślarek. Mają 2 pary czułków: pierwsza pełni rolę narządu czuciowego, druga stanowi główny narząd ruchu (rozwielitki poruszają się skokami) oraz 5 par odnóży tułowiowych, pełniących funkcje filtracyjne. Rozmiary ich ciała wahają się od 1 do 6 mm, samce są znacznie mniejsze od samic. Żywią się glonami, bakteriami i zawiesiną organiczną, którą odfiltrowują z wody.
+		<div class="col-md-6 col-md-offset-1 col-sm-6 col-xs-12 tekstpad kontener3">
+		<div class="slowo-panskie" id="skryba" ng-show="k.soYoSpeak">
+		{{ k.writings }}
+
+		<img class="domek" ng-show="k.domek" src="sources/media/pics/house.jpg" alt="domek">
+
 		</div>
 		</div>
 	</div>
 	<div class="row">
-	<div class="col-md-6 tekstpad">
-	<div class="slowo-panskie">
-	Stanowią ważny składnik planktonu słodkowodnego, będącego pokarmem dla ryb i innych zwierząt wodnych. Jako filtratory odżywiające się glonami mają duże możliwości kontroli ich rozwoju, przyczyniając się do naturalnego samooczyszczania się zbiorników wodnych. Ich zdolności filtracyjne wykorzystywane są w zabiegach biomanipulacyjnych, gdy ogranicza się (lub czasowo eliminuje) populacje ryb planktonożernych w zbiorniku wodnym, pozwalając rozwijać się dużym rozwielitkom, które w krótkim czasie zdolne są doprowadzić do tego że woda staje się przezroczysta[2]. Żywe i suszone rozwielitki wykorzystywane są przez akwarystów jako pokarm dla ryb akwariowych. Chętnie wykorzysują je naukowcy w badaniach procesów ekologicznych. Genom Daphnia pulex został zsekwencjonowany w 2011 roku[3].
+	<div class="col-md-5 tekstpad kontener1">
+	<div class="slowo-panskie" ng-show="k.soYoSpeak">
+	Jestem kobietą, która wiele umie. <br>
+	Zbudowałam pałac Kultury. Lubię koty i oposy
 	</div>
 	</div>
 
-	<div class="col-md-6 tekstpad">
-	<div class="slowo-panskie">
-	Stanowią ważny składnik planktonu słodkowodnego, będącego pokarmem dla ryb i innych zwierząt wodnych. Jako filtratory odżywiające się glonami mają duże możliwości kontroli ich rozwoju, przyczyniając się do naturalnego samooczyszczania się zbiorników wodnych. Ich zdolności filtracyjne wykorzystywane są w zabiegach biomanipulacyjnych, gdy ogranicza się (lub czasowo eliminuje) populacje ryb planktonożernych w zbiorniku wodnym, pozwalając rozwijać się dużym rozwielitkom, które w krótkim czasie zdolne są doprowadzić do tego że woda staje się przezroczysta[2]. Żywe i suszone rozwielitki wykorzystywane są przez akwarystów jako pokarm dla ryb akwariowych. Chętnie wykorzysują je naukowcy w badaniach procesów ekologicznych. Genom Daphnia pulex został zsekwencjonowany w 2011 roku[3].
-
+	<div class="col-md-5 col-md-offset-1 tekstpad kontener2">
+	<div class="slowo-panskie" ng-show="k.soYoSpeak">
+	Kot domowy, bury i pachnie mu spod ogona<br>
+	Kot domowy składa się z samych sprzeczności.
 	</div>
 	</div>
-
-
 
 </div>
+
+</div>
+</div>
+
+
+<button id="ikonka1" ng-click="k.nuta(1);">
+
+<img ng-src="{{k.soundIcon}}" alt="muzyka/bezmuzy">
+</button>
+
+<button id="ikonka2" ng-click="k.nuta(2);">
+<img ng-src="{{k.soundShutUp}}" alt="w swiecie ciszy">
+</button>
+
+
+
+
 </div>
