@@ -1,41 +1,52 @@
-<div class="container-fluid about-template">
+
 <div class="container text-center" id="chunk-content">
 
 <div class="container black-mamba" ng-show="k.mamba">
 <img class="nutka" src="sources/media/icons/notes.png" alt="nuta" ng-show="k.letThereBeMusic">
-<span class="slowo-panskiectc" ng-show="k.alla">... I'm all about that bass, 'bout that bass, no treble ...</span>
+<span class="slowo-panskiectc" ng-show="k.alla">... architektura jest muzyką przestrzeni ...</span>
 <img class="nutka" src="sources/media/icons/notes.png" alt="nuta" ng-show="k.letThereBeMusic">
 </div>
 
 <div class="container">
 
 	<div class="row">
-		<div class="col-md-4 col-sm-6 col-xs-12 fotopad" ng-show="k.fotopad">
+		<div class="col-md-4 col-sm-4 col-xs-12 fotopad" ng-show="k.fotopad">
 		<div>
 			<img src="sources/media/pics/Monika.jpg" class="img-rounded img-responsive" alt="Monika">
+			<img class="domek" ng-show="k.domek" src="sources/media/icons/approved.png" alt="wow">
 		</div>
 		</div>
-		<div class="col-md-6 col-md-offset-1 col-sm-6 col-xs-12 tekstpad kontener3">
+
+		<div class="col-md-6 col-sm-7 col-xs-11 tekstpad kontener3">
 		<div class="slowo-panskie" id="skryba" ng-show="k.soYoSpeak">
 		{{ k.writings }}
-
-		<img class="domek" ng-show="k.domek" src="sources/media/pics/house.jpg" alt="domek">
-
 		</div>
 		</div>
+
+		<div class="col-md-1 col-sm-1 col-xs-1 kontener1" ng-show="k.kontener3">
+		<button class="showallbutton" ng-click="k.showItAll();"
+		 ng-audio-hover="sources/media/sounds/modalhover.wav" volume-hover="0.7" 
+  		 ng-audio="sources/media/sounds/rocker-switch.wav" volume="0.8">
+		<img src="sources/media/icons/down-arrow.png" alt="sutkiMarioli">
+		</button>
+		<br>
+		szybciej
+		</div>
+
 	</div>
 	<div class="row">
-	<div class="col-md-5 tekstpad kontener1">
+	<div class="col-md-5 col-sm-6 col-xs-11 tekstpad kontener2">
 	<div class="slowo-panskie" ng-show="k.soYoSpeak">
-	Jestem kobietą, która wiele umie. <br>
-	Zbudowałam pałac Kultury. Lubię koty i oposy
+	Skończyłam wydział Architektury Wnętrza wrocławskiej ASP.
+	Mogę pochwalić się wieloma nagrodami na międzynarodowych 
+	konkursach designu użytkowego.
 	</div>
 	</div>
 
-	<div class="col-md-5 col-md-offset-1 tekstpad kontener2">
+	<div class="col-md-5 col-md-offset-1 col-sm-6 col-xs-11 tekstpad kontener2">
 	<div class="slowo-panskie" ng-show="k.soYoSpeak">
-	Kot domowy, bury i pachnie mu spod ogona<br>
-	Kot domowy składa się z samych sprzeczności.
+	W wolnych chwilach zajmuję się hodowlą kotów i oposów. Lubię zjeść
+	tłusto i dużo. Bo mogę!
 	</div>
 	</div>
 
@@ -56,5 +67,3 @@
 
 
 
-
-</div>

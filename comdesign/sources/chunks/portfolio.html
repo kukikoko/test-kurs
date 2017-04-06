@@ -1,29 +1,74 @@
-<div class="container-fluid portfolio-template">
 
-<div class="container text-center" id="chunk-content">
+
+<div ng-show="k.karuzelizowal" class="container text-center nutka" id="chunk-content">
 
 <div class="container black-mamba">
-<span class="slowo-panskiectc">kliknięcie w fotkę będzie przenosiło do szczegółowego opisu projektu</span>
+<span class="slowo-panskiectc">Zapraszam do obejrzenia moich projektów. 
+Wszystko jest możliwe, wszystko jest realne!</span>
 </div>
 
-<div class="row" class="karuzela">
-  <div class="col-md-4">
+<div class="container karuzela">
+
+
+<div class="row">
+  <div class="col-md-6 col-sm-5 col-xs-10">
+  <div class="portfolio">
+  <div>kliknij by zobaczyć szczegóły</div>
     <div uib-carousel active="active" interval="k.myInterval" no-wrap="noWrapSlides">
       <div uib-slide ng-repeat="slide in k.photos track by slide.id" index="$index">
-      	<a ng-click="k.modal($index)">
+      	<a ng-click="k.modal($index)"
+  		  ng-audio="sources/media/sounds/rocker-switch.wav" volume="0.8">
         <img ng-src="{{slide.image}}" class="img-responsive" style="max-height:300px; margin:0 auto;">
-        </a>
         <div class="carousel-caption">
           <h4>Projekt {{slide.id}}</h4>
-          <p>{{slide.text}}</p>
+          <p class="portslide">{{slide.text}}</p>
         </div>
+        </a>
       </div>
     </div>
-</div>
+    </div>
 </div>
 
+<div class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12">
+	<div class="portfolio">
+Wsłuchuję się w potrzeby, kreuję indywidualne rozwiązania. Korzystając z posiadanej wiedzy, bazując na kreatywności i bogatej w różne doświadczenia realizacyjne praktyce tworzę wyjątkowe wnętrza. Ich unikalny charakter wynika z pełnej personalizacji. Każdą aranżację opieram na indywidualnych ustaleniach z Inwestorem. Projektowanie wnętrz jest procesem, w którym mogę zaproponować znacznie więcej niż tylko kreację funkcjonalnej i estetycznej przestrzeni. Staram się nadawać tworzonym przestrzeniom unikalny klimat, kreować intymną przestrzeń, miejsce dla Ciebie. 
+I dla kotów, rzecz jasna...
+	</div>
+</div>
 
 </div>
+
+</div>
+
+</div>
+
+<div ng-show="k.diabolizowal" class="container text-center nutka" id="chunk-content">
+
+	<div class="row">
+		<div class="col-md-5 col-sm-4 col-xs-10 fotopad">
+		<img ng-src="{{k.photos[k.whichProject].image}}" class="img-rounded img-responsive" alt="oferta">
+		<p class="pjkt">
+			Projekt {{ k.photos[k.whichProject].id }}.<br>
+			{{ k.photos[k.whichProject].text }}
+		</p>
+		</div>
+
+		<div class="col-md-6 col-sm-7 col-xs-11 tekstpad">
+		<div class="slowo-panskie" id="skryba">
+		{{ k.photos[k.whichProject].description }}
+		</div>
+		<p class="pozyszyn">powrót do projektów..
+		<button class="portfoliobutton" ng-click="k.modal(99);"
+ 		 ng-audio-hover="sources/media/sounds/modalhover.wav" volume-hover="0.7" 
+  		 ng-audio="sources/media/sounds/rocker-switch.wav" volume="0.8">
+		<img src="sources/media/icons/previous.png" alt="sutkiMarioli">
+		</button>
+		</p>
+		</div>
+	</div>
+
+</div>
+
 
 
 <button id="ikonka1" ng-click="k.nuta(1);">
@@ -38,4 +83,3 @@
 
 
 
-</div>

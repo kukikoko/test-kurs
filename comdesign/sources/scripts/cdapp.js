@@ -4,6 +4,7 @@
 
 
 	angular.module('CounterpartIssues', ['ngAudio', 'ui.router', 'ngAnimate', 'ngSanitize', 'ui.bootstrap'])
+	.run (Starter)
 	.config(RoutesConfig)
 	.controller('PortfolioCtrl', PortfolioCtrl)
 	.controller('ContactCtrl', ContactCtrl)
@@ -11,6 +12,14 @@
 	.controller('AboutCtrl', AboutCtrl)
 	.controller('OfferCtrl', OfferCtrl)
 	.service('Serwis', Serwis);
+
+
+	Starter.$inject = ['$rootScope', '$state'];
+	function Starter ($rootScope, $state)
+		{
+			$rootScope.$state = $state;
+		};
+
 
 	RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 	function RoutesConfig($stateProvider, $urlRouterProvider, $locationProvider) 
@@ -23,31 +32,46 @@
 			.state('home', {
     		url: '/',
     		templateUrl: 'sources/chunks/home.html',
-    		controller: 'HomeCtrl as k'
+    		controller: 'HomeCtrl as k',
+    		data: 	{
+    			bodyClass: 'home-template'
+    				}
 			})
 
 			.state('about', {
 			url: '/about',
 			templateUrl: 'sources/chunks/about.html',
-			controller: 'AboutCtrl as k'
+			controller: 'AboutCtrl as k',
+    		data: 	{
+    			bodyClass: 'about-template'
+    				}
 			})
 
 			.state('offer', {
 			url: '/offer',
 			templateUrl: 'sources/chunks/offer.html',
-			controller: 'OfferCtrl as k'
+			controller: 'OfferCtrl as k',
+    		data: 	{
+    			bodyClass: 'offer-template'
+    				}
 			})
 
 			.state('portfolio', {
 			url: '/portfolio',
 			templateUrl: 'sources/chunks/portfolio.html',
-			controller: 'PortfolioCtrl as k'
+			controller: 'PortfolioCtrl as k',
+    		data: 	{
+    			bodyClass: 'portfolio-template'
+    				}
 			})
 
 			.state('contact', {
 			url: '/contact',
 			templateUrl: 'sources/chunks/contact.html',
-			controller: 'ContactCtrl as k'
+			controller: 'ContactCtrl as k',
+    		data: 	{
+    			bodyClass: 'contact-template'
+    				}
 			})
 
 		};
@@ -58,52 +82,94 @@ function PortfolioCtrl (Serwis)
 	{
 		var k = this;
 		k.photos = [];
+		k.karuzelizowal = true;
+		k.diabolizowal = false;
+		k.whichProject = 0;
 
 		k.photos = [
 		{
 			image: 'sources/media/carousel/s1.jpg',
-			text: "jadalnia",
+			text: "elegancka jadalnia",
+			description: 
+			"Projektowałam tą jadalnię dla rodziny karłów w 2014 roku. Tak naprawdę - choć pomieszczenie wygląda na pełnowymiarowe - to ma 2 na 3 metry, a np. krzesła po ok. 40 cm. wysokości. Ciekawe wyzwanie, jedno z pierwszych. Karły ucztują tam po dziś dzień.",
 			id : 1
 		},
 		{
 			image: 'sources/media/carousel/s2.jpg',
-			text: "pracownia",
+			text: "pracownia na poddaszu",
+			description: 
+			"Ta pracownia powstała dla człowieka, który nic nie chciał robić - był zbyt leniwy. Prosił o stworzenie takiego wnętrza, które wręcz uniemożliwia jakąkolwiek pracę. Stąd gipsowe krzywizny, za niskie biurko i szafa z pochyłymi półkami, z których wszystko spada.",
 			id : 2
 		},
 		{
 			image: 'sources/media/carousel/s3.jpg',
-			text: "bidet",
+			text: "turkusowa łazienka",
+			description: 
+			"Bardzo ucieszyło mnie, gdy o pomoc przy projektowaniu łazienki zgłosiła się do mnie para daltonistów, gdyż mogłam wypaprać zalegającą mi w składziku turkusową olejną. Wyszło nawet zgrabnie.",
 			id : 3
 		},		
 		{
 			image: 'sources/media/carousel/s4.jpg',
-			text: "wanna",
+			text: "łazienka retro",
+			description: 
+			"Jest to łazienka zaprojektowana na specjalne życzenie pewnej korpulentnej pani. Pod wymiar jej niewymiarowych bioder sprowadzałam robioną na zamówienie wannę firmy Tresse z włoskiego Neppi. Wanna służy do siedzenia w niej i namydlania nogi, wystawionej w górę by wabić samców.",
 			id : 4
 		},
 		{
 			image: 'sources/media/carousel/s5.jpg',
-			text: "sracz",
+			text: "diaboliczna ubikacja",
+			description: 
+			"Ta ubikacja została przeze mnie zaprojektowana dla osoby cichej i nieśmiałej, w konsultacji z psychologiem oraz matadorem. Efekt przeszedł najśmielsze oczekiwania. Użytkownik łazienki w skutek kolorystycznej stymulacji sensorycznej, w niedługim czasie po renowacji wymordował siekierą całą swoją rodzinę.",
 			id : 5
 		},
 		{
 			image: 'sources/media/carousel/s6.jpg',
-			text: "dla pana starosty",
+			text: "szykowna sala kominkowa",
+			description: 
+			"Projekt sali kominkowej w stylu Barbary Niechcic został mi zlecony przez dwie panie około sześćdziesiątki. Zgodnie z ich życzeniem, jego motywem przewodnim i celem było takie dobranie kolorów, dodatków, mebli oraz tak umiejętne ich ustawienie, żeby negatywna energia feng-shui wyganiała stamtąd każdego gościa po maksymalnie trzech minutach i to z migreną. Panie nie lubiły wizyt. Spisałam się chyba dobrze, bo sama po oddaniu projektu nie mogłam tam wytrzymać.",
 			id : 6
 		},
 		{
 			image: 'sources/media/carousel/s7.jpg',
-			text: "on Jamaica very nice",
+			text: "salon snobów",
+			description: 
+			"Salon snobów to ciąg dalszy sali kominkowej. W salonie snobów jest miejsce na czytanie romansów, układanie pasjansów i specjalny kącik obgadywania ludzi.",
 			id : 7
 		},
 		{
 			image: 'sources/media/carousel/s8.jpg',
-			text: "everybody smokes cigars yo!",
+			text: "sypialnia letnia",
+			description: 
+			"Sypialnia letnia - inspirowana plażami Malediwów - powstała na życzenie pewnego przeuroczego byłego gwałciciela, który odpokutowawszy grzechy młodości w zakładzie karnym, chciał stworzyć sobie bezpieczną oazę spokojnego snu. Projekt multimedialny, prócz starannie zaprojektowanej strony wizualnej dodatkowo z wmontowanych w ściany głośników sączy się non-stop dźwięk rozpinanych rytmicznie rozporków.",
 			id : 8
 		},
 		{
 			image: 'sources/media/carousel/s9.jpg',
-			text: "koniec!",
+			text: "zakątek utraty dziewictwa",
+			description: 
+			"Stworzona przeze mnie zaciszna norka, w której zleceniodawczyni - czterdziestoletnia pani A. - zamierzała stracić dziewictwo z pewnym dość nieciekawym jegomościem. Czy zamiar się udał? Nie wiem. Natomiast ciekawostką było to, że pani A. zapłaciła za projekt przetworami owocowo-warzywnymi własnej produkcji. Do dziś się nimi zajadam!",
 			id : 9
+		},
+		{
+			image: 'sources/media/carousel/s10.jpg',
+			text: "sala bankietowa",
+			description: 
+			"Jednorazowy projekt - tak zwana fuszka - na wieczorek zapoznawczy internetowego koła wielbicieli filmów erotycznych z serii Różowa Landrynka. Stąd kolorystyka. Bardzo zacna impreza odbyła się w tym wnętrzu, bardzo w skutek niej to wnętrze ucierpiało. Cóż... Któż by się spodziewał tak niecodziennej pijackiej żarliwości wśród zdawałoby się spokojnych internautów?",
+			id : 10
+		},
+		{
+			image: 'sources/media/carousel/s11.jpg',
+			text: "klub jazzowy",
+			description: 
+			"Znajoma poprosiła mnie o przemianę jej pijalni piwa Ufo w snobistyczny klub jazzowy. Niestety nie dysponowała szerokim budżetem, stąd jedynie przemalowałam ściany i narysowałam na nich kredą instrumenty oraz udzieliłam jej kilku wskazówek tyczących skomponowania samej siebie z wnętrzem i stworzenia pajęczego matecznika, mającego wabić, kusić, nęcić. Po mej modernizacji niegdysiejsza pijalnia piwa, a obecnie klub jazzowy Tryton przynosi miesiąc w miesiąc nieliche zyski.",
+			id : 11
+		},
+		{
+			image: 'sources/media/carousel/s12.jpg',
+			text: "męska jaskinia",
+			description: 
+			"Jeden z moich ciekawszych projektów, mężczyzna około czterdziestki, uwolniwszy się z małżeńskich sideł i wygoniwszy kobietę z domu poprosił mnie o pomoc w całkowitej modernizacji swojej przestrzeni. Zburzyliśmy garderobę, dwie łazienki i salę do aerobiku, zniszczyliśmy każdy ślad obecności kobiety w tym domu, miast tego jest kręgielnia, pokój do grania w gry, pokój pornograficzny, bar, sala kina domowego i mini izba wytrzeźwień. Koszty były ogromne, pracy dużo, jednak moja satysfakcja niebywała, gdy z każdym dniem widziałam budzącą się na twarzy tego stłamszonego przez niegodziwą kobietę człowieka dziecięcą i szczerą radość.",
+			id : 12
 		}];
 
 		k.myInterval = 3000;
@@ -127,7 +193,16 @@ function PortfolioCtrl (Serwis)
 
 		k.modal = function (numer)
 			{
-				console.log (numer);
+				if (numer!=99)
+				{
+				k.karuzelizowal = false;
+				k.whichProject = numer;
+    			setTimeout(function(){ k.diabolizowal = true; }, 2200);
+    			}	else
+    			{
+    			k.diabolizowal = false;
+    			setTimeout(function(){ k.karuzelizowal = true; }, 2200);
+    			};
 			};
 
 		console.log (k.photos);
@@ -179,18 +254,18 @@ function ContactCtrl (Serwis)
 		{
 			console.log (k.ContactDetails);
 			k.showform = false;
-    		setTimeout(function(){ k.showass = true; }, 3000);
-    		setTimeout(function(){ k.paxTu1 = true; }, 4100);
-     		setTimeout(function(){ k.paxTu2 = true; }, 5200);
-    		setTimeout(function(){ k.paxTu3 = true; }, 6300);
-    		setTimeout(function(){ k.paxTu4 = true; }, 7400);
-    		setTimeout(function(){ k.paxTu5 = true; }, 8500);
-    		setTimeout(function(){ k.paxTu6 = true; }, 9600);
-    		setTimeout(function(){ k.paxTu7 = true; }, 10700);
-    		setTimeout(function(){ Serwis.kissme(); k.kiss = true; }, 14000);
+    		setTimeout(function(){ k.showass = true; }, 1000);
+    		setTimeout(function(){ k.paxTu1 = true; }, 2100);
+     		setTimeout(function(){ k.paxTu2 = true; }, 2500);
+    		setTimeout(function(){ k.paxTu3 = true; }, 2900);
+    		setTimeout(function(){ k.paxTu4 = true; }, 3300);
+    		setTimeout(function(){ k.paxTu5 = true; }, 3700);
+    		setTimeout(function(){ k.paxTu6 = true; }, 4100);
+    		setTimeout(function(){ k.paxTu7 = true; }, 4500);
+    		setTimeout(function(){ Serwis.kissme(); k.kiss = true; }, 6000);
 		};
 
-    setTimeout(function(){ k.showform = true; }, 3000);
+    setTimeout(function(){ k.showform = true; }, 1000);
 
 	};
 
@@ -201,6 +276,7 @@ HomeCtrl.$inject = ['Serwis'];
 function HomeCtrl (Serwis)
 	{
 		var k = this;
+		k.bodyclass = 'home-template';
 		k.hello = false;
 		var startUp = Serwis.init (0);
 		k.soundIcon = startUp.music;
@@ -240,29 +316,26 @@ function AboutCtrl (Serwis)
 		k.domek = false;
 		k.whichLetter = 0;
 		k.timeout = null;
-		k.textToType = "Dzień dobry, tutaj napiszę niedługo coś bardzo mądrego o sobie. Na razie niestety nie mam gotowego tekstu, więc pochwalę się wam rysunkiem domu."
-
+		k.textToType = "Nasze codzienne życie, nawyki, a przede wszystkim przestrzeń, w której żyjemy definiuje nas bardziej niż sobie to uświadamiamy. Przebywanie w funkcjonalnie zaprojektowanej przestrzeni ułatwia wiele rzeczy, powoduje, że nie musimy marnować czasu na niepotrzebne działania i możemy skupić się na rzeczach bardziej istotnych. Jako projektant staram się tak projektować wnętrza, aby spełniały właśnie tę funkcję. Nie widzę sensu aranżacji pomieszczeń jedynie modnie, ale w oderwaniu od mieszkańców, którzy mają tam spędzać swe wolne chwile. Jesteś w tym procesie najważniejszy i Twoje potrzeby stoją na pierwszym miejscu. W oparciu o wiedzę i doświadczenie tworzę projekt, który ma wychodzić na wprost Twoim oczekiwaniom, ale jednocześnie ma stanowić niepowtarzalną jakość. ";
 
 
 
 		function typeIt ()
-		{
-			console.log (k.timeout);
-			if (k.timeout != null) { clearTimeout (k.timeout) };
-
-			 
+		{			 
 
 			if (k.whichLetter < k.textToType.length)
 			{
-			k.timeout =	setTimeout(function()
+			setTimeout(function()
 				{
-					Serwis.typeme ();
 					k.writings = k.writings + k.textToType.charAt(k.whichLetter);
 					k.whichLetter = k.whichLetter + 1;
 					typeIt ();
-				}, (100 + Math.floor((Math.random() * 100) + 1)));
+				}, (Math.floor((Math.random() * 100) + 1)));
 			} else
-			{ setTimeout(function(){ k.domek = true; }, 2000); };
+			{ 
+				Serwis.typeme(false);
+				k.kontener3 = false;
+				setTimeout(function(){ k.domek = true; }, 1000); };
 		};
 
 
@@ -282,20 +355,34 @@ function AboutCtrl (Serwis)
 				k.soundShutUp = Serwis.nuta (2);
 			};
 		};
-    	setTimeout(function(){ k.kontener1 = true; }, 6000);
-    	setTimeout(function(){ k.kontener2 = true; }, 8000);
-    	setTimeout(function(){ k.kontener3 = true; }, 3000);
+
+		k.showItAll = function ()
+		{
+			console.log ("yey");
+			k.whichLetter = k.textToType.length;
+			k.writings = k.textToType;
+		};
+
+
+		setTimeout(function(){ k.kontener3 = true; }, 7000);
+
     	setTimeout(function(){ k.fotopad = true; }, 2500);
+    	
     	setTimeout(function(){ k.mamba = true; }, 1000);
-   		setTimeout(function(){ k.alla = true; }, 1500);
+	 	setTimeout(function(){ k.alla = true; }, 800);
+
 
     	setTimeout(function(){ k.soYoSpeak = true; 
 
-    	setTimeout(function(){ typeIt (); }, 2400);
-    	}, 8500);
+    	setTimeout(function(){ 
+    			Serwis.typeme (true); 
+    			typeIt (); }, 2400);
+    			 }, 4500);
+
+    	setTimeout(function(){ k.letThereBeMusic = true; }, 2500);
 
 
-    	setTimeout(function(){ k.letThereBeMusic = true; }, 1900);
+
 	};
 
 
@@ -380,7 +467,7 @@ function Serwis (ngAudio)
 		"podział funkcjonalny i hierarchia pomieszczeń",
 		"ulubione tkaniny, faktury, materiały wykończeniowe, urządzenia, meble, detale, rośliny, rodzaje oświetlenia",
 		"charakter i kolorystyka wnętrza",
-		"indywidualne rozwiązania i koncepcje technologiczne - sala kinowa, piwniczka na wino, sala gier, strefa SPA i relaksu, przestrzeń dla zwierząt, inteligentny system sterowania, solary, itp."
+		"indywidualne rozwiązania i koncepcje technologiczne - sala kinowa, piwniczka na wino, sala gier, strefa SPA i relaksu, przestrzeń dla zwierząt (np. kotów), inteligentny system sterowania, solary, itp."
 		],
 		photo : 'sources/media/pics/rzut_parteru.png' };
 
@@ -465,9 +552,11 @@ function Serwis (ngAudio)
 			s.bessos.play();
 		};
 
-		s.typeme = function ()
+		s.typeme = function (on)
 		{
+			if (on) {
 			s.typing.play();
+			} else { s.typing.stop() };
 		};
 
 		s.passOffer = function (which)
