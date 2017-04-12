@@ -295,17 +295,17 @@ function ContactCtrl (Serwis)
 			k.showform = false;
     		setTimeout(function(){ k.showass = true; }, 1200);
     		setTimeout(function(){ k.paxTu1 = true; }, 2100);
-     		setTimeout(function(){ k.paxTu2 = true; }, 3100);
-    		setTimeout(function(){ k.paxTu3 = true; }, 4100);
-    		setTimeout(function(){ k.paxTu4 = true; }, 5100);
-    		setTimeout(function(){ k.paxTu5 = true; }, 6100);
-    		setTimeout(function(){ k.paxTu6 = true; }, 7100);
-    		setTimeout(function(){ k.paxTu7 = true; }, 8100);
-    		setTimeout(function(){ Serwis.kissme(); k.kiss = true; }, 9000);
+     		setTimeout(function(){ k.paxTu2 = true; }, 2600);
+    		setTimeout(function(){ k.paxTu3 = true; }, 3100);
+    		setTimeout(function(){ k.paxTu4 = true; }, 3600);
+    		setTimeout(function(){ k.paxTu5 = true; }, 4100);
+    		setTimeout(function(){ k.paxTu6 = true; }, 4600);
+    		setTimeout(function(){ k.paxTu7 = true; }, 5600);
+    		setTimeout(function(){ Serwis.kissme(); k.kiss = true; }, 6600);
 		};
 
-    setTimeout(function(){ k.showcontacts = true; }, 3000);
-    setTimeout(function(){ k.showform = true; }, 5000);
+    setTimeout(function(){ k.showcontacts = true; }, 4000);
+    setTimeout(function(){ k.showform = true; }, 7000);
 
 	};
 
@@ -535,11 +535,11 @@ function Serwis (ngAudio)
 		s.muza[4] = ngAudio.load("sources/media/sounds/contact_song.mp3");
 		s.muza[5] = ngAudio.load("sources/media/sounds/poker_song.mp3");
 		s.muza[6] = ngAudio.load("sources/media/sounds/poker_login.mp3");
-		s.muza[0].volume = 0.2; s.muza[0].unbind();
+		s.muza[0].volume = 0.15; s.muza[0].unbind();
 		s.muza[1].volume = 0.2; s.muza[1].unbind();
 		s.muza[2].volume = 0.4; s.muza[2].unbind();
 		s.muza[3].volume = 0.2; s.muza[3].unbind();
-		s.muza[4].volume = 0.15; s.muza[4].unbind();
+		s.muza[4].volume = 0.95; s.muza[4].unbind();
 		s.muza[5].volume = 0.2; s.muza[5].unbind();
 		s.muza[6].volume = 0.55; s.muza[6].unbind();
 		s.bessos.unbind();

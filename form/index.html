@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Application Form</title>
+
+    <!-- Bootstrap -->
+ 
+    <link rel="stylesheet" href="plugins/bootstrap.min.css">
+
+   </head>
+
+<body>
+
+
+
+<div class="container" ng-app="Aplikacja" ng-controller="Kontroler as k">
+
+
+<div class="container">
+  <div class="row" style="margin-bottom:15px;">
+    <div class="col-md-12">
+
+
+
+      <div class="container" id="box" ng-if="k.firstpage">
+        <div>wypełnij dane w formularzu</div>
+        <hr>
+        <form class="form-horizontal" name="contactForm" novalidate>
+          <fieldset>
+            <!-- Form Name -->
+            <!-- Text input-->
+            <div class="row">
+            <div class="col-md-5">
+            <span>Szkoła:</span>
+            <div class="form-group">
+              <div class="col-md-12" ng-class="{ 'has-error' : contactForm.school_name.$invalid && !contactForm.school_name.$pristine }">
+                <div class="input-group">
+
+                  <input name="school_name" placeholder="Nazwa szkoły" ng-model="k.ContactDetails.name" class="form-control" type="text" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-12" ng-class="{ 'has-error' : contactForm.school_patron.$invalid && !contactForm.school_patron.$pristine }">
+                <div class="input-group">
+
+                  <input name="school_patron" placeholder="Patron" ng-model="k.ContactDetails.patron" class="form-control" type="text" required>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Text input-->
+            <div>Adres:</div>
+            <div class="form-group">
+              <div class="col-md-12" ng-class="{ 'has-error' : contactForm.school_zipcode.$invalid && !contactForm.school_zipcode.$pristine }">
+                <div class="input-group">
+
+                  <input name="school_zipcode" placeholder="Kod pocztowy" ng-model="k.ContactDetails.zip" class="form-control" type="text" required>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12" ng-class="{ 'has-error' : contactForm.school_city.$invalid && !contactForm.school_city.$pristine }">
+                <div class="input-group">
+
+                  <input name="school_city" placeholder="Miejscowość" ng-model="k.ContactDetails.city" class="form-control" type="text" required>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12" ng-class="{ 'has-error' : contactForm.school_street.$invalid && !contactForm.school_street.$pristine }">
+                <div class="input-group">
+
+                  <input name="school_street" placeholder="Ulica i numer" ng-model="k.ContactDetails.street" class="form-control" type="text" required>
+                </div>
+              </div>
+            </div>
+            </div>
+
+            <div class="col-md-5">
+            <div>Osoba z dyrekcji odpowiedzialna za kontakty w sprawie badania</div>
+            <div>adres e-mail do rejestracji szkoły do badania</div>
+
+            <div class="form-group" ng-class="{ 'has-error' : contactForm.contact_name.$invalid && !contactForm.contact_name.$pristine }">
+              <div class="col-md-12">
+                <div class="input-group">
+                  <input name="contact_name" ng-model="k.ContactDetails.contactPerson" placeholder="Imię i nazwisko" class="form-control" type="text" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-12" ng-class="{ 'has-error' : contactForm.email.$invalid && !contactForm.email.$pristine }">
+                <div class="input-group">
+                  <input name="email" placeholder="E-Mail" ng-model="k.ContactDetails.main_email" class="form-control" type="text"
+                   ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required>
+                </div>
+              </div>
+            </div>
+
+            <div>Koordynator szkolny badania - osoba odpowiedzialna za przygotowanie</div>
+            <div>sali, komputerów itp.</div>
+
+            <div class="form-group" ng-class="{ 'has-error' : contactForm.coordinator.$invalid && !contactForm.coordinator.$pristine }">
+              <div class="col-md-12">
+                <div class="input-group">
+                  <input name="coordinator" ng-model="k.ContactDetails.coordinator" placeholder="Imię i nazwisko" class="form-control" type="text" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group" ng-class="{ 'has-error' : contactForm.coordinator_phone.$invalid && !contactForm.coordinator_phone.$pristine }">
+              <div class="col-md-12">
+                <div class="input-group">
+                  <input name="coordinator_phone" ng-model="k.ContactDetails.coordinator_phone" placeholder="bezpośredni numer telefonu" class="form-control" type="text" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-12" ng-class="{ 'has-error' : contactForm.coordinator_email.$invalid && !contactForm.coordinator_email.$pristine }">
+                <div class="input-group">
+                  <input name="coordinator_email" placeholder="E-Mail" ng-model="k.ContactDetails.coordinator_email" class="form-control" type="text"
+                   ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required>
+                </div>
+              </div>
+            </div>
+            </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-12">
+                <button class="btn btn-warning pull-right"
+                ng-disabled="contactForm.$invalid" ng-click="k.flippage();">Następna strona</button>
+
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+
+
+
+      <div class="container" id="box" ng-if="k.secondpage">
+        <div>dane dotyczące klas i sal komputerowych</div>
+        <hr>
+        <form class="form-horizontal" name="contactForm" novalidate>
+          <fieldset>
+        <div class="row">
+        <div class="col-md-5">
+          <div ng-repeat="klasa in k.klasy track by $index">
+            <div class="form-group">
+              <div class="col-md-12">
+                <div class="input-group"><span>klasa nr {{ $index + 1 }}</span>
+                  <input ng-model="k.ContactDetails.classes[$index].classname" placeholder="oznaczenie klasy nr {{$index+1}}" class="form-control" type="text" required>
+                  <input ng-model="k.ContactDetails.classes[$index].qty" placeholder="ilość uczniów w klasie nr {{$index+1}}" class="form-control" type="number" required>
+                </div>
+              </div>
+            </div>
+        </div>        <button class="btn" ng-click="k.dodajklase();">dodaj klasę</button>
+                 <button class="btn" ng-click="k.usunklase();">usuń klasę</button>
+
+        <hr>
+        </div>
+
+        <div class="col-md-5">
+        <div ng-repeat="sala in k.salekomputerowe track by $index">
+           <div class="form-group">
+              <div class="col-md-12">
+                <div class="input-group"><span>sala komputerowa nr {{ $index + 1 }}</span>
+                  <input ng-model="k.ContactDetails.computers[$index].roomname" placeholder="oznaczenie sali nr {{$index+1}}" class="form-control" type="text" required>
+                  <input ng-model="k.ContactDetails.computers[$index].qty" placeholder="ilość komputerów w sali nr {{$index+1}}" class="form-control" type="number" required>
+                </div>
+              </div>
+            </div>
+        </div>          <button class="btn" ng-click="k.dodajsale();">dodaj salę</button>
+         <button class="btn" ng-click="k.usunsale();">usuń salę</button>
+        <hr>
+        </div>
+        </div>
+        <hr>
+
+            <div> czy odpowiada ci termin zasadniczy?</div>
+           <div class="form-group">
+              <div class="col-md-12">
+                <div class="input-group">
+                <input type="radio" value="yes" ng-model="k.ContactDetails.term" checked> TAK<br>
+                <input type="radio" value="no" ng-model="k.ContactDetails.term"> NIE<br>
+                </div>
+              </div>
+            </div>
+
+            <div ng-show="k.ContactDetails.term==='no'"> jeśli nie to napisz dlaczego:
+           <div class="form-group">
+              <div class="col-md-12">
+                <div class="input-group">
+                <input type="text" value="true" ng-model="k.ContactDetails.why">
+                </div>
+              </div>
+            </div>
+            </div>
+
+
+
+
+            <div class="form-group">
+              <div class="col-md-12">
+                <button class="btn btn-warning pull-right"
+                ng-disabled="contactForm.$invalid" ng-click="k.sendIt();">Wyślij</button>
+
+              </div>
+            </div>
+
+
+
+          </fieldset>
+        </form>
+      </div>
+
+
+
+
+    </div>
+  </div>
+</div>
+
+<div class="col-md-offset-1 col-md-6" ng-show="k.sent">
+<hr><br>
+<div ng-show="k.success">
+Dziękujemy za wysłanie formularza.<br>
+Link aktywacyjny zostanie przesłany na adres mailowy<br>
+{{ k.ContactDetails.main_email }}<br>
+Prosimy o aktywację rejestracji poprzez kliknięcie w ten link.<br>
+Dziękujemy.
+</div>
+<div ng-show="k.failed">
+Niestety wysłanie formularza nie powiodło się<br>
+Prosimy spróbować ponownie.<br>
+Dziękujemy.
+</div>
+<br>
+<hr>
+</div>
+
+
+
+</div>
+
+
+
+        <script src="plugins/jquery-3.1.1.min.js"></script>
+        <script src="plugins/bootstrap.min.js"></script>
+        <script src="plugins/angular.min.js"></script>
+        <script src="plugins/script.js"></script>
+
+</body>
+</html>
