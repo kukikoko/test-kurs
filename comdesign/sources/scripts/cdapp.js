@@ -535,7 +535,7 @@ function Serwis (ngAudio)
 		s.muza[4] = ngAudio.load("sources/media/sounds/contact_song.mp3");
 		s.muza[5] = ngAudio.load("sources/media/sounds/poker_song.mp3");
 		s.muza[6] = ngAudio.load("sources/media/sounds/poker_login.mp3");
-		s.muza[0].volume = 0.15; s.muza[0].unbind();
+		s.muza[0].volume = 0.45; s.muza[0].unbind();
 		s.muza[1].volume = 0.2; s.muza[1].unbind();
 		s.muza[2].volume = 0.4; s.muza[2].unbind();
 		s.muza[3].volume = 0.2; s.muza[3].unbind();
