@@ -127,17 +127,25 @@ body.modal-open #wrap{
 		margin-bottom: 45px;
 	}
 
+#chunk-content2
+	{
+		margin-top: 80px;
+		margin-bottom: 10px;
+	}
+
 .fotopad
 	{
 		padding: 15px;
-        -webkit-transition:all linear 2s;
-        transition:all linear 2s;	
+        -webkit-transition: all 2000ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition:         all 2000ms cubic-bezier(0.68, -0.55, 0.265, 1.55);	
 	}
 
 .fotopad.ng-hide
 	{
-
-		opacity: 0;
+		width: 5px;
+		height: 5px;
+		opacity: 0.1;
+		margin-right: 200px;
 	}
 
 .nutka
@@ -221,27 +229,31 @@ body.modal-open #wrap{
 		border-radius: 10px;
 	}
 
+.shadowyHood
+	{
+		box-shadow: 4px 6px 14px rgba( 72,244,252,0.4);
+	}
+
 .karuzela
 	{
-		margin-top: 70px;
+		margin-top: 20px;
 	}
 
 .portfolio
 	{
 
-		margin-top: 20px;
-		background-color: rgba(40,40,40,0.8);
+		margin-top: 15px;
+		background-color: rgba(20,20,20,0.8);
 		padding-top: 20px;
 		padding-bottom: 20px;
-		padding-left: 15px;
-		padding-right: 15px;
+		padding-left: 35px;
+		padding-right: 35px;
 		color: white;
-		font-family: 'Arimo', sans-serif;
+		font-family: 'Indie Flower', cursive;
 		text-shadow: 1px 1px black;
 		font-size: 13px;
 		border: 1px solid #09093B;
 		border-radius: 8px;
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	}
 
 .portslide
@@ -249,10 +261,10 @@ body.modal-open #wrap{
 		padding: 5px;
 		width: 70%;
 		border-radius: 9px;
-		margin: 5px auto;
+		margin: 2px auto;
 		background-color: rgba(  9,  9, 59, 0.7);
 		font-family: 'Indie Flower', cursive;
-		font-size: 17px;
+		font-size: 15px;
 	}
 
 .pjkt
@@ -274,7 +286,26 @@ body.modal-open #wrap{
 
 .pozyszyn
 	{
-		right: 8px;
+		left: 30%;
+		padding: 5px;
+		width: 210px;
+
+		margin: 5px 0px 2px auto;
+
+		font-family: 'Indie Flower', cursive;
+		font-size: 16px;
+		color: white;
+		text-shadow: 1px 1px black;
+		text-align: right;		
+	}		
+
+
+
+.pozyszyn2
+	{
+		position: fixed;
+		top: 55px;
+		left: 10%;
 		padding: 5px;
 		width: 210px;
 
@@ -358,6 +389,7 @@ body.modal-open #wrap{
 		margin-top: 8px;
 		font-family: 'Sigmar One', cursive;
 		background-color: rgba(212,186,106,0.8);
+		box-shadow: 1px 1px 2px rgba( 72,244,252,0.2);
 		color: white;
 		border-radius: 9px;
 		text-shadow: 1px 1px black;
@@ -416,9 +448,8 @@ body.modal-open #wrap{
 		padding-top: 11px;
 		padding-bottom: 11px;
 		border-radius: 13px;
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        -webkit-transition:all linear 1s;
-        transition:all linear 1s;	
+        -webkit-transition: all 2000ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition:         all 2000ms cubic-bezier(0.68, -0.55, 0.265, 1.55);	
 	}
 
 
@@ -426,7 +457,9 @@ body.modal-open #wrap{
 .black-mamba.ng-hide
 	{
 		opacity: 0;
-		background-color : white;
+		width: 15%;
+		font-size: 2px;
+		margin-bottom: 200px;
 	}
 
 .kontaktuj
@@ -544,19 +577,20 @@ a.offerstajl:focus, a.offerstajl:hover
 	{
 		font-family: 'Indie Flower', cursive;
 		color: white;
-		text-shadow: 1px 1px black;				
+		text-shadow: 1px 1px rgb( 15,20,25);
 		font-size: 18px;
 		padding-left: 5px;
 		padding-right: 5px;
-       -webkit-transition:all linear 4s;
-        transition:all linear 4s;	
+		box-shadow: 4px 6px 14px rgba( 72,244,252,0.4);
+        -webkit-transition: all 2000ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition:         all 2000ms cubic-bezier(0.68, -0.55, 0.265, 1.55);	
 	}
 
 .mehaalomahn.ng-hide
 	{
 		color: black;
-		text-shadow: 1px 1px white;
-		font-size: 18px;
+		font-size: 3px;
+		width: 20px;
 	}
 
 
@@ -564,7 +598,7 @@ a.offerstajl:focus, a.offerstajl:hover
 	{
 		font-family: 'Sigmar One', cursive;
 		font-size: 20px;
-		padding: 23px;
+		padding: 15px;
 		color: white;
 		text-shadow: 1px 1px black;
 		border-radius: 9px;
@@ -572,6 +606,7 @@ a.offerstajl:focus, a.offerstajl:hover
        -webkit-transition:all linear 1s;
         transition:all linear 1s;	
 	}
+
 .laseczka
 	{
 		font-family: 'Sigmar One', cursive;
@@ -579,13 +614,15 @@ a.offerstajl:focus, a.offerstajl:hover
 		padding: 23px;
 		color: white;
 		text-shadow: 1px 1px black;
-        -webkit-transition:all linear 1s;
-        transition:all linear 1s;	
+        -webkit-transition: all 1500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition:         all 1500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);	
 	}
 
 .laseczka.ng-hide
 	{
 		color: black;
+		font-size: 8px;
+		text-align: left;
 		opacity: 0;		
 	}
 
@@ -640,14 +677,18 @@ a.offerstajl:focus, a.offerstajl:hover
 		background-repeat: no-repeat;
 		border-radius: 9px;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);	
-        -webkit-transition:all linear 1s;
-        transition:all linear 1s;	
+        -webkit-transition: all 1500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition:         all 1500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);	
 	}
 
 
 .nagiefotki.ng-hide 
 	{
 		opacity: 0;
+		width: 10px;
+		height: 10px;
+		margin-left: 300px;
+		margin-bottom: 400px;
 		background: black;
 	}
 
@@ -849,6 +890,42 @@ a.offerstajl:focus, a.offerstajl:hover
 		outline: none;
 	}
 
+.whatSheThinks
+	{
+		position: fixed;
+		top:80px;
+		right: 8%;
+		width: 290px;
+		font-family: 'Indie Flower', cursive;
+		font-size: 18px;
+		text-align: center;
+		background-color: rgba(185, 185, 185, 0.89);
+		color: black;
+		border-radius: 9px;
+		text-shadow: 1px 1px rgb(94, 92, 92);
+		padding: 7px;		
+		box-shadow: 1px 4px 3px 0 rgba(0, 0, 0, 0.4);
+        -webkit-transition: all 1200ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition:         all 1200ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+.whatSheThinks.ng-hide
+	{
+		top: 1%;
+		width: 10%;
+		right: 1%;
+		opacity: 0.1;
+		font-size: 4px;
+	}
+
+.buritos
+	{
+		width: 20%;
+		position: fixed;
+		top: 85px;
+		left: 40%;
+	}
+
 .showallbutton
 	{
 		background-color : black;
@@ -901,23 +978,97 @@ a.offerstajl:focus, a.offerstajl:hover
 		box-shadow: 1px 4px 3px 0 rgba(0, 0, 0, 0.4);
 	}
 
+.chalkboard
+	{
+		position: fixed;
+		padding: 8px;
+		left: 0px;
+		top: 10%;
+		opacity: 1;
+    	font-family: 'Gloria Hallelujah', cursive;
+    	width: 250px;
+    	background-color: black;
+    	opacity: 0.8;
+    	border: 1px solid white;
+		box-shadow: 4px 6px 14px rgba( 72,244,252,0.4);
+    	color: white;
+    	text-shadow: 1px 1px grey;
+    	border-radius: 10px;
+    	text-align:  center;
+    	font-size: 18px;
+        -webkit-transition: all 1500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition:         all 1500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);	
+	}
+
+.chalkboard.ng-hide
+	{
+		width: 1px;
+		opacity: 0.1;
+		font-size: 1px;
+	}
+
+.chalkboard2
+	{
+		position: fixed;
+		padding: 8px;
+		right: 0px;
+		top: 25%;
+		opacity: 1;
+    	font-family: 'Gloria Hallelujah', cursive;
+    	width: 250px;
+    	background-color: black;
+    	opacity: 0.8;
+    	border: 1px solid white;
+		box-shadow: 4px 6px 14px rgba( 72,244,252,0.4);
+    	color: white;
+    	text-shadow: 1px 1px grey;
+    	border-radius: 10px;
+    	text-align:  center;
+    	font-size: 18px;
+        -webkit-transition: all 1500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition:         all 1500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);	
+	}
+
+.chalkboard2.ng-hide
+	{
+
+		width: 1px;
+		opacity: 0.1;
+		font-size: 1px;
+	}
+	
+
+
 .pokerpad
 	{
-		background-color: rgba(212,186,106,0.7);
-		padding: 11px;
-		border-radius: 17px;
-		margin-top: 40px;
-		text-align: left;
-		font-size: 18px;
-		color: white;
-		text-shadow: 1px 1px black;
-		box-shadow: 1px 4px 3px 0 rgba(0, 0, 0, 0.4);
+		padding: 9px;
+		margin-top: 8px;
+		border-radius: 9px;
 	}
 
 .pokerphoto
 	{
 
-		width: 40%;
+		width: auto;
+		height: auto;			
+		padding: 5px;
+		box-shadow: 1px 4px 3px 0 rgba(0, 0, 0, 0.4);
+		background-color: rgba(188,164,135,0.9);	
+		border-radius: 9px;		
+        -webkit-transition: all 1500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition:         all 1500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);	
+	}
+
+.pokerphoto.ng-hide
+	{
+		opacity: 0.1;
+		margin-right: 300px;
+	}
+
+.pokerwinningphoto
+	{
+		width: 85%;
+		margin: 0 auto;
 		background-color: rgba(188,164,135,0.9);	
 		border-radius: 9px;			
 		height: auto;
@@ -925,19 +1076,156 @@ a.offerstajl:focus, a.offerstajl:hover
 		box-shadow: 1px 4px 3px 0 rgba(0, 0, 0, 0.4);		
 	}
 
+
+
 .pokertext
 	{
+		width: 55%;
+		clear: both;
 		font-family: 'Indie Flower', cursive;
 		background-color: rgba(98,79,57,0.9);	
 		border-radius: 9px;
 		margin-top: 10px;
 		margin-left: 8px;
 		margin-right: 8px;
-		padding: 5px;
-		text-align: left;
+		margin-bottom: 7px;
+		padding: 9px;
+
 		font-size: 18px;
 		color: white;
 		text-shadow: 1px 1px black;
+		box-shadow: 1px 4px 3px 0 rgba(0, 0, 0, 0.4);
+	}
+
+.lemmechangeDice
+	{
+		position: fixed;
+		width: 30%;
+		left: 35%;
+		top: 45%;
+		padding: 10px;
+		background-color: rgba(20,20,20,0.8);
+		border: 1px solid black;
+		font-size: 18px;
+		color: rgb(213, 213, 213);
+		text-shadow: 1px 1px rgb(54, 53, 53);
+		text-align: center;
+		font-family: 'Indie Flower', cursive;
+
+	}
+
+.lemmechangeDice.ng-hide
+	{
+		font-size: 4px;
+		width: 5%;
+		left: 30%;
+		top: 99%;
+		opacity: 0.1;
+	}
+
+.guzik
+	{
+		width: 20%;
+		margin: 0 auto;
+		font-size: 12px;
+	}
+
+.podkosteczke
+	{
+		width: 29px;
+		height: 29px;
+		margin: 2px;
+		background-color: rgba(185, 185, 185, 0.89);
+		border-radius: 4px;
+		padding-top: 2px;		
+		padding-left: 2px;
+	}
+
+.greentable
+	{
+		font-family: 'Indie Flower', cursive;
+		margin-top: 9px;
+		font-size: 19px;
+		text-align: center;
+		background-color: rgba(20, 51, 6, 0.9);
+		border: 1px solid black;
+		border-radius: 9px;
+		color: white;
+		text-shadow: 1px 1px black;
+		padding: 11px;		
+		box-shadow: 1px 4px 3px 0 rgba(0, 0, 0, 0.4);
+	}
+
+.thelystleft
+	{
+		position: absolute;
+		right: -10px;
+		bottom: 50px;
+	}
+
+.thelystright
+	{
+		position: absolute;
+		left: -10px;
+		bottom: 50px;
+	}
+
+.fotosista
+	{
+		margin: 0 auto;
+	}
+
+.wlewo
+	{
+		float: right;
+	}
+
+.wprawo
+	{
+		float: left;
+	}
+
+.theWinnerIs
+	{
+		position: fixed;
+		top:190px;
+		left: 35%;
+		width: 30%;
+		font-family: 'Indie Flower', cursive;
+		background-image : url('../media/backgrounds/plamka.png');
+		background-color: rgba(6, 78, 244, 0.87);
+		background-size: cover;
+		padding: 11px;
+		border-radius: 17px;
+		margin-top: 65px;
+		text-align: center;
+		font-size: 22px;
+		color: white;
+		text-shadow: 1px 1px black;
+		box-shadow: 1px 4px 3px 0 rgba(0, 0, 0, 0.4);
+        -webkit-transition: all 1500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition:         all 1500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+.theWinnerIs.ng-hide
+	{
+		opacity: 0.1;
+		top: 100px;
+		width: 10%;
+		left: 30%;
+		font-size: 3px;
+	}
+
+ul {
+	padding: 0;
+	list-style-type: none;
+}
+
+
+
+
+hr {
+	width: 75%;
 	}
 
 .logo-img 
@@ -1202,7 +1490,33 @@ a.offerstajl:focus, a.offerstajl:hover
 	}
 
 
+.rozdaj
+	{
+		margin-top: 20px;
+        -webkit-transition:all linear 0.5s;
+        transition:all linear 0.5s;	
+	}
 
+.rozdaj.ng-hide
+	{
+		opacity: 0;
+	}
+
+
+.pokerbuttons
+	{
+		font-family: 'Gloria Hallelujah', cursive;
+		font-size: 20px;
+		margin: 1px;
+		background-color: rgba(230, 230, 244, 0.8);
+		color: black;
+		text-shadow: 1px 1px rgb(176, 190, 197);		
+	}
+
+.pokerbuttons:hover
+	{
+		box-shadow: 1px 3px 8px 2px #FFEAAA;		
+	}
 
 @media screen and (max-width: 991px) {
     .kontaktuum {
@@ -1213,10 +1527,22 @@ a.offerstajl:focus, a.offerstajl:hover
     	font-size: 19px;
     }
 
+.lemmechangeDice
+	{
+		width: 48%;
+		left: 26%;
+	}
+
     .slowo-panskie {
     	font-size: 19px;
     	padding: 20px;
     }
+
+    .theWinnerIs
+	{
+		left: 27%;
+		width: 46%;
+	}
 }
 
 @media screen and (max-width: 767px) {
@@ -1234,6 +1560,11 @@ a.offerstajl:focus, a.offerstajl:hover
     	font-size: 25px;
     }
 
+.lemmechangeDice
+	{
+		width: 64%;
+		left: 18%;
+	}
 
 
 .modaltitlepad
@@ -1244,6 +1575,12 @@ a.offerstajl:focus, a.offerstajl:hover
     .slowo-panskiectc
     {
     	font-size: 17px;
+    }
+
+    .buritos
+    {
+    	width: 40%;
+    	left: 30%;
     }
 
     .slowo-panskie
@@ -1264,6 +1601,14 @@ a.offerstajl:focus, a.offerstajl:hover
     	padding: 5px;
     	font-size: 16px;
     }
+
+    .theWinnerIs
+	{
+		left: 20%;
+		width: 60%;
+	}
+}
+
 }
 
 @media screen and (max-width: 570px) {
@@ -1279,7 +1624,14 @@ a.offerstajl:focus, a.offerstajl:hover
 		width: 100%;
 	}
 
-    .modal-header
+.lemmechangeDice
+	{
+		width: 84%;
+		left: 8%;
+	}
+
+
+.modal-header
     {
     	font-size: 20px;
     }
@@ -1289,9 +1641,21 @@ a.offerstajl:focus, a.offerstajl:hover
 		right: -15px;
 	}
 
+    .buritos
+    {
+    	width: 50%;
+    	left: 20%;
+    }
+
 	.introtext
 	{
 		font-size: 13px;
+	}
+
+    .theWinnerIs
+	{
+		left: 12%;
+		width: 76%;
 	}
 
 }
@@ -1303,6 +1667,19 @@ li
 
 
 @media screen and (max-width: 500px) {
+
+	.portfolio {
+		padding: 2px;
+	}
+
+
+.lemmechangeDice
+	{
+		width: 96%;
+		left: 2%;
+	}
+
+
     .kontaktuum {
         font-size: 11px;
         padding-left: 10px;

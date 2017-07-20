@@ -67,7 +67,7 @@
 			})
 
 			.state('poker', {
-			url: '/poker',
+			url: '/dice',
 			templateUrl: 'sources/chunks/poker.html',
 			controller: 'PokerCtrl as k',
 			data: 	{
@@ -87,16 +87,43 @@
 		};
 
 
-PokerCtrl.$inject = ['Serwis'];
-function PokerCtrl (Serwis)
+PokerCtrl.$inject = ['Serwis', '$state'];
+function PokerCtrl (Serwis, $state)
 {
 		var k = this;
+
 		var startUp = Serwis.init (5);
 		k.soundIcon = startUp.music;
 		k.soundShutUp = startUp.sound;
 		k.dieseLeute = {};
 		k.dieseLeute = Serwis.passName ("justpass");
 		k.brutality = false;
+		k.AlbertynaPicture = "sources/media/pics/poker1.jpg";
+		k.AlbertynaIdle = true;
+		k.shufflebutton = false;
+		k.playbuttons = false;
+		k.playermoney = 1000;
+		k.photojoker = false;
+		k.winningScreen = false;
+		k.mymoney = 1000;
+		k.ascendus = 1;
+		k.round = 1;
+		k.changeDone = false;
+		k.buttonText = "Wymieniam!";
+		k.moneypile = 0;
+		k.whatIdo = "";
+		k.winner = "";
+		k.showWinner = false;
+		k.minimumBet = 15;
+		k.bid = k.minimumBet;
+		k.dice = ['sources/media/icons/one.png', 'sources/media/icons/two.png', 'sources/media/icons/three.png', 'sources/media/icons/four.png', 'sources/media/icons/five.png', 'sources/media/icons/six.png'];
+		k.playercards = [];
+		k.mycards = [];
+		k.noLooking = true;
+		k.swapemDice = false;
+		k.points = false;
+		k.tuapua = "";
+		k.duplexpua = "";
 
 		k.nuta = function (what)
 		{
@@ -109,9 +136,444 @@ function PokerCtrl (Serwis)
 			};
 		};
 
-		setTimeout(function(){ k.brutality = true; }, 5000);
+		function finishThatBlast (didAlbertynaLoose)
+		{
+			var sound = 0;
 
-};
+			setTimeout(function(){
+			if (didAlbertynaLoose)
+			{
+				k.whatIdo = "Wygrałeś! Aż nie mogę uwierzyć. Gratuluję szczęścia wygrania darmowej metamorfozy Twej nory, którą - zgodnie z obietnicą - zaprojektuję i będę nadzorować. Ty pokrywasz tylko koszt materiałów!";
+				k.AlbertynaPicture = "sources/media/pics/grandfinale.jpg";	sound = 6;
+			} else
+			{
+				k.whatIdo = "Hah! Mówiłam Ci, że jestem dobra w kości! Mam nadzieję, że nie zapomnisz o naszej umowie i zatrudnisz mnie do zaprojektowania Twoich wnętrz. Obiecuję, że będziesz naprawdę zadowolony, a Twoje życie nabierze kolorów.";
+				k.AlbertynaPicture = "sources/media/pics/playersbroke.jpg"; sound = 9;
+			};
+			}, 3500);
+			
+			setTimeout(function(){			
+				Serwis.soundMachine (sound);
+				k.winningScreen = true;
+						 }, 4000);
+
+		};
+
+
+
+		function undressingCheck ()
+		{
+			var temporaryPicture = "";
+			var newAscendus = 0;
+
+			if (k.playermoney < 1)
+			{
+				k.brutality = false;
+				Serwis.init (7);
+			setTimeout(function(){
+				finishThatBlast (false); }, 1200);				
+			}
+
+			else {
+			if (k.mymoney > 900) { temporaryPicture = "sources/media/pics/poker1.jpg"; newAscendus = 1; };
+			if ((k.mymoney > 700) && (k.mymoney < 901))  { temporaryPicture = "sources/media/pics/poker2.jpg"; newAscendus = 2;  };
+			if ((k.mymoney > 500) && (k.mymoney < 701))  { temporaryPicture = "sources/media/pics/poker3.jpg"; newAscendus = 3;  };
+			if ((k.mymoney > 300) && (k.mymoney < 501))  { temporaryPicture = "sources/media/pics/poker4.jpg"; newAscendus = 4;  };
+			if ((k.mymoney > 100) && (k.mymoney < 301))  { temporaryPicture = "sources/media/pics/poker5.jpg"; newAscendus = 5;  };
+			if ((k.mymoney > 0) && (k.mymoney < 101))  { temporaryPicture = "sources/media/pics/poker6.jpg"; newAscendus = 6;  };
+			if (k.mymoney < 1)  { 
+				k.brutality = false;
+				Serwis.init (7);
+			setTimeout(function(){
+				finishThatBlast (true); }, 1200);
+			};
+
+			if (k.AlbertynaPicture != temporaryPicture)
+			{
+				k.photojoker = false;
+			setTimeout(function(){ 
+			k.AlbertynaPicture = temporaryPicture;
+			k.photojoker = true;
+			if (k.ascendus < newAscendus)
+				{	Serwis.soundMachine(10); }
+				else {	Serwis.soundMachine(11); };
+			k.ascendus = newAscendus;
+			}, 1000);
+			};
+
+		};	
+		};
+
+		function showUsWhoWon ()
+		{
+			var i = 0;
+
+			setTimeout(function(){ k.showWinner = true;
+			Serwis.soundMachine (14);
+
+			setTimeout(function(){
+			if (k.winner === "wygrywa Albertyna!")
+			{
+				Serwis.soundMachine (1);
+				k.mymoney = k.mymoney + k.moneypile;
+				k.moneypile = 0;
+				Serwis.soundMachine (8);
+			}
+			else 
+			{ if (k.winner!="REMIS!")
+			{
+				Serwis.soundMachine (13);
+				k.playermoney = k.playermoney + k.moneypile;
+				k.moneypile = 0;
+				Serwis.soundMachine (8);
+			} else
+				{
+					Serwis.soundMachine (17);
+				};
+			};
+
+			setTimeout(function(){ k.shufflebutton = true; k.bid = k.minimumBet;
+				k.showWinner = false; k.round = 1;
+			for (i=0; i<6; i++)
+			{
+				k.playercards.pop();
+				k.mycards.pop();
+			};
+				k.points = false;
+				undressingCheck (); }, 4000);
+			}, 1500);
+			 }, 1200);
+		};
+
+
+		k.yuppi = function ()
+		{
+			k.winningScreen = false;
+			setTimeout(function(){ Serwis.soundMachine(12); }, 500);
+			setTimeout(function(){ 
+			Serwis.soundMachine(20); 
+			setTimeout(function(){ $state.go('home');}, 1500); }, 2800);
+		};
+
+
+		k.shuffle = function ()
+		{
+			var i = 0;
+			var rc = 0;
+			var rl = 0;
+
+			k.changeDone = false;
+			k.noLooking = true;
+
+			k.buttonText = "Wymieniam!";
+
+			k.shufflebutton = false;
+			setTimeout(function(){
+			Serwis.soundMachine (8);
+			k.playermoney = k.playermoney - k.minimumBet;
+			k.mymoney = k.mymoney - k.minimumBet;
+			k.moneypile = k.moneypile + k.minimumBet + k.minimumBet;
+			k.bid = k.minimumBet;
+			k.round = 1;
+
+			undressingCheck ();
+			 }, 1200);
+
+			setTimeout(function() {
+			for (i=0; i<6; i++)
+			{
+				rc = Math.floor(Math.random() * 6) + 1;
+				rl = Math.floor(Math.random() * 6) + 1;
+
+				k.playercards [i] = rc;	k.mycards [i] = rl;
+			};
+
+			k.playercards.sort(function(a, b){return b-a}); k.mycards.sort(function(a, b){return b-a});
+
+			}, 2900);
+
+			setTimeout(function(){ k.playbuttons = true; }, 1200);
+
+		};
+
+		k.ruchAlbertyny = function ()
+		{
+			var myStrength = 0;
+			var i = 0;
+			var bluffFactor = Math.floor(Math.random() * 100);
+
+			for (i=0; i<6; i++)
+			{
+				var myStrength = myStrength + k.mycards[i];
+			};
+
+			var additionalText = "";
+
+			if (myStrength>30) {
+				if (k.mymoney > 2*k.bid) { additionalText = " podnoszę stawkę!!!"; }
+					else {
+						if (k.changeDone) { additionalText = " sprawdzam!!!"; }
+							else { additionalText = " zmieniam!!!"; };
+					};
+				};
+
+			if ((myStrength < 31) && (myStrength > 24)) {
+				if ((bluffFactor > 70) && (k.mymoney > 2*k.bid)) { additionalText = " podnoszę stawkę!!!"; }
+				else {
+				if ((bluffFactor < 10) && (k.moneypile < 105)) { additionalText = " pasuję...."; }
+					else {
+						if (k.changeDone) { additionalText = " sprawdzam!!!"; }
+							else { additionalText = " zmieniam!!!"; };
+					};
+				};
+				};
+
+			if ((myStrength < 25) && (myStrength > 17)) {
+				if ((bluffFactor > 80) && (k.mymoney > 3*k.bid)) { additionalText = " podnoszę stawkę!!!"; };
+				if ((bluffFactor < 20) && (k.moneypile < 140)) { additionalText = " pasuję...."; }
+					else {
+						if (k.changeDone) { additionalText = " sprawdzam!!!"; }
+							else { additionalText = " zmieniam!!!"; };
+					};
+				};
+
+			if (myStrength < 18) {
+				if (bluffFactor > 93) { additionalText = " podnoszę stawkę!!!"; };
+				if (bluffFactor < 45) { additionalText = " pasuję...."; }
+					else {
+						if ((k.moneypile>65) && (!k.changeDone)) {  additionalText = " zmieniam!!!"; }
+							else {  additionalText = " pasuję...."; };
+					};
+				};
+
+			if ((additionalText === " podnoszę stawkę!!!") && (k.round > 4))
+			{
+				if (!changeDone) { additionalText = " zmieniam!!!"; }
+					else { additionalText = " sprawdzam!!!"; };
+			}
+
+			k.whatIdo = "... no więc " + Serwis.caressMe() + " ... ";
+
+			setTimeout(function(){  k.AlbertynaIdle=false; Serwis.soundMachine(5); }, 1000);
+			setTimeout(function(){  k.whatIdo = k.whatIdo + additionalText; 
+			if (additionalText === " podnoszę stawkę!!!")
+			{
+			k.bid = k.bid + k.minimumBet;
+			k.mymoney = k.mymoney - k.bid;
+			k.moneypile = k.moneypile + k.bid;
+
+			Serwis.soundMachine (8);
+			setTimeout(function(){  k.AlbertynaIdle=true; k.playbuttons = true; 
+						k.round = k.round + 1; }, 2000);
+			};
+
+			if (additionalText === " sprawdzam!!!")
+			{
+			Serwis.soundMachine (15);
+			setTimeout(function(){  k.AlbertynaIdle=true; k.check (1); }, 2000);				
+			};
+
+			if (additionalText === " zmieniam!!!")
+			{
+			Serwis.soundMachine (18);
+			setTimeout(function(){  k.AlbertynaIdle=true; k.check (1); }, 2000);				
+			};
+
+			if (additionalText === " pasuję....")
+			{
+				Serwis.soundMachine (16);
+				k.winner = "wygrywa " + k.dieseLeute.name + "!";
+				setTimeout(function(){  k.AlbertynaIdle=true; showUsWhoWon(); }, 2000);					
+			};
+			}, 3000);
+		};
+
+		k.raise = function ()
+		{
+			k.bid = k.bid + k.minimumBet;
+			k.playermoney = k.playermoney - k.bid;
+			k.moneypile = k.moneypile + k.bid;
+			k.round = k.round + 1;
+			k.whatIdo = "mój ruch ....";
+			k.playbuttons = false;
+			setTimeout(function(){ 
+			k.AlbertynaIdle = false;
+			Serwis.soundMachine(0); }, 1200);	
+			setTimeout(function(){  k.AlbertynaIdle=true; 
+			setTimeout(function(){
+
+			k.ruchAlbertyny(); }, 1000);
+			}, 3000);						
+		};
+
+		k.pass = function ()
+		{
+			k.winner = "wygrywa Albertyna!";
+			k.playbuttons = false;
+			showUsWhoWon ();
+		};
+
+		k.changeDice = function (howmany)
+		{
+			var i = 0;
+			var y = 0;
+			var rn = 0;
+			var playerswapper = "";
+			var Albertynaswapper = "";
+			k.swapemDice = false;
+
+			for (i = 0; i < howmany; i++)
+			{
+				k.playermoney = k.playermoney - k.bid;
+				k.moneypile = k.moneypile + k.bid;
+				k.playercards.pop();
+			};
+
+			for (i = 0; i < howmany; i++)
+			{
+				rn = Math.floor(Math.random() * 6) + 1;
+				k.playercards.push(rn);	
+			};
+
+			k.playercards.sort(function(a, b){return b-a});
+
+			i = 0;
+
+			if (k.mycards[5]<4)
+			{
+				i = i+1;
+				k.mycards.pop();
+				k.mymoney = k.mymoney - k.bid;
+				k.moneypile = k.moneypile + k.bid;
+				if (k.mycards[4]<4)
+				{
+					i = i+1;
+					k.mycards.pop();
+					k.mymoney = k.mymoney - k.bid;
+					k.moneypile = k.moneypile + k.bid;					
+					if (k.mycards[3]<4)
+					{
+					i = i+1;
+					k.mycards.pop();
+					k.mymoney = k.mymoney - k.bid;
+					k.moneypile = k.moneypile + k.bid;		
+					};
+				};
+			};
+			
+			for (y = 0; y < i; y++)
+			{
+				rn = Math.floor(Math.random() * 6) + 1;
+				k.mycards.push(rn);					
+			};
+
+			k.mycards.sort(function(a, b){return b-a});
+
+			if (howmany === 0) { playerswapper = "nie wymieniona ani jedna kostka." };
+			if (howmany === 1) { playerswapper = "wymieniona jedna kostka." };
+			if (howmany === 2) { playerswapper = "wymienione dwie kostki." };
+			if (howmany === 3) { playerswapper = "wymienione trzy kostki." };
+
+			if (i === 0) { Albertynaswapper = "nie wymieniona ani jedna kostka." };
+			if (i === 1) { Albertynaswapper = "wymieniona jedna kostka." };
+			if (i === 2) { Albertynaswapper = "wymienione dwie kostki." };
+			if (i === 3) { Albertynaswapper = "wymienione trzy kostki." };
+
+
+			k.winner = k.dieseLeute.name + " : " + playerswapper + "\n"
+			+ "Albertyna " + " : " + Albertynaswapper;
+
+			k.showWinner = true;
+			setTimeout(function(){
+				k.showWinner = false;
+			}, 5000);
+
+			Serwis.soundMachine (19);
+
+			setTimeout(function(){
+			k.buttonText = "Sprawdzam!";
+			k.round = 1;
+			console.log (k.changeDone);
+			if (k.changeDone) 
+			{
+			k.playbuttons = true;
+			} else
+			{
+			k.changeDone = true;
+			k.whatIdo = "mój ruch ....";
+			setTimeout(function(){ 
+			k.AlbertynaIdle = false;
+			Serwis.soundMachine(0); }, 1200);	
+			setTimeout(function(){  k.AlbertynaIdle=true; 
+			setTimeout(function(){
+
+			k.ruchAlbertyny(); }, 1000);
+			}, 3000); };
+			}, 2500);
+		};
+
+
+		k.check = function (who)
+		{
+
+			k.playbuttons = false;
+			var AlbertynaPoints = 0;
+			var PlayerPoints = 0;
+			var i = 0;
+
+			if (who === 0)
+			{
+			k.playermoney = k.playermoney - k.bid;
+			k.moneypile = k.moneypile + k.bid;				
+			}
+			else
+			{
+			k.mymoney = k.mymoney - k.bid;
+			k.moneypile = k.moneypile + k.bid;			
+			};
+			Serwis.soundMachine (8);
+
+			if (k.changeDone)
+			{
+		
+			k.noLooking = false; 
+			Serwis.soundMachine (4);
+			setTimeout(function(){
+
+				k.points = true;
+			}, 1000);
+
+
+			k.round = 1;
+			for (i = 0; i<6; i++)
+			{
+				AlbertynaPoints = AlbertynaPoints + k.mycards [i];
+				PlayerPoints = PlayerPoints + k.playercards [i];
+			};
+
+			k.tuapua = PlayerPoints.toString();
+			k.duplexpua = AlbertynaPoints.toString();
+
+
+			setTimeout(function(){
+			if (AlbertynaPoints > PlayerPoints) { k.winner = "wygrywa Albertyna!";};
+			if (AlbertynaPoints ===  PlayerPoints) { k.winner = "REMIS!"; };
+			if (AlbertynaPoints < PlayerPoints) { k.winner = "wygrywa " + k.dieseLeute.name;};
+			showUsWhoWon (); }, 2000);
+			}
+			else { 
+				if (who === 1) { k.changeDone = true };
+				setTimeout(function(){
+				Serwis.soundMachine (2);
+				k.swapemDice = true;
+				}, 2000)};
+		};
+
+
+		setTimeout(function(){ k.brutality = true; Serwis.soundMachine (7);
+		setTimeout(function(){ k.photojoker = true; Serwis.soundMachine (21); k.shufflebutton = true; }, 7000);			
+		}, 5000); 
+		};
 
 
 PortfolioCtrl.$inject = ['Serwis'];
@@ -301,7 +763,7 @@ function ContactCtrl (Serwis)
     		setTimeout(function(){ k.paxTu5 = true; }, 4100);
     		setTimeout(function(){ k.paxTu6 = true; }, 4600);
     		setTimeout(function(){ k.paxTu7 = true; }, 5600);
-    		setTimeout(function(){ Serwis.kissme(); k.kiss = true; }, 6600);
+    		setTimeout(function(){ Serwis.soundMachine(2); k.kiss = true; }, 6600);
 		};
 
     setTimeout(function(){ k.showcontacts = true; }, 4000);
@@ -379,10 +841,10 @@ function HomeCtrl (Serwis)
 			if (p === 1) { k.powitanie = false; k.firsttime = true; };
 			if (p === 2) { k.powitanie = false; k.showWishes = true; };
 			if (p === 3) { k.firsttime = false; k.showControls = true;
-			 setTimeout(function(){ k.pointsounds = true; Serwis.dzyn(); }, 1000); };
+			 setTimeout(function(){ k.pointsounds = true; Serwis.soundMachine(4); }, 1000); };
 			if (p === 4) { k.showControls = false; k.showVarans = true;  k.pointsounds = false;
-			 setTimeout(function(){ k.pointwaran = true; Serwis.dzyn(); }, 1500);
-			 setTimeout(function(){ k.pointnavi = true; Serwis.dzyn(); }, 4000); }
+			 setTimeout(function(){ k.pointwaran = true; Serwis.soundMachine(4); }, 1500);
+			 setTimeout(function(){ k.pointnavi = true; Serwis.soundMachine(4); }, 4000); }
 			if (p === 5) { k.showVarans = false; k.showWishes = true; 
 				k.pointwaran = false; k.pointnavi = false };
 		};
@@ -426,9 +888,9 @@ function AboutCtrl (Serwis)
 				}, (Math.floor((Math.random() * 100) + 1)));
 			} else
 			{ 
-				Serwis.typeme(false);
+				Serwis.soundMachine(100);
 				k.speedButton = false;
-				setTimeout(function(){ k.domek = true; }, 1000); };
+		};
 		};
 
 
@@ -466,9 +928,9 @@ function AboutCtrl (Serwis)
 
     	setTimeout(function(){ k.soYoSpeak = true; 
 
-    	setTimeout(function(){ 
-    			Serwis.typeme (true); 
-    			typeIt (); }, 1000);
+     	setTimeout(function(){ k.domek = true; }, 2000);
+
+    	setTimeout(function(){ Serwis.soundMachine (3); typeIt (); }, 1000);
     			 }, 4500);
 
 
@@ -524,10 +986,34 @@ function Serwis (ngAudio)
 		var s = this;
 		s.soundIcon = "sources/media/icons/big-pause-button.png";
 		s.soundShutUp = "sources/media/icons/big-speaker.png";
-		s.bessos = ngAudio.load("sources/media/sounds/kiss.wav");
-		s.typing = ngAudio.load("sources/media/sounds/typing.wav");
-		s.bling = ngAudio.load("sources/media/sounds/bling.wav");
+
 		s.muza = [];
+		s.soundFX = [];
+
+		s.soundFX [0] = ngAudio.load("sources/media/sounds/think.wav");
+		s.soundFX [1] = ngAudio.load("sources/media/sounds/winning.wav");
+		s.soundFX [2] = ngAudio.load("sources/media/sounds/kiss.wav");
+		s.soundFX [3] = ngAudio.load("sources/media/sounds/typing.wav");
+		s.soundFX [4] = ngAudio.load("sources/media/sounds/bling.wav");
+		s.soundFX [5] = ngAudio.load("sources/media/sounds/gasp.mp3");		
+		s.soundFX [6] = ngAudio.load("sources/media/sounds/touch-my-body.wav");	
+		s.soundFX [7] = ngAudio.load("sources/media/sounds/enjoy-my-breeze.wav");
+		s.soundFX [8] = ngAudio.load("sources/media/sounds/coins.wav");
+		s.soundFX [9] = ngAudio.load("sources/media/sounds/giggle.wav");
+		s.soundFX [10] = ngAudio.load("sources/media/sounds/takeoff.wav");
+		s.soundFX [11] = ngAudio.load("sources/media/sounds/dressup.wav");
+		s.soundFX [12] = ngAudio.load("sources/media/sounds/oh_yes.wav");
+		s.soundFX [13] = ngAudio.load("sources/media/sounds/argh.ogg");
+		s.soundFX [14] = ngAudio.load("sources/media/sounds/ba-da-dum.wav");
+		s.soundFX [15] = ngAudio.load("sources/media/sounds/checked.wav");
+		s.soundFX [16] = ngAudio.load("sources/media/sounds/pass.wav");
+		s.soundFX [17] = ngAudio.load("sources/media/sounds/draw.wav");
+		s.soundFX [18] = ngAudio.load("sources/media/sounds/changeyeah.wav");
+		s.soundFX [19] = ngAudio.load("sources/media/sounds/dice.wav");
+		s.soundFX [20] = ngAudio.load("sources/media/sounds/blast.wav");
+		s.soundFX [21] = ngAudio.load("sources/media/sounds/missyou.wav");
+
+
 		s.muza[0] = ngAudio.load("sources/media/sounds/home_song.mp3");
 		s.muza[1] = ngAudio.load("sources/media/sounds/about_song.mp3");
 		s.muza[2] = ngAudio.load("sources/media/sounds/offer_song.mp3");
@@ -535,16 +1021,39 @@ function Serwis (ngAudio)
 		s.muza[4] = ngAudio.load("sources/media/sounds/contact_song.mp3");
 		s.muza[5] = ngAudio.load("sources/media/sounds/poker_song.mp3");
 		s.muza[6] = ngAudio.load("sources/media/sounds/poker_login.mp3");
+		s.muza[7] = ngAudio.load("sources/media/sounds/bens.mp3");
 		s.muza[0].volume = 0.45; s.muza[0].unbind();
 		s.muza[1].volume = 0.2; s.muza[1].unbind();
 		s.muza[2].volume = 0.4; s.muza[2].unbind();
 		s.muza[3].volume = 0.2; s.muza[3].unbind();
 		s.muza[4].volume = 0.95; s.muza[4].unbind();
 		s.muza[5].volume = 0.2; s.muza[5].unbind();
-		s.muza[6].volume = 0.55; s.muza[6].unbind();
-		s.bessos.unbind();
-		s.typing.unbind();
-		s.bling.unbind();
+		s.muza[6].volume = 0.45; s.muza[6].unbind();
+		s.muza[7].volume = 0.44; s.muza[7].unbind();
+		s.soundFX [0].unbind();
+		s.soundFX [1].unbind();
+		s.soundFX [2].unbind();
+		s.soundFX [3].unbind();
+		s.soundFX [4].unbind();
+		s.soundFX [5].unbind();
+		s.soundFX [6].unbind();
+		s.soundFX [7].unbind();
+		s.soundFX [8].unbind();
+		s.soundFX [9].unbind();
+		s.soundFX [10].unbind();
+		s.soundFX [11].unbind();
+		s.soundFX [12].unbind();
+		s.soundFX [13].unbind();
+		s.soundFX [14].unbind();
+		s.soundFX [15].unbind();
+		s.soundFX [16].unbind();
+		s.soundFX [17].unbind();
+		s.soundFX [18].unbind();
+		s.soundFX [19].unbind();
+		s.soundFX [20].unbind();
+		s.soundFX [20].unbind();
+		s.soundFX [21].unbind();
+
 		s.isFirst = true;
 
 		s.dj = 1;
@@ -635,6 +1144,13 @@ function Serwis (ngAudio)
 			            "brudas ", "boski żygolo ", "kominiarz ", "rycerski ", "świerzb ", "smrodostopy ", "kawał huja ", "menelik ", "wieczna sraczka ", "megaloman "]
 		};
 
+		s.realMacho = false;
+
+		s.males = ["drogusiu", "koleżko", "kochanieńki", "mój brutalu", "skarbie", "wariacie", "mordo", "ziomaliku", "prztojniaku", "pokręcony gargulcu",
+					"udręczony sękatym kijem w odbyt lichodzieju", "meneliku", "szefie", "mistrzuniu", "moczymordo", "królu", "grubszy", "rycerzu", "twardzielu", "chamie"];
+		s.females = ["maleńka", "smródko", "kochanieńka", "tragikomiczna wiedźmo", "nieznośna jędzo", "ślicznotko", "kotku", "dupeńko", "czarodziejko", "grzebiuszko",
+					"cipo łysa", "skarbeńku", "bezczelna złodziejko", "mikrokotku", "nie mazgaj się", "perełko", "ptaszyno", "zagadko ewolucji", "martwisz mnie", "chrobocie"];
+
 
 		s.passName = function (name)
 		{
@@ -656,10 +1172,21 @@ function Serwis (ngAudio)
 						s.personalData = {
 							name : s.nicknames.dicknames[nicknameNumber] + name,
 							head : 'sources/media/icons/guyhead.png'
-						};
+						}; s.realMacho = true;
 						};
 				};
 		};
+
+		s.caressMe = function ()
+		{
+			var dearestOne = Math.floor(Math.random() * 20);
+
+			if (s.realMacho)
+			{
+				return s.males [dearestOne];
+			} else { return s.females [dearestOne]; };
+		};
+
 
 		s.init = function (state)
 		{
@@ -685,22 +1212,18 @@ function Serwis (ngAudio)
 			return musicDeterminieties;
 		};
 
-		s.kissme = function ()
+		s.soundMachine = function (burritoSplash)
 		{
-			s.bessos.play();
+			if (burritoSplash === 100)
+			{
+				s.soundFX[3].stop();
+			}
+			else
+			{
+				s.soundFX[burritoSplash].play();
+			};
 		};
 
-		s.dzyn = function ()
-		{
-			s.bling.play();
-		};
-
-		s.typeme = function (on)
-		{
-			if (on) {
-			s.typing.play();
-			} else { s.typing.stop() };
-		};
 
 		s.passOffer = function (which)
 		{

@@ -6,7 +6,7 @@
 
 <div class="cointainer naszolapie tekstpad" ng-show="k.hello">
 
-<img class="img-responsive img-rounded" src="sources/media/pics/concept.jpg" alt="dragon">
+<img class="img-responsive img-rounded shadowyHood" src="sources/media/pics/concept.jpg" alt="dragon">
 
 <div class="quickshow" ng-show="k.primitivity">
 
@@ -93,7 +93,7 @@ Buziaki! <br>
 <div class="homepad">
 <p>Widzę, że poznajesz moją stronę</p>
 Bardzo mi miło<br>
-.... może partyjka pokera? ....<br>
+.... może zagramy w kości? ....<br>
 </div>
 </div>
 </div>
@@ -109,7 +109,7 @@ Bardzo mi miło<br>
 <div class="fpokjerka" ng-hide="k.primitivity">
 <div class="kontener3">
 <a class="offerbutton" ng-click="k.goPlayPoker(0);"
- ng-audio="sources/media/sounds/shuffling-cards.mp3" volume="0.5" 
+ ng-audio="sources/media/sounds/dice.wav" volume="0.9" 
  ng-audio-hover="sources/media/sounds/button-21.mp3" volume-hover="0.2">
 <img class="img-responsive" src="sources/media/pics/deckocards.png" alt="karciochy">
 </a>
@@ -123,8 +123,8 @@ Bardzo mi miło<br>
 <div class="col-md-offset-1 col-md-6 askmabadapoker" ng-hide="k.innocentGames">
 
 	<div class="container kontener3" ng-hide="k.valid">
-		<p>Poker <span class="kontener3" ng-hide="k.enterYourName">.......</span></p>
-		<p class="kontener3" ng-hide="k.enterYourName">Życzę Ci powodzenia... Jestem w tym dobra!</p>
+		<p>Kości <span class="kontener3" ng-hide="k.enterYourName">.......</span></p>
+		<p class="kontener3" ng-hide="k.enterYourName">Życzę Ci powodzenia...!</p>
 		<p ng-show="k.enterYourName">
 		Jeśli wygram... zatrudnisz mnie przy rearanżu <br>
 		swojego domu...<br>
@@ -141,7 +141,7 @@ Bardzo mi miło<br>
 	<div class="container kontener2" ng-show="k.validation">
 		<p>Witaj {{k.thyName}}</p>
 		<button class="btn btn-danger" ui-sref="poker"
-		  ng-audio="sources/media/sounds/scream.ogg" volume="0.3" 
+		  ng-audio="sources/media/sounds/scream.ogg" volume="0.2" 
  		  ng-audio-hover="sources/media/sounds/crack.mp3" volume-hover="0.4">
 		ZAPRASZAM DO GRY</button>
 	</div>
