@@ -1138,18 +1138,18 @@ function Serwis (ngAudio)
 		s.personalData = { name : "none", head : "none"};
 
 		s.nicknames = {
-			chicknames : ["królewna ", "kocica ", "rusałka ", "krzywdzicielka ", "nimfa ", "syrena ", "czarodziejka ", "butelkonosa ", "ślicznostopa ", "wiedźma ",
-						"tłustawa ", "bogini seksu ", "otrupiała ", "pajęczyca ", "sroga ", "popiardująca ", "ślepawa brzydula ", "zmysłowa ", "pazerna ", "nimfomanka "],
-			dicknames : ["zakapior ", "żulik ", "cwaniaczyna ", "ziomalik ", "kat uczuć ", "psychopata ", "cherlawy ", "książę ", "srający pieniędzmi ", "nieodgadniony ",
-			            "brudas ", "boski żygolo ", "kominiarz ", "rycerski ", "świerzb ", "smrodostopy ", "kawał huja ", "menelik ", "wieczna sraczka ", "megaloman "]
+			chicknames : ["królewna ", "kocica ", "rusałka ", "krzywdzicielka ", "nimfa ", "syrena ", "czarodziejka ", "butelkonosa ", "śliczna ", "wiedźma ",
+						"tłustawa ", "bogini seksu ", "otrupiała ", "pajęczyca ", "sroga ", "smakowita ", "ślepawa ", "zmysłowa ", "pazerna ", "nimfomanka "],
+			dicknames : ["zakapior ", "żulik ", "cwaniaczyna ", "ziomalik ", "kat uczuć ", "psychopata ", "cherlawy ", "książę ", "przebogaty ", "nieodgadniony ",
+			            "brudas ", "boski żygolo ", "kominiarz ", "rycerski ", "świerzb ", "maluczki ", "niedobry ", "menelik ", "wieczny ", "megaloman "]
 		};
 
 		s.realMacho = false;
 
 		s.males = ["drogusiu", "koleżko", "kochanieńki", "mój brutalu", "skarbie", "wariacie", "mordo", "ziomaliku", "prztojniaku", "pokręcony gargulcu",
-					"udręczony sękatym kijem w odbyt lichodzieju", "meneliku", "szefie", "mistrzuniu", "moczymordo", "królu", "grubszy", "rycerzu", "twardzielu", "chamie"];
+					"złociutki", "meneliku", "szefie", "mistrzuniu", "moczymordo", "królu", "grubszy", "rycerzu", "twardzielu", "chamie"];
 		s.females = ["maleńka", "smródko", "kochanieńka", "tragikomiczna wiedźmo", "nieznośna jędzo", "ślicznotko", "kotku", "dupeńko", "czarodziejko", "grzebiuszko",
-					"cipo łysa", "skarbeńku", "bezczelna złodziejko", "mikrokotku", "nie mazgaj się", "perełko", "ptaszyno", "zagadko ewolucji", "martwisz mnie", "chrobocie"];
+					"skarbie", "skarbeńku", "bezczelna złodziejko", "mikrokotku", "nie mazgaj się", "perełko", "ptaszyno", "zagadko ewolucji", "martwisz mnie", "chrobocie"];
 
 
 		s.passName = function (name)
