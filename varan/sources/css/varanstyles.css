@@ -1,0 +1,101 @@
+body
+    {
+        background-color: black;
+    }
+
+    .logo-img 
+	{
+        width: 70px;
+        height: 42px;
+        padding-left: 19px;
+        padding-right: 19px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-top: 4px;
+        margin-left: 2px;
+        margin-bottom: 4px; 
+        border: 2px solid black;
+        border-radius: 20px; 
+	}
+
+
+#navka
+	{
+        font-family: 'Kanit', sans-serif;
+        background-color: black;
+
+		color: white;
+		margin-top: 3px;
+		font-size: 16px;
+		box-shadow: 0 4px 8px 0 rgba(24, 23, 23, 0.2), 0 6px 20px 0 rgba(24, 23, 23, 0.19);
+	}
+
+.navibutton
+	{
+		text-align: center;
+        border: 1px solid black;
+		border-radius: 10px;
+		margin: 6px;
+		margin-top: 12px;
+	}
+
+.nav>li>a 
+	{
+		color: rgb(45, 48, 49);
+		padding-top: 3px;
+		padding-bottom: 3px;
+	}
+
+.navbar-default .navbar-nav>li>a
+	{
+		color: rgb(45, 48, 49);
+	}
+
+
+
+.navibutton:hover 
+	{
+			box-shadow: 2px 2px 20px rgba( 244, 248, 248, 0.4);
+	}
+
+.navbar-default .navbar-nav>li>a:hover
+	{
+		color: rgb(221, 225, 226);
+	}
+
+
+.navbar-default .navbar-toggle:hover
+	{
+		background-color: rgb(26, 26, 27);
+		box-shadow: 2px 2px 20px rgba( 244,248, 248 ,0.4);
+	}
+
+.logo-img:hover
+	{
+		box-shadow: 2px 2px 20px rgba(244, 248, 248, 0.4);
+	}
+
+#chunk-content
+	{
+		margin-top: 80px;
+	}
+
+.fit-in-viewport
+	{
+		margin-top: 50px;
+	}
+
+.logo-text
+	{
+		color: rgb(139, 20, 30);
+		padding-top: 10px;
+		font-family: 'Black Ops One', cursive;
+		font-size: 80px;
+	}
+
+.logo-text-small
+	{
+		color: rgb(109, 19, 23);
+		font-family: 'Annie Use Your Telescope', cursive;
+		font-size: 28px;
+	}

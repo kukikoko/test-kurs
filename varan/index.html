@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VARAN</title>
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Black+Ops+One" rel="stylesheet">
+
+    <!-- Bootstrap -->
+
+    <link rel="stylesheet" href="sources/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="sources/css/varanstyles.css">
+
+   </head>
+
+
+   <body ng-app="VaranApplication">
+
+
+    <nav class="navbar navbar-inverse navbar-fixed-top container-fluid" id="navka">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+           data-target="#collapsable-nav" aria-expanded="false"
+           ng-audio="sources/sounds/click.mp3">        
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a ui-sref="home"
+          ng-audio="sources/sounds/click.mp3">
+           <div class="logo-img">
+          <img src="sources/icons/logo.png" alt="VARAN">
+          </div>
+          </a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="collapsable-nav">
+            <ul id="nav-list" class="nav navbar-nav navbar-right">
+                <li role="presentation" class="nav-item text-center">
+                <a class="nav-link navibutton" ui-sref="about" data-toggle="collapse"
+                data-target="#collapsable-nav.in"
+                ng-audio="sources/sounds/click.mp3">About</a>
+                </li>
+                <li role="presentation" class="nav-item text-center">
+                <a class="nav-link navibutton" ui-sref="style" data-toggle="collapse" 
+                data-target="#collapsable-nav.in"
+                ng-audio="sources/sounds/click.mp3">Lifestyle</a>
+                </li>
+                <li role="presentation" class="nav-item text-center">
+                <a class="nav-link navibutton" ui-sref="guitar" data-toggle="collapse"
+                data-target="#collapsable-nav.in"
+                ng-audio="sources/sounds/click.mp3">Guitar</a>
+                </li>
+                <li role="presentation" class="nav-item text-center">
+                <a class="nav-link navibutton" ui-sref="contact" data-toggle="collapse"
+                data-target="#collapsable-nav.in"
+                ng-audio="sources/sounds/click.mp3">Contact</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    
+    <div ui-view></div>
+
+    <script src="sources/script/jquery-3.1.1.min.js"></script>
+    <script src="sources/script/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+    <script src="sources/script/angular.audio.js"></script>
+    <script src="sources/script/varanapp.js"></script>
+   </body>
