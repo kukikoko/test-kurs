@@ -6,9 +6,9 @@
     angular.module('VaranApplication', ['ui.router', 'ngAudio'])
 	.config(RoutesConfig)
 	.controller('HomeController', HomeController)
-    .controller('AboutController', AboutController)
-    .controller('StyleController', StyleController)
-    .controller('GuitarController', GuitarController)
+    .controller('CareerController', CareerController)
+    .controller('LetterController', LetterController)
+    .controller('PastimeController', PastimeController)
     .controller('ContactController', ContactController)
 	.service('ServiceEngine', ServiceEngine);
 
@@ -30,22 +30,22 @@
     		controller: 'HomeController as k',
 			})
 
-			.state('about', {
-			url: '/about',
-			templateUrl: 'sources/chunks/about.html',
-			controller: 'AboutController as k',
+			.state('career', {
+			url: '/career',
+			templateUrl: 'sources/chunks/career.html',
+			controller: 'CareerController as k',
 			})
 
-			.state('style', {
-			url: '/lifestyle',
-			templateUrl: 'sources/chunks/lifestyle.html',
-			controller: 'StyleController as k',
+			.state('letter', {
+			url: '/letter',
+			templateUrl: 'sources/chunks/letter.html',
+			controller: 'LetterController as k',
 			})
 
-			.state('guitar', {
-			url: '/guitar',
-			templateUrl: 'sources/chunks/guitar.html',
-			controller: 'GuitarController as k',
+			.state('pastime', {
+			url: '/pastime',
+			templateUrl: 'sources/chunks/pastime.html',
+			controller: 'PastimeController as k',
 			})
 
 			.state('contact', {
@@ -63,20 +63,20 @@ function HomeController (ServiceEngine)
             var k = this;
         };
 
-AboutController.$inject = ['ServiceEngine'];
-function AboutController (ServiceEngine)
+CareerController.$inject = ['ServiceEngine'];
+function CareerController (ServiceEngine)
         {
             var k = this;
         };
 
-StyleController.$inject = ['ServiceEngine'];
-function StyleController (ServiceEngine)
+LetterController.$inject = ['ServiceEngine'];
+function LetterController (ServiceEngine)
         {
             var k = this;
         };
 
-GuitarController.$inject = ['ServiceEngine'];
-function GuitarController (ServiceEngine)
+PastimeController.$inject = ['ServiceEngine'];
+function PastimeController (ServiceEngine)
         {
             var k = this;
         };
