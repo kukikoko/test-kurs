@@ -1,3 +1,163 @@
 <div class="container" id="chunk-content">
-<h>lifestyle</h>
+
+
+        <div class="col-xs-10 col-xs-offset-1 kontener3">
+                <div class="col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 tekstpad kontener2">
+                <div class="career-choose" ng-show="k.interestsText">
+        
+                <div class="col-md-4 centruj kontener4">
+                    <button class="btn btn-xs myButton" ng-click="k.flipPage(1);"
+                    ng-audio="sources/sounds/click.wav">
+                    games</button>
+                </div>
+        
+                <div class="col-md-4 centruj kontener4">
+                    <button class="btn btn-xs myButton" ng-click="k.flipPage(2);"
+                    ng-audio="sources/sounds/click.wav">
+                    guitar</button>
+                </div>
+        
+                <div class="col-md-4 centruj kontener4">
+                    <button class="btn btn-xs myButton" ng-click="k.flipPage(3);"
+                    ng-audio="sources/sounds/click.wav">
+                    travel</button>
+                </div>
+    
+        
+                </div>
+                </div>
+            </div>
+
+            <div class="kontener4">
+                    <div class="col-xs-10 col-xs-offset-1 tekstpad kontener2">
+                    <div class="mehaalomahn black-mamba" ng-show="k.games">
+                    <p class="centruj-title">GAMES</p>
+                    <div class="penelope kontener4" ng-show="k.gamesIntro">
+                    <p class="noMargins">I have been playing games since mid-80s and the 8-bit computers, which
+                        had an undeniable charm in their simplicity.<br>
+                        Because for me the most important thing in games is the story and the opportunity to participate in the adventure,
+                        I mostly play RPGs - the more complicated the better.
+                        <br>
+                        And I also like shooters, but I can't say I'm the best at it in the world :)<br>
+                        I appreciate when the game makes you think and evokes emotions and feelings,
+                        because the world of computer games is an incredible place of fun, entertainment,
+                        and adventures and I really can't wait what the future brings.<br>
+                        Please click the button below to see the list of the games that really 
+                        did inspire me somehow and please find me on Steam - my nickname is kukikoko.<br>
+                    </p>
+
+                            <button class="btn btn-xs myButton1" ng-click="k.ShowTheList();"
+                            ng-audio="sources/sounds/click.wav">
+                            the list</button> 
+
+                    </div>
+ 
+
+                    <div class="penelope kontener4" ng-show="k.theList">
+                    <ul>
+                        <li ng-repeat="thing in k.gamelist"> {{thing}} </li>
+                    </ul>
+                    </div>
+                    </div>
+                    </div>
+            </div>
+        
+            <div class="kontener4">
+                    <div class="col-xs-10 col-xs-offset-1 tekstpad kontener2">
+                    <div class="mehaalomahn black-mamba" ng-show="k.guitar">
+                    <p class="centruj-title">GUITAR</p>
+
+                    <div class="penelope kontener4" ng-show="k.guitarIntro">
+                            <p class="noMargins">I play the guitar, button below for inspirations<br></p>
+
+                            <button class="btn btn-xs myButton1" ng-click="k.ShowInspirations();"
+                            ng-audio="sources/sounds/click.wav">
+                            inspirations</button> 
+
+                    </div>
+
+                    <div class="penelope kontener4" ng-show="k.guitarInspirations">
+                        <p class="noMargins">My inspirations:</p>
+                        <ul>
+                        <li ng-repeat="thing in k.guitarDescription"> {{thing}} </li>
+                        </ul>
+                    </div>
+
+                    </div>
+                    </div>
+            </div>
+
+            <div class="kontener4">
+                    <div class="col-xs-10 col-xs-offset-1 tekstpad kontener2">
+                    <div class="mehaalomahn black-mamba" ng-show="k.travel">
+                    <p class="centruj-title">TRAVELLING</p>
+
+                    <div class="penelope kontener4" ng-show="k.travelIntro">
+                            <p class="noMargins">I like to travel bla bla bla<br></p>
+
+                            <button class="btn btn-xs myButton1" ng-click="k.ShowCountry(1);"
+                            ng-audio="sources/sounds/click.wav">
+                            Mexico</button> 
+
+                            <button class="btn btn-xs myButton1" ng-click="k.ShowCountry(2);"
+                            ng-audio="sources/sounds/click.wav">
+                            Mexico</button> 
+
+                            <button class="btn btn-xs myButton1" ng-click="k.ShowCountry(3);"
+                            ng-audio="sources/sounds/click.wav">
+                            Holland</button> 
+
+                            <button class="btn btn-xs myButton1" ng-click="k.ShowCountry(4);"
+                            ng-audio="sources/sounds/click.wav">
+                            Thailand</button> 
+
+                            <button class="btn btn-xs myButton1" ng-click="k.ShowCountry(5);"
+                            ng-audio="sources/sounds/click.wav">
+                            Greece</button> 
+
+                            <button class="btn btn-xs myButton1" ng-click="k.ShowCountry(6);"
+                            ng-audio="sources/sounds/click.wav">
+                            Mexico</button> 
+
+                            <button class="btn btn-xs myButton1" ng-click="k.ShowCountry(7);"
+                            ng-audio="sources/sounds/click.wav">
+                            The UK</button> 
+
+                            <button class="btn btn-xs myButton1" ng-click="k.ShowCountry(8);"
+                            ng-audio="sources/sounds/click.wav">
+                            Danmark</button> 
+
+                            <button class="btn btn-xs myButton1" ng-click="k.ShowCountry(9);"
+                            ng-audio="sources/sounds/click.wav">
+                            Spain</button> 
+
+                            <button class="btn btn-xs myButton1" ng-click="k.ShowCountry(10);"
+                            ng-audio="sources/sounds/click.wav">
+                            Hungary</button> 
+
+                            <button class="btn btn-xs myButton1" ng-click="k.ShowCountry(11);"
+                            ng-audio="sources/sounds/click.wav">
+                            Germany</button> 
+
+                            <button class="btn btn-xs myButton1" ng-click="k.ShowCountry(12);"
+                            ng-audio="sources/sounds/click.wav">
+                            Mexico</button> 
+
+                            <button class="btn btn-xs myButton1" ng-click="k.ShowCountry(13);"
+                            ng-audio="sources/sounds/click.wav">
+                            Burkina Faso</button> 
+
+                    </div>
+
+                    <div class="penelope kontener4" ng-show="k.travelInfo">
+                            <p class="noMargins">Work in progress...<br></p>
+
+                    </div>
+
+
+
+                    </div>
+                    </div>
+            </div>    
+
 </div>
