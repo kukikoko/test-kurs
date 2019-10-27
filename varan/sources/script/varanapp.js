@@ -121,8 +121,7 @@ function PastimeController (ServiceEngine)
 			k.theList = false;
 			k.guitarIntro = true;
 			k.guitarInspirations = false;
-			k.travelIntro = true;
-			k.travelInfo = false;
+
 
 			k.gamelist = ["Gothic", "Gothic 2 + The Night of The Raven", "Gothic 3", "The Elder Scrolls: Skyrim",
 						"Fallout: New Vegas", "Mount and Blade", "Dragon's Dogma: Dark Arisen", "Dragon Age: Origins", 
@@ -131,7 +130,9 @@ function PastimeController (ServiceEngine)
 						"Call of Juarez: Gunslinger", "Two Worlds, Two Worlds 2", "Battlefield: Bad Company 2", "Dark Souls 3",
 						"This War of Mine", "Sleeping Dogs", "Mafia", "Mafia 2", "Call of Duty", "… and many more and still waiting for more to come"];
 
-			k.guitarDescription = ["Pat Metheny", "John Pettrucci", "James Brown", "BB King", "Red Hot Chili Peppers"];
+			k.guitarDescription = ["Pat Metheny", "John Pettrucci", "James Brown", "BB King", "Red Hot Chili Peppers", "Faith no More", "Slayer", "Tower of Power", "Stevie Wonder", "... and many more"];
+
+			k.otherActivities = ["movies", "the gym", "writing stories", "reading", "sailing", "my cat", "travelling"]
 
 			k.flipPage = function(p)
 			{
@@ -158,11 +159,6 @@ function PastimeController (ServiceEngine)
 				setTimeout(function(){ k.guitarInspirations = true; }, 1010);				
 			};
 
-			k.ShowCountry = function (p)
-			{
-				k.travelIntro = false;
-				setTimeout(function(){ k.travelInfo = true; }, 1010);				
-			};
 
 			setTimeout(function(){ k.interestsText = true; }, 1010);
 
